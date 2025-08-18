@@ -28,9 +28,9 @@ export default function Hardware() {
         </nav>
       </header>
 
-      {/* Main Content */}
-      <main 
-        className="py-20 min-h-screen"
+      {/* Hero Section with Background Image */}
+      <section 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden" 
         style={{
           backgroundImage: `url(${hardwareBackgroundImage})`,
           backgroundSize: 'cover',
@@ -38,27 +38,29 @@ export default function Hardware() {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-75"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Specter Hardware
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Open-source firmware on trust minimized signing devices.
-            </p>
-            <a 
-              href="https://github.com/cryptoadvance/specter-diy/releases"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-            >
-              Specter Firmware
-            </a>
-          </div>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            Specter Hardware
+          </h1>
+          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            Open-source firmware on trust minimized signing devices.
+          </p>
+          <a 
+            href="https://github.com/cryptoadvance/specter-diy/releases"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+          >
+            Specter Firmware
+          </a>
+        </div>
+      </section>
 
+      {/* Main Content */}
+      <main className="py-20 bg-specter-dark">
+        <div className="container mx-auto px-4">
+          
           <div className="mb-16">
             <p className="text-lg text-center max-w-4xl mx-auto mb-6">
               Specter Firmware enables you to build your own trust <strong>minimized signing devices.</strong>
