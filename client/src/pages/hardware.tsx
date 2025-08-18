@@ -27,7 +27,6 @@ export default function Hardware() {
           </div>
         </nav>
       </header>
-
       {/* Hero Section with Background Image */}
       <section 
         className="relative min-h-screen flex items-center justify-center overflow-hidden" 
@@ -56,7 +55,6 @@ export default function Hardware() {
           </a>
         </div>
       </section>
-
       {/* Main Content */}
       <main className="py-20 bg-specter-dark">
         <div className="container mx-auto px-4">
@@ -366,7 +364,7 @@ export default function Hardware() {
 
           {/* Shield Components Section */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">Components</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">Components Specter Shield</h2>
             
             <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
               <div>
@@ -457,7 +455,6 @@ export default function Hardware() {
 
         </div>
       </main>
-
       {/* Footer */}
       <footer className="bg-specter-navy py-16 mt-20">
         <div className="container mx-auto px-4">
