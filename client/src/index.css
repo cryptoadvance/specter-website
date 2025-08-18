@@ -54,7 +54,7 @@
   /* Specter Brand Colors */
   --specter-primary: hsl(203 79% 51%);
   --specter-coral: hsl(0 100% 74%);
-  --specter-dark: hsl(215 48% 6%);
+  --specter-dark: hsl(217 45% 3%); /* #05080F */
   --specter-navy: hsl(216 27% 16%);
 }
 

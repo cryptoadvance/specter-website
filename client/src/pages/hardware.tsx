@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
 
 export default function Hardware() {
   return (
@@ -28,8 +29,17 @@ export default function Hardware() {
       </header>
 
       {/* Main Content */}
-      <main className="py-20">
-        <div className="container mx-auto px-4">
+      <main 
+        className="py-20 min-h-screen"
+        style={{
+          backgroundImage: `url(${hardwareBackgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-75"></div>
+        <div className="container mx-auto px-4 relative z-10">
           
           {/* Hero Section */}
           <div className="text-center mb-16">
@@ -404,7 +414,7 @@ export default function Hardware() {
             />
           </div>
 
-          {/* Comparison Section */}
+          {/* Comparison Section - moved here to be below hardware wallets */}
           <section className="mb-20">
             <h2 className="text-3xl font-bold text-center mb-12">Specter Signer Comparison</h2>
             
