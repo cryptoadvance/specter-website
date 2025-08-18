@@ -464,11 +464,6 @@ export default function Hardware() {
           
           {/* Contact Section */}
           <div className="text-center mb-12">
-            <img 
-              src="https://specter.solutions/wp-content/uploads/2021/12/moritz-square-new-1500x1500.jpg" 
-              alt="Moritz" 
-              className="w-24 h-24 rounded-full mx-auto mb-4 shadow-lg object-cover"
-            />
             <h3 className="text-xl font-semibold text-white">
               Contact Moritz for more information
             </h3>
