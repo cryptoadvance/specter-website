@@ -462,12 +462,7 @@ export default function Hardware() {
       <footer className="bg-specter-navy py-16 mt-20">
         <div className="container mx-auto px-4">
           
-          {/* Contact Section */}
-          <div className="text-center mb-12">
-            <h3 className="text-xl font-semibold text-white">
-              Contact Moritz for more information
-            </h3>
-          </div>
+          
           
           {/* Social Media Links */}
           <div className="flex justify-center space-x-8 mb-12">
