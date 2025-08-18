@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,8 @@ import { apiRequest } from "@/lib/queryClient";
 import { insertContactSchema, insertNewsletterSchema } from "@shared/schema";
 import { Menu, X } from "lucide-react";
 import type { InsertContact, InsertNewsletter } from "@shared/schema";
+import heroBackgroundImage from "@assets/imgi_6_Specter_Foss_Suite-scaled_1755535754418.png";
+import contactPersonImage from "@assets/Uncle Jim Tutorial (1)_1755536226982.png";
 
 export default function Home() {
   const { toast } = useToast();
@@ -117,18 +120,12 @@ export default function Home() {
               >
                 Home
               </button>
-              <button 
-                onClick={() => scrollToSection('desktop')}
-                className="text-white hover:text-specter-coral transition-colors duration-200"
-              >
+              <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Desktop
-              </button>
-              <button 
-                onClick={() => scrollToSection('hardware')}
-                className="text-white hover:text-specter-coral transition-colors duration-200"
-              >
+              </Link>
+              <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Hardware
-              </button>
+              </Link>
               <button 
                 onClick={() => scrollToSection('contact')}
                 className="text-white hover:text-specter-coral transition-colors duration-200"
@@ -156,18 +153,12 @@ export default function Home() {
                 >
                   Home
                 </button>
-                <button 
-                  onClick={() => scrollToSection('desktop')}
-                  className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                >
+                <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Desktop
-                </button>
-                <button 
-                  onClick={() => scrollToSection('hardware')}
-                  className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                >
+                </Link>
+                <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Hardware
-                </button>
+                </Link>
                 <button 
                   onClick={() => scrollToSection('contact')}
                   className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
@@ -185,7 +176,7 @@ export default function Home() {
         id="hero"
         className="relative min-h-screen flex items-center justify-center overflow-hidden" 
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080')",
+          backgroundImage: `url(${heroBackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -194,18 +185,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-black opacity-60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Free <span className="text-specter-coral">Open-Source</span><br />
-            Product Suite
+            <span className="text-specter-coral">Open-Source</span><br />
+            Specter Project
           </h1>
           <h2 className="text-xl md:text-2xl font-light mb-8 text-gray-300">
-            For Bitcoiners, Developers & Enterprise
+            Secure your Bitcoin with Specter
           </h2>
-          <Button 
-            onClick={() => scrollToSection('desktop')}
-            className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200"
-          >
-            Specter Desktop
-          </Button>
+          <Link href="/desktop">
+            <Button className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200">
+              Specter Desktop
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -222,14 +212,11 @@ export default function Home() {
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     Secure your bitcoin. Verify your transactions. Protect your privacy.
                   </p>
-                  <a 
-                    href="https://specter.solutions/downloads/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
-                  >
-                    Get Specter &gt;&gt;
-                  </a>
+                  <Link href="/desktop">
+                    <Button className="bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
+                      Get Specter &gt;&gt;
+                    </Button>
+                  </Link>
                 </div>
                 <div className="order-1 md:order-2">
                   <img 
@@ -258,12 +245,11 @@ export default function Home() {
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     Trust minimised signing devices running Specter open source firmware.
                   </p>
-                  <a 
-                    href="#"
-                    className="inline-block bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
-                  >
-                    Build yours &gt;&gt;
-                  </a>
+                  <Link href="/hardware">
+                    <Button className="bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
+                      Build yours &gt;&gt;
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </Card>
@@ -272,90 +258,88 @@ export default function Home() {
           {/* Contact Section */}
           <section id="contact" className="mb-20">
             <Card className="bg-specter-navy rounded-xl p-8 md:p-12 shadow-2xl border-0">
-              <div className="grid md:grid-cols-2 gap-8 items-start">
-                <div className="text-center md:text-left">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2021/12/moritz-square-new-1500x1500.jpg" 
-                    alt="Moritz - Contact Person" 
-                    className="w-32 h-32 rounded-full mx-auto md:mx-0 mb-6 shadow-lg object-cover"
-                  />
-                  <h3 className="text-2xl font-semibold mb-4 text-white">
-                    Contact Moritz for<br />more information
-                  </h3>
-                </div>
-                <div>
-                  <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-4">
-                    <div>
-                      <Label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
-                        Name *
-                      </Label>
-                      <Input
-                        {...contactForm.register("name")}
-                        type="text"
-                        id="name"
-                        required
-                        className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
-                      />
-                      {contactForm.formState.errors.name && (
-                        <p className="text-red-400 text-sm mt-1">
-                          {contactForm.formState.errors.name.message}
-                        </p>
-                      )}
-                    </div>
-                    <div>
-                      <Label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
-                        Email *
-                      </Label>
-                      <Input
-                        {...contactForm.register("email")}
-                        type="email"
-                        id="email"
-                        required
-                        className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
-                      />
-                      {contactForm.formState.errors.email && (
-                        <p className="text-red-400 text-sm mt-1">
-                          {contactForm.formState.errors.email.message}
-                        </p>
-                      )}
-                    </div>
-                    <div>
-                      <Label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
-                        Message *
-                      </Label>
-                      <Textarea
-                        {...contactForm.register("message")}
-                        id="message"
-                        rows={4}
-                        required
-                        className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors resize-vertical text-white"
-                      />
-                      {contactForm.formState.errors.message && (
-                        <p className="text-red-400 text-sm mt-1">
-                          {contactForm.formState.errors.message.message}
-                        </p>
-                      )}
-                    </div>
-                    <div className="text-xs text-gray-400 mb-4">
-                      Fields marked with an * are required
-                    </div>
-                    {/* Honeypot field for spam protection */}
-                    <input 
-                      {...contactForm.register("honeypot")}
-                      type="text" 
-                      name="honeypot" 
-                      style={{ display: 'none' }} 
-                      tabIndex={-1} 
+              <div className="text-center mb-8">
+                <img 
+                  src={contactPersonImage}
+                  alt="Association Contact" 
+                  className="w-24 h-24 rounded-full mx-auto mb-4 shadow-lg object-cover"
+                />
+                <h3 className="text-2xl font-semibold text-white">
+                  Contact Association
+                </h3>
+              </div>
+              <div className="max-w-lg mx-auto">
+                <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-4">
+                  <div>
+                    <Label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
+                      Name *
+                    </Label>
+                    <Input
+                      {...contactForm.register("name")}
+                      type="text"
+                      id="name"
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
                     />
-                    <Button 
-                      type="submit"
-                      disabled={contactMutation.isPending}
-                      className="w-full bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-                    >
-                      {contactMutation.isPending ? "Sending..." : "Send Message"}
-                    </Button>
-                  </form>
-                </div>
+                    {contactForm.formState.errors.name && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {contactForm.formState.errors.name.message}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
+                      Email *
+                    </Label>
+                    <Input
+                      {...contactForm.register("email")}
+                      type="email"
+                      id="email"
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
+                    />
+                    {contactForm.formState.errors.email && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {contactForm.formState.errors.email.message}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <Label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
+                      Message *
+                    </Label>
+                    <Textarea
+                      {...contactForm.register("message")}
+                      id="message"
+                      rows={4}
+                      required
+                      className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors resize-vertical text-white"
+                    />
+                    {contactForm.formState.errors.message && (
+                      <p className="text-red-400 text-sm mt-1">
+                        {contactForm.formState.errors.message.message}
+                      </p>
+                    )}
+                  </div>
+                  <div className="text-xs text-gray-400 mb-4 text-center">
+                    Fields marked with an * are required
+                  </div>
+                  {/* Honeypot field for spam protection */}
+                  <input 
+                    {...contactForm.register("honeypot")}
+                    type="text" 
+                    name="honeypot" 
+                    style={{ display: 'none' }} 
+                    tabIndex={-1} 
+                  />
+                  <Button 
+                    type="submit"
+                    disabled={contactMutation.isPending}
+                    className="w-full bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                  >
+                    {contactMutation.isPending ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
               </div>
             </Card>
           </section>

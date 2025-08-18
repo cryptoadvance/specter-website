@@ -1,21 +1,28 @@
 # Overview
 
-This is a modern full-stack web application built with React, TypeScript, and Express.js. The application features a contact form and newsletter subscription system with a clean, responsive design using shadcn/ui components and Tailwind CSS. It follows a monorepo structure with shared type definitions and schemas between the frontend and backend.
+This is a replica of the Specter Solutions website built as a modern full-stack web application using React, TypeScript, and Express.js. The application features the Specter Association branding with a hero section, desktop and hardware product showcases, and a contact form. It includes dedicated pages for Specter Desktop and Hardware products, maintaining the original site's structure while using modern web technologies.
 
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
 
+## Design Requirements
+- Use exact Specter brand colors: Primary (#2D9CDB), Text (#FFFFFF), Link (#FF7C7C), Background 1 (#05080F), Background 2 (#192432)
+- Maintain original Specter Solutions site structure and layout
+- Use provided background images and contact person photos
+- Desktop and Hardware sections should link to dedicated pages
+
 # System Architecture
 
 ## Frontend Architecture
 - **Framework**: React 18 with TypeScript and Vite for development and building
-- **Routing**: Wouter for lightweight client-side routing
+- **Routing**: Wouter for lightweight client-side routing with dedicated pages for Desktop (/desktop) and Hardware (/hardware)
 - **UI Components**: shadcn/ui component library built on Radix UI primitives
-- **Styling**: Tailwind CSS with a custom design system including CSS variables for theming
+- **Styling**: Tailwind CSS with Specter brand colors and custom design system
 - **State Management**: TanStack React Query for server state management
 - **Form Handling**: React Hook Form with Zod validation for type-safe form validation
-- **Build Tool**: Vite with custom configuration for path aliases and development features
+- **Build Tool**: Vite with custom configuration for path aliases and asset imports
+- **Assets**: Custom hero background image and contact person image integrated via @assets imports
 
 ## Backend Architecture
 - **Runtime**: Node.js with Express.js framework
@@ -34,7 +41,7 @@ Preferred communication style: Simple, everyday language.
 
 ## Data Models
 - **Users**: Basic user authentication system with username/password
-- **Contacts**: Contact form submissions with spam protection (honeypot field)
+- **Contacts**: Contact form submissions with spam protection (honeypot field) for association inquiries
 - **Newsletters**: Email subscription management with duplicate prevention
 
 ## Security Features
@@ -83,3 +90,25 @@ Preferred communication style: Simple, everyday language.
 - **drizzle-zod**: Integration between Drizzle ORM and Zod
 - **nanoid**: Unique ID generation
 - **cmdk**: Command palette component
+
+# Recent Changes (August 18, 2025)
+
+## Website Structure Update
+- Created dedicated Desktop page (/desktop) with detailed Specter Desktop information
+- Created dedicated Hardware page (/hardware) with Specter DIY hardware wallet details  
+- Updated home page navigation to link to new dedicated pages
+- Removed Enterprise section per user request, focusing only on Desktop and Hardware
+
+## Visual Design Changes
+- Updated hero section with custom background image (man typing with Specter interface)
+- Changed hero text from "Free Open-Source Product Suite" to "Open-Source Specter Project"
+- Updated subtitle from "For Bitcoiners, Developers & Enterprise" to "Secure your Bitcoin with Specter"
+- Replaced contact person image with new association team photo
+- Changed contact section title from "Contact Moritz for more information" to "Contact Association"
+- Redesigned contact form layout with centered form and contact image above
+
+## Brand Integration
+- Applied Specter brand colors throughout the site
+- Integrated custom assets via @assets imports for better asset management
+- Maintained responsive design with mobile navigation
+- Preserved original site structure while modernizing the technology stack
