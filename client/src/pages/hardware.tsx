@@ -416,39 +416,141 @@ export default function Hardware() {
 
           {/* Comparison Section - moved here to be below hardware wallets */}
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">Specter Signer Comparison</h2>
-            
-            <div className="text-center mb-8">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2022/02/Hardware-Comparison.png" 
-                alt="Hardware Comparison" 
-                className="w-full max-w-2xl mx-auto h-auto"
-              />
-            </div>
-            
-            <Card className="bg-specter-navy rounded-xl p-8 border-0">
-              <div className="space-y-4">
-                <div className="flex items-center">
-                  <span className="text-lg font-semibold text-white">4" Touch Display</span>
+            <Card className="bg-specter-navy rounded-xl p-8 border-0 max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+                
+                {/* Left side - Title and Hardware Images */}
+                <div className="text-center">
+                  <h2 className="text-3xl font-bold mb-8 text-white">Specter Signer Comparison</h2>
+                  <div className="flex justify-center items-center space-x-4 mb-8">
+                    <div className="text-center">
+                      <img 
+                        src="https://specter.solutions/wp-content/uploads/2022/02/Specter-DIY-Barebones.png" 
+                        alt="Specter DIY" 
+                        className="w-24 h-auto mx-auto mb-2"
+                      />
+                      <span className="text-sm text-gray-300">DIY</span>
+                    </div>
+                    <div className="text-center">
+                      <img 
+                        src="https://specter.solutions/wp-content/uploads/2022/01/Specter-Shield.png" 
+                        alt="Specter Shield" 
+                        className="w-24 h-auto mx-auto mb-2"
+                      />
+                      <span className="text-sm text-gray-300">Shield</span>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <span className="text-lg font-semibold text-white">True random number generation + coin flip added randomness</span>
+
+                {/* Middle and Right - Features Table */}
+                <div className="md:col-span-2">
+                  <div className="space-y-6">
+                    
+                    {/* Header Row */}
+                    <div className="grid grid-cols-3 gap-4 pb-4 border-b border-gray-600">
+                      <div className="text-white font-semibold">Feature</div>
+                      <div className="text-white font-semibold text-center">DIY</div>
+                      <div className="text-white font-semibold text-center">Shield</div>
+                    </div>
+
+                    {/* Feature Rows */}
+                    <div className="grid grid-cols-3 gap-4 items-center py-2">
+                      <div className="text-white">4" Touch Display</div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 items-center py-2">
+                      <div className="text-white">True Random Number Generation + Coin Flip Added Randomness</div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 items-center py-2">
+                      <div className="text-white">Smart Card Secure Element</div>
+                      <div className="text-center">
+                        <span className="text-gray-500">-</span>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 items-center py-2">
+                      <div className="text-white">Agnostic Mode</div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 items-center py-2">
+                      <div className="text-white">Airgapped PSBT QR Code Operation</div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 items-center py-2">
+                      <div className="text-white">Liquid Support</div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-3 gap-4 items-center py-2">
+                      <div className="text-white">Integrated Battery</div>
+                      <div className="text-center">
+                        <span className="text-gray-500">-</span>
+                      </div>
+                      <div className="text-center">
+                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                        </svg>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <span className="text-lg font-semibold text-white">Smart Card Secure Element</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-lg font-semibold text-white">Agnostic mode</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-lg font-semibold text-white">Airgapped PSBT QR Code Operation</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-lg font-semibold text-white">Liquid support</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-lg font-semibold text-white">Integrated Battery</span>
-                </div>
+
               </div>
             </Card>
           </section>
