@@ -222,7 +222,7 @@ export default function Home() {
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2022/02/Home-Specter_Add_Device.png" 
                     alt="Specter Desktop - Add your devices interface" 
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2022/03/IMG_0062.png" 
                     alt="Specter DIY Hardware Wallet" 
-                    className="rounded-lg shadow-lg w-full h-auto"
+                    className="w-full h-auto"
                   />
                 </div>
                 <div>
