@@ -135,9 +135,7 @@ export default function Hardware() {
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
                 <h3 className="text-xl font-bold mb-4 text-white">Secure Element</h3>
-                <p className="text-gray-300">
-                  Removable smart cards store wallet seed and enable quick access to multiple wallets.
-                </p>
+                <p className="text-gray-300">Shield board enables smart cards to encrypt wallet seeds. Multiple cards are acting like separate hardware wallets.</p>
               </Card>
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
