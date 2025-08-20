@@ -189,6 +189,20 @@ export default function Hardware() {
                   Verify and export receive addresses.
                 </p>
               </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">SeedQR</h3>
+                <p className="text-gray-300">
+                  Import Seeds instant into the device by just scanning classic or compact seedQR Codes.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">BIP85</h3>
+                <p className="text-gray-300">
+                  Derive child seed phrases from your primary seed phrase for use on less secure devices, such as hot wallets, lightning wallets, etc.
+                </p>
+              </Card>
             </div>
             
             <div className="text-center mt-12">
