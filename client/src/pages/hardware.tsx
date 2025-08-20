@@ -151,7 +151,7 @@ export default function Hardware() {
               </Card>
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Store In Memory</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Temporary Seed</h3>
                 <p className="text-gray-300">
                   Private keys can be stored locally in device memory.
                 </p>
