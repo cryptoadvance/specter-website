@@ -147,9 +147,7 @@ export default function Hardware() {
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
                 <h3 className="text-xl font-bold mb-4 text-white">QR Code Wallet Import</h3>
-                <p className="text-gray-300">
-                  Scan QR code to import wallet descriptor.
-                </p>
+                <p className="text-gray-300">Scan QR code to import wallet descriptor to the device.</p>
               </Card>
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
