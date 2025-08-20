@@ -127,7 +127,7 @@ export default function Hardware() {
               </Card>
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Device Verification</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Anti-phishing words</h3>
                 <p className="text-gray-300">
                   Seed displayed after each pin entry verifies the device was not tampered with.
                 </p>
