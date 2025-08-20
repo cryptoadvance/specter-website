@@ -170,9 +170,7 @@ export default function Hardware() {
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
                 <h3 className="text-xl font-bold mb-4 text-white">Key Generation</h3>
-                <p className="text-gray-300">
-                  Securely generate seed words using the microcontrollers true random number generator.
-                </p>
+                <p className="text-gray-300">Securely generate seed words using the microcontrollers true random number generator and entropy from koordinates and timestamps of every display touch.</p>
               </Card>
               
               <Card className="bg-specter-navy rounded-xl p-6 border-0">
