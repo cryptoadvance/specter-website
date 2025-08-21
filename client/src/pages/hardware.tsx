@@ -50,7 +50,7 @@ export default function Hardware() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-          >Specter Hardware Wallet</a>
+          >Specter Firmware</a>
         </div>
       </section>
       {/* Main Content */}
