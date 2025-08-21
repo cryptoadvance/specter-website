@@ -12,6 +12,9 @@ import { useToast } from "@/hooks/use-toast";
 
 // Import team member images
 import schnuartzImage from "@assets/Schnuartz Profilbild_1755804562715.png";
+import mikeImage from "@assets/Mike Tolkachev_1755805238554.png";
+import cryptoguideImage from "@assets/Cryptoguide_1755805248345.jpg";
+import yanImage from "@assets/Yan-Swan_1755805253984.jpg";
 import moritzImage from "@assets/Moritz-e1600023402803_1755804923225.jpg";
 import stepanImage from "@assets/Stepan-Snigirev_1755804956177.jpg";
 import kimImage from "@assets/Kim_1755804970556.jpg";
@@ -99,7 +102,7 @@ export default function Contact() {
               <h2 className="text-2xl font-semibold text-white">Schnuartz</h2>
               <p className="text-specter-coral font-medium mb-4">President</p>
               <p className="text-gray-300 text-sm md:text-base">
-                As the founder of a small German online shop named <span className="text-white font-bold">ClavaStack</span> that sold Specter hardware wallets and created numerous Specter tutorials on the EINUNDZWANZIG channel, Schnuartz has been living the association's mission from the very beginning. He was elected president to lead Specter into the future as an officially community-driven organization.
+                As the founder of a small German online shop named <span className="text-white">ClavaStack</span> that sold Specter hardware wallets and created numerous Specter tutorials on the EINUNDZWANZIG channel, Schnuartz has been living the association's mission from the very beginning. He was elected president to lead Specter into the future as an officially community-driven organization.
               </p>
             </div>
           </Card>
@@ -107,9 +110,11 @@ export default function Contact() {
           {/* Mike - Vice President */}
           <Card className="bg-specter-navy rounded-2xl p-6 shadow-2xl border-0 flex flex-col items-center space-y-4">
             <div className="flex-shrink-0">
-              <div className="rounded-full w-28 h-28 bg-gray-600 border-4 border-specter-coral flex items-center justify-center">
-                <span className="text-white font-bold text-lg">Mike</span>
-              </div>
+              <img 
+                src={mikeImage} 
+                alt="Portrait of Mike" 
+                className="rounded-full w-28 h-28 object-cover border-4 border-specter-coral"
+              />
             </div>
             <div className="text-center">
               <h2 className="text-2xl font-semibold text-white">Mike</h2>
@@ -205,18 +210,22 @@ export default function Contact() {
               
               {/* Board Members */}
               <div className="flex flex-col items-center text-center p-4 bg-specter-dark rounded-lg shadow-inner border border-gray-700">
-                <div className="rounded-full w-20 h-20 mb-2 bg-gray-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">CryptoGuide</span>
-                </div>
+                <img 
+                  src={cryptoguideImage} 
+                  alt="CryptoGuide" 
+                  className="rounded-full w-20 h-20 mb-2 object-cover"
+                />
                 <h3 className="text-lg font-semibold text-white">CryptoGuide</h3>
                 <p className="text-sm text-specter-coral">Board of Directors</p>
                 <p className="text-xs text-gray-400 mt-1">Revived the Specter Shield with his PCB skills and created the cost-effective Shield Lite version.</p>
               </div>
               
               <div className="flex flex-col items-center text-center p-4 bg-specter-dark rounded-lg shadow-inner border border-gray-700">
-                <div className="rounded-full w-20 h-20 mb-2 bg-gray-600 flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">Yan</span>
-                </div>
+                <img 
+                  src={yanImage} 
+                  alt="Yan" 
+                  className="rounded-full w-20 h-20 mb-2 object-cover"
+                />
                 <h3 className="text-lg font-semibold text-white">Yan</h3>
                 <p className="text-sm text-specter-coral">Board of Directors</p>
                 <p className="text-xs text-gray-400 mt-1">Co-founder of Swan and a crucial bridge in transferring Specter into the hands of the community.</p>
@@ -276,7 +285,7 @@ export default function Contact() {
                 />
                 <h3 className="text-lg font-semibold text-white">Thomas</h3>
                 <p className="text-sm text-gray-400">Association Member</p>
-                <p className="text-xs text-gray-400 mt-1">Designer of the Specter Snap Case, who also sells Specter DIYs at <span className="text-white font-bold">BitcoinStoreOrg</span>.</p>
+                <p className="text-xs text-gray-400 mt-1">Designer of the Specter Snap Case, who also sells Specter DIYs at <span className="text-white">BitcoinStoreOrg</span>.</p>
               </div>
             </div>
           </Card>
