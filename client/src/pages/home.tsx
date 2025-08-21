@@ -170,7 +170,6 @@ export default function Home() {
           )}
         </nav>
       </header>
-
       {/* Hero Section */}
       <section 
         id="hero"
@@ -192,13 +191,10 @@ export default function Home() {
             Secure your Bitcoin with Specter
           </h2>
           <Link href="/hardware">
-            <Button className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200">
-              Specter Desktop
-            </Button>
+            <Button className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200">Specter Hardware Wallet</Button>
           </Link>
         </div>
       </section>
-
       {/* Main Content */}
       <main className="py-20">
         <div className="container mx-auto px-4">
@@ -346,7 +342,6 @@ export default function Home() {
 
         </div>
       </main>
-
       {/* Footer */}
       <footer className="bg-specter-navy py-16 mt-20">
         <div className="container mx-auto px-4">
