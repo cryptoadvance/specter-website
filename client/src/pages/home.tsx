@@ -191,7 +191,7 @@ export default function Home() {
           <h2 className="text-xl md:text-2xl font-light mb-8 text-gray-300">
             Secure your Bitcoin with Specter
           </h2>
-          <Link href="/desktop">
+          <Link href="/hardware">
             <Button className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200">
               Specter Desktop
             </Button>
