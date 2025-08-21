@@ -466,24 +466,26 @@ export default function Desktop() {
           <section className="mb-20">
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Wallet Backups</h2>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/import_export.svg" 
-                  alt="Import/Export" 
-                  className="w-16 h-16 mb-6"
-                />
-                <h3 className="text-2xl font-bold mb-4 text-white">Backup your multi-sig.</h3>
-                <p className="text-gray-300">
-                  Export a PDF Backup from Specter Desktop, it is recommended you keep this with each device/seed word back-up especially for multi-sig wallets.
-                </p>
-              </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0 flex items-center justify-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Backup_File-1-1024x511.png" 
-                  alt="Specter Backup File" 
-                  className="w-full max-w-lg h-auto rounded-lg shadow-lg"
-                />
+            <div className="bg-specter-navy rounded-xl p-8 border-0 mb-16">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2022/02/import_export.svg" 
+                    alt="Import/Export" 
+                    className="w-16 h-16 mb-6"
+                  />
+                  <h3 className="text-2xl font-bold mb-4 text-white">Backup your multi-sig.</h3>
+                  <p className="text-gray-300">
+                    Export a PDF Backup from Specter Desktop, it is recommended you keep this with each device/seed word back-up especially for multi-sig wallets.
+                  </p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Backup_File-1-1024x511.png" 
+                    alt="Specter Backup File" 
+                    className="w-full max-w-lg h-auto rounded-lg shadow-lg"
+                  />
+                </div>
               </div>
             </div>
 
