@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
+import { Link } from "wouter";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -15,7 +16,7 @@ import schnuartzImage from "@assets/Schnuartz Profilbild_1755804562715.png";
 import mikeImage from "@assets/Mike Tolkachev_1755805238554.png";
 import cryptoguideImage from "@assets/Cryptoguide_1755805248345.jpg";
 import yanImage from "@assets/Yan-Swan_1755805253984.jpg";
-import moritzImage from "@assets/Moritz-e1600023402803_1755804923225.jpg";
+import moritzImage from "@assets/Moritz_1755805413765.jpg";
 import stepanImage from "@assets/Stepan-Snigirev_1755804956177.jpg";
 import kimImage from "@assets/Kim_1755804970556.jpg";
 import poltoImage from "@assets/polto_1755804982512.jpg";
@@ -77,6 +78,31 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-specter-dark text-white">
+      {/* Navigation Header */}
+      <nav className="bg-specter-navy border-b border-gray-700">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="text-2xl font-bold text-white hover:text-specter-coral transition-colors">
+              Specter
+            </Link>
+            <div className="flex space-x-6">
+              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+                Home
+              </Link>
+              <Link href="/desktop" className="text-gray-300 hover:text-white transition-colors">
+                Desktop
+              </Link>
+              <Link href="/hardware" className="text-gray-300 hover:text-white transition-colors">
+                Hardware
+              </Link>
+              <Link href="/contact" className="text-specter-coral font-medium">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
       {/* Header Section */}
       <header className="text-center py-16 px-4">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">The Specter Association</h1>
@@ -128,77 +154,85 @@ export default function Contact() {
 
         {/* Contact Form */}
         <section>
-          <Card className="bg-specter-navy rounded-2xl p-8 shadow-2xl border-0">
-            <h2 className="text-3xl font-bold text-white mb-2 text-center">Contact Us</h2>
-            <p className="text-center text-gray-400 mb-6">Your message will be personally answered by our President.</p>
-            <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-6 max-w-xl mx-auto">
-              <div>
-                <Label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                  Name
-                </Label>
-                <Input
-                  {...contactForm.register("name")}
-                  type="text"
-                  id="name"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
+          <Card className="bg-specter-navy rounded-xl p-8 md:p-12 shadow-2xl border-0">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-semibold text-white">
+                Contact Association
+              </h3>
+            </div>
+            <div className="max-w-lg mx-auto">
+              <form onSubmit={contactForm.handleSubmit(onContactSubmit)} className="space-y-4">
+                <div>
+                  <Label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-300">
+                    Name *
+                  </Label>
+                  <Input
+                    {...contactForm.register("name")}
+                    type="text"
+                    id="name"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
+                  />
+                  {contactForm.formState.errors.name && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {contactForm.formState.errors.name.message}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <Label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-300">
+                    Email *
+                  </Label>
+                  <Input
+                    {...contactForm.register("email")}
+                    type="email"
+                    id="email"
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
+                  />
+                  {contactForm.formState.errors.email && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {contactForm.formState.errors.email.message}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <Label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-300">
+                    Message *
+                  </Label>
+                  <Textarea
+                    {...contactForm.register("message")}
+                    id="message"
+                    rows={4}
+                    required
+                    className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors resize-vertical text-white"
+                  />
+                  {contactForm.formState.errors.message && (
+                    <p className="text-red-400 text-sm mt-1">
+                      {contactForm.formState.errors.message.message}
+                    </p>
+                  )}
+                </div>
+                <div className="text-xs text-gray-400 mb-4 text-center">
+                  Fields marked with an * are required
+                </div>
+                {/* Honeypot field for spam protection */}
+                <input 
+                  {...contactForm.register("honeypot")}
+                  type="text" 
+                  name="honeypot" 
+                  style={{ display: 'none' }} 
+                  tabIndex={-1} 
                 />
-                {contactForm.formState.errors.name && (
-                  <p className="text-red-400 text-sm mt-1">
-                    {contactForm.formState.errors.name.message}
-                  </p>
-                )}
-              </div>
-              <div>
-                <Label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                  Email
-                </Label>
-                <Input
-                  {...contactForm.register("email")}
-                  type="email"
-                  id="email"
-                  placeholder="Your Email Address"
-                  className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors text-white"
-                />
-                {contactForm.formState.errors.email && (
-                  <p className="text-red-400 text-sm mt-1">
-                    {contactForm.formState.errors.email.message}
-                  </p>
-                )}
-              </div>
-              <div>
-                <Label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                  Message
-                </Label>
-                <Textarea
-                  {...contactForm.register("message")}
-                  id="message"
-                  rows={4}
-                  placeholder="Your message for us..."
-                  className="w-full px-4 py-3 rounded-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none transition-colors resize-vertical text-white"
-                />
-                {contactForm.formState.errors.message && (
-                  <p className="text-red-400 text-sm mt-1">
-                    {contactForm.formState.errors.message.message}
-                  </p>
-                )}
-              </div>
-              {/* Honeypot field for spam protection */}
-              <input 
-                {...contactForm.register("honeypot")}
-                type="text" 
-                name="honeypot" 
-                style={{ display: 'none' }} 
-                tabIndex={-1} 
-              />
-              <Button 
-                type="submit"
-                disabled={contactMutation.isPending}
-                className="w-full py-3 px-6 rounded-lg bg-specter-coral text-white font-bold hover:bg-red-600 transition-colors duration-300"
-              >
-                {contactMutation.isPending ? "Sending..." : "Send"}
-              </Button>
-            </form>
+                <Button 
+                  type="submit"
+                  disabled={contactMutation.isPending}
+                  className="w-full bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                >
+                  {contactMutation.isPending ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            </div>
           </Card>
         </section>
 
