@@ -1,29 +1,73 @@
+import { useState } from "react";
 import { Link } from "wouter";
-import { ArrowLeft } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
 export default function Desktop() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="bg-specter-dark text-white font-sans min-h-screen">
       {/* Header */}
-      <header className="bg-specter-primary shadow-lg">
+      <header className="bg-specter-primary shadow-lg sticky top-0 z-50">
         <nav className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link href="/">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo%402x-180x15.png" 
-                alt="Specter Solutions Logo" 
-                className="h-6"
-              />
-            </Link>
-            <Link href="/">
-              <Button variant="ghost" className="text-white hover:text-specter-coral">
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to Home
-              </Button>
-            </Link>
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/">
+                <img 
+                  src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo%402x-180x15.png" 
+                  alt="Specter Solutions Logo" 
+                  className="h-6"
+                />
+              </Link>
+            </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Home
+              </Link>
+              <span className="text-specter-coral font-medium">
+                Desktop
+              </span>
+              <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Hardware
+              </Link>
+              <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Contact
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
+            </button>
           </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4">
+              <div className="flex flex-col space-y-2">
+                <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
+                  Home
+                </Link>
+                <span className="text-specter-coral font-medium py-2 text-left">
+                  Desktop
+                </span>
+                <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
+                  Hardware
+                </Link>
+                <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
+                  Contact
+                </Link>
+              </div>
+            </div>
+          )}
         </nav>
       </header>
 

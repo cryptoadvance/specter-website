@@ -126,12 +126,9 @@ export default function Home() {
               <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Hardware
               </Link>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="text-white hover:text-specter-coral transition-colors duration-200"
-              >
+              <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Contact
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -159,12 +156,9 @@ export default function Home() {
                 <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Hardware
                 </Link>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                >
+                <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Contact
-                </button>
+                </Link>
               </div>
             </div>
           )}

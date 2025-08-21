@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
+import { Menu, X } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -33,6 +35,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 
 export default function Contact() {
   const { toast } = useToast();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const contactForm = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -77,31 +80,68 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-specter-dark text-white">
-      {/* Navigation Header */}
-      <nav className="bg-specter-navy border-b border-gray-700">
-        <div className="container mx-auto px-4 py-4">
+    <div className="bg-specter-dark text-white font-sans">
+      {/* Header */}
+      <header className="bg-specter-primary shadow-lg sticky top-0 z-50">
+        <nav className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
-            <Link href="/" className="text-2xl font-bold text-white hover:text-specter-coral transition-colors">
-              Specter
-            </Link>
-            <div className="flex space-x-6">
-              <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-                Home
-              </Link>
-              <Link href="/desktop" className="text-gray-300 hover:text-white transition-colors">
-                Desktop
-              </Link>
-              <Link href="/hardware" className="text-gray-300 hover:text-white transition-colors">
-                Hardware
-              </Link>
-              <Link href="/contact" className="text-specter-coral font-medium">
-                Contact
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/">
+                <img 
+                  src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo%402x-180x15.png" 
+                  alt="Specter Solutions Logo" 
+                  className="h-6"
+                />
               </Link>
             </div>
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Home
+              </Link>
+              <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Desktop
+              </Link>
+              <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Hardware
+              </Link>
+              <span className="text-specter-coral font-medium">
+                Contact
+              </span>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
+            </button>
           </div>
-        </div>
-      </nav>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4">
+              <div className="flex flex-col space-y-2">
+                <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
+                  Home
+                </Link>
+                <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
+                  Desktop
+                </Link>
+                <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
+                  Hardware
+                </Link>
+                <span className="text-specter-coral font-medium py-2 text-left">
+                  Contact
+                </span>
+              </div>
+            </div>
+          )}
+        </nav>
+      </header>
 
       {/* Header Section */}
       <header className="text-center py-16 px-4">
