@@ -96,6 +96,7 @@ Preferred communication style: Simple, everyday language.
 ## Website Structure Update
 - Created dedicated Desktop page (/desktop) with detailed Specter Desktop information
 - Created dedicated Hardware page (/hardware) with Specter DIY hardware wallet details  
+- Created dedicated Contact page (/contact) with Specter Association team member profiles and contact form
 - Updated home page navigation to link to new dedicated pages
 - Removed Enterprise section per user request, focusing only on Desktop and Hardware
 

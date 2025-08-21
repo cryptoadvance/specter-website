@@ -1,0 +1,299 @@
+Gemini
+
+2.5 Flash
+
+Upgrade durchführen
+
+
+
+
+Angepinnter Chat
+
+
+Unterhaltung mit Gemini
+Mach aus diesen Informationen eine richtig gute Webseiten Kontakt Seite.
+
+
+
+Oben wir sind eine Assocaition...
+
+
+
+Dann Präsident mit Story...
+
+Dann küzer Vice Präsident
+
+
+
+[Kontaktformular]
+
+
+
+Und unten drunter einmal alle namen kurz die dabei sind. alle 5 anderen. Mit Kurzer Beschreibung. Und Titel Board of directors oder member of honory.
+
+
+
+Untendrunter dann die Geschichte von Specter...
+
+"Titel Ideen
+
+
+
+Thumbnail Ideen
+
+Recherche und Notizen
+
+Moritz: 2017 thoughts that we need some better hardware wallets
+
+Portugal Lissabon Wasabi Wallets circa 2018 met StepanStepan showed him prototypes
+
+Partnering in a company
+
+Frauenhofer Institut
+
+2019 really good prototyp
+
+There wasn’t a good Desktop App.September 2019to launch august 2020
+
+Skript:
+
+Video Script: Announcing the Specter Association
+
+[Opening Scene: Fade in with the Specter Association logo on screen, upbeat Bitcoin-inspired music playing softly. Show quick clips of hardware wallets, community gatherings, and open-source code scrolling.]
+
+Narrator (Schnuartz, speaking energetically and confidently, with a welcoming tone):
+
+Today, I'm thrilled to announce that the Specter Association is officially here. I'm Schnuartz, the first president of the Specter Association. The Specter Community is now fully ready to take charge and drive this project forward like never before.
+
+[Transition: Cut to historical timeline graphics, starting from 2019, with visuals of old hardware wallets, hacks, and frustrated users.]
+
+Let's dive into the story of Specter and how we've arrived at this exciting moment. The Specter Association marks the perfect time for Specter to truly flourish—not as a traditional company, but as a community-driven organization. We are inspired by the EINUNDZWANZIG association, a role model founded by Gigi and other German Bitcoiners.
+
+To understand where we are now, let's look back at what has happened so far.
+
+In 2019, the hardware wallet landscape was tense. Devices were often poor quality, plagued by hacks and vulnerabilities. Stepan Snigirev a physicist frustrated with the options available, decided to build a prototype that met his extremely high security standards. In 2018, he met Moritz Wietersheim who had been searching for a partner to develop a hardware wallet for a year. They teamed up and founded a company. specter solutions
+
+But their vision wasn't about profiting directly from selling hardware. Instead, they aimed to empower anyone to build their own signing device using just off-the-shelf electronics. Key features included temporaryseed so hackers cannot hack the seed even if they stole the device, air-gapped security via QR codes—far more convenient than SD cards—and a big touchscreen for easy navigation without external display. They incorporated transparent, real-life entropy through coin flips. Everything was open-sourced: the firmware, build instructions, and parts list. The community even stepped in to create the first high-quality case. The barebone case made from the SeedSigner guys. Shoutout to this other great project that used Specter DIY as inspiration to grow another cheaper DIY Signing Device project.
+
+The cases made by the community from the beginning on shows that Specter was always a community project at heart.
+
+[Scene: Show prototypes, code repositories, and community contributions.]
+
+As the hardware wallet prototype evolved, another challenge emerged: How do you actually use this secure device effectively? At the time, there were no good tools for air-gapped hardware wallets, multi-signature setups weren't functioning smoothly, and full node connections were nonexistent.
+
+After some initial prototyping by Stepan, Specter Desktop was born. Keith Mukai, now a core developer at SeedSigner, contributed hardware wallet implementations. Kim joined to enhance the software wallet side, and Ben Kaufman, currently the lead developer at Bitcoin Keeper, came on board. All along, Mike—who wasn't even part of the company—played a huge role in helping Stepan develop the hardware wallet.
+
+Specter Desktop became even more successful than the Specter DIY hardware itself. However, without a solid business model, it needed investment. In September 2022, Swan—a major Bitcoin company known for reliable Bitcoin purchases—acquired Specter.
+
+But challenges arose even before that. The COVID-19 pandemic disrupted supply chains for the smartphone developer boards essential to building the hardware wallet, limiting marketing efforts despite the product's excellence. Then the Ukraine war begun, complicating things further since the main developer and Mike were from Russia.
+
+Meanwhile, Swan shifted the remaining Specter team's focus to building a collaborative custody product. During this period, updates for both the hardware and software wallets slowed down. The Desktop version, once a market leader, fell a bit behind and isn’t the best anymore.
+
+[Reassuring tone, with visuals of stable hardware in action.]
+
+But here's the key thing about the hardware wallet: Bitcoin doesn't change, so a well-built hardware wallet doesn't need constant changes either. If the code is implemented solidly using open standards, it just works reliably. It's like a good chair—if it's stable and at the right height, it serves its purpose perfectly. You might add some decorations or tweaks for comfort, but the core remains solid. And Stepan even delivered another great update along the way.
+
+Things got even better when CryptoGuide discovered the project nine month ago. He realized the Specter Shield—which added a Secure Element option—was no longer available. Using his PCB skills, he revived it, making it easy for the community to order from factories. He went further by creating an incredibly affordable version: the Shield Lite.
+
+And
+
+When Swan decided not to continue development, we in the community saw our chance to take over Specter—but officially as an association.
+
+[Excited tone, show group photos or icons of the new team.]
+
+Nine Specter enthusiasts founded the association in Switzerland. Stepan and Moritz stepped down from their roles but became honorary members, of course. Me, Schnuartz, who ran all the time a small German Online Shop, selling Specter Hardware Wallets, became president; Mike, who was getting paid for his great work on Specter, is vice president; CryptoGuide, creator of the Shield Lite, and Yan, co-founder of Swan, joined the board of directors. Kim, a former important Specter team member; Polto, who led Specter workshops at conferences; and Thomas, designer of the Specter Snap Case, all became part of the association too.
+
+A huge thanks to Swan for transferring the logo rights, X channel, YouTube, and GitHub to the community. This is an act of true honor—they acquired Specter as a company but released it back as an official community-led association.
+
+That brings us to the present and our bright future. Mike is hard at work making it easier for developers to contribute. On top of that, we're actively brainstorming ways to improve the device, make it as accessible as possible, and create tutorials and documentation for beginners, advanced users, and power users alike. Our goal is to enhance self-custody and sovereignty for bitcoiners worldwide.
+
+Join the open-source movement! If you're a pleb like you and me, get yourself a Specter—build one or buy one. Show it to your friends, share your experiences on social media. If you really like the project, consider donating to help us make it even better. And if you want to support us without spending money, follow us on YouTube and X to stay updated and help grow our reach.
+
+[Closing Scene: Call-to-action screen with links to website, shop, socials, and donation info. Music swells.]
+
+Thank you for being part of this journey. Let's build a more secure Bitcoin future together.
+
+The Specter Association is here. Specters community is now ready to
+
+
+
+Main
+
+The Specter Association is here. Now is the time for Specter to fully unfold. And not in a company, but in a community organisation structure. Modelled on EINUNDZWANZIG, which was founded by Gigi and other German Bitcoiners.
+
+What has happened so far.
+
+2019, the hardware wallet situation is tense. Poor quality. Hacks, etc.
+
+Stepan, a physicist, is dissatisfied with the hardware wallet situation and builds a prototype of a hardware wallet that can meet his extremely high security requirements. In 2018, Stepan meets Moritz, who has been looking for a partner for a hardware wallet for a year. They partner up and start a company.
+
+But they didn't want to make money directly with the hardware wallet. The idea was that anyone could build their own hardware wallet from standard electronics.
+
+Temporary seed, so that a hacker could steal the device, air-gapped with QR codes for high security and much more convenient than SD cards. Off-the-shelf components. Big Touchscreen to navigate on the device itself. Transparent real life entropy with coinflips. Anyone could just buy the parts and build the hardware wallet themselves. They open-sourced everything. The firmware, how to build it, which parts to buy. The first good case was even built by the community, not by Specter itself. The guys from SeedSigner helped here.
+
+This showed that Specter was always a community project.
+
+In the early days after the hardware wallet was prototyped, another question arose. How to use this great hardware wallet.
+
+There was nothing out there, nothing for air gapped hardware wallets, multi Sig doesn’t worked properly and a Full Node connection wasn’t on the market.
+
+After some protoyping from Stepan was Specter Deskop born. Keith Mukai who is now a core developer from seedsigner coded some hardware wallet implementations, Kim joined and helped out with the Software Wallet and Ben Kaufman who is now Lead developer of bitcoinkeeper joined. And all the time there was mike who wasn’t part of the company but did great in helping stepan developing the hardware wallet.
+
+Specter Desktop got even more successfull than Specter DIY. But there was no business modell behind and needed an investor. Swan a huge bitcoin company where you can buy bitcoin relyable bought Specter in September 2022. But already problems occoured, until then.
+
+The corona pandemic destroyed the supplychain of the smartphone developer boards, who where essential for building the hardware wallet and Specter didn’t make as much marketing for that reason. Even if the product, was hella good. And then ukrain war. The main developer and mike were from russia, and this makes everything complicated.
+
+Meanwhile was Swan started focusing the left specter team on building a collaborative Custody product. Yes, there were not that much updates at this time. For the hardware wallet and for the software wallet. This time wasn’t that good for the Desktop version, as it lacks a little bit behind and is not the best on the market anymore like in the beginning.
+
+But what about the hardware wallet? You need to know. Bitcoin doesn’t change. A proper hardware wallet does not to change as well. If the code is once good implemented. And everything works using open standards, than you don’t necessary need to update the device. It is like a good chair. If the chair is works then it works really good one time than it works really good. And of course you can decorate something here or make something more compftable there But either way, the chair is stable and on the right height. And stepan even made another great update as well.
+
+And it got even better. CryptoGuide found the project, and realized that the Specter Shield version which gave the Specter a Secure Elemnt option. Wasn’t available anymore. He used is PCB Skills and brought it back. So that everyone from the community can easily order some from a factory. And he even went further and made a increadable cheap version of the Shield Board the Shield Lite. All the time I had a small Specter Online Shop where I sold the Specter Hardware Wallets in Germany. And as Swan didn’t wanted to continue development on Specter we, we as a community got the opertunity to get Specter. But officially as a association. 9 Specter Fans founded a asscociation in Switzerland. Stepan and Moritz resign. And me, Schnuartz I got President, Mike got vice president who always worked paid for the project and Cryptoguide who did the great shield lite and Yan the co-founder of Swan got board of dircectors. Stepan and Moritz got members of hounour of course. Kim who worked for Specter and polto who did a couple of Specter workshops on conferences and Thomas who did the Specter Snap Case joined the Specter Association as well.
+
+Thanks to Swan who gave us the rights on the logo. Who transfered the X channel, youtube and github in the hands of the community. This is a action of honour. This is a action of honour. They bought Specter as a company but released it as a official Community in form of an association.
+
+This were the past month and years. But now we are going further. Mike is currently working on making it easier for developers to contribute to the project. And on top of that now we are activly thinking about how to improve the device. How to make it as accessible as possible and provide tutorials and documentation on how to use the device. To make it easy to use for beginnes and advanced and power users. Improving Self Custody and souveränity worldwide.
+
+Join the Opensource Movement! If you are a pleb like you and me. Get yourself a Specter build one buy one. Show your friends and share your experiences on Social Media. And if you really like the project you can consider donating us, to make the project even better. And if you want to support us without spending money, then follow us on YouTube and on X to stay up to date and to help the project grow reach.”
+
+
+
+Checklists
+
+Publishing Checklist
+
+Video Description Preset:"
+
+
+
+Hier ist ein Entwurf für eine richtig gute Kontaktseite für die Specter Association. Ich habe die von Ihnen bereitgestellten Informationen verwendet, um die einzelnen Abschnitte zu gestalten und einen modernen, ansprechenden Stil mit Tailwind CSS zu schaffen. Die Seite ist vollständig responsiv, sodass sie auf jedem Gerät gut aussieht.
+Specter Association Contact Page
+21. Aug., 21:24
+
+Dieser Entwurf bietet eine solide Grundlage für die Kontaktseite. Er enthält alle gewünschten Informationen in einer klaren und optisch ansprechenden Struktur.
+
+Als nächsten Schritt könnten Sie die Platzhalterbilder der Teammitglieder durch echte Fotos ersetzen, um der Seite eine persönlichere Note zu geben. Auch die Kontaktformulare müssten noch mit einem Backend verbunden werden, um die Nachrichten tatsächlich zu empfangen.
+
+Lassen Sie mich wissen, ob Sie weitere Abschnitte hinzufügen oder Anpassungen am Design vornehmen möchten!
+
+
+
+
+
+Das ist extrem gut. Aber ich habe 2 Sachen.
+
+
+
+Erstens muss alles in Englisch sein.
+
+
+
+Die Geschichte muss viel viel küzer sein. Und darf nur alles bis zur Gründung der Association beinhalten.
+
+
+
+Mache irgendwie klar, das der Präsident die Nachrichten beantworten wird.
+
+
+
+Das ist eine großartige Idee. Ich habe die Webseite komplett ins Englische übersetzt, die Geschichte stark gekürzt und einen Hinweis hinzugefügt, dass der Präsident die Nachrichten persönlich beantwortet.
+
+Hier ist die aktualisierte Version:
+
+Ich habe das Dokument entsprechend Ihren Wünschen angepasst. Alle Inhalte sind nun auf Englisch, die Geschichte ist kurz und konzentriert sich auf die Entstehung der Association, und im Kontaktformular habe ich den Hinweis auf den Präsidenten hinzugefügt.
+
+Sagen Sie mir Bescheid, wenn Sie weitere Anpassungen benötigen oder andere Elemente hinzufügen möchten.
+
+
+
+
+
+Bitte mach die beiden Präsidenten und Vize Präsidenten etwas cleaner.
+
+
+
+Sodass das Bild über dem Text ist und nicht daneben
+
+
+
+Zudem soll in den Text von Schnuartz dass er auf dem EINUNDZWANZIG Kanal viele Specter Tutorials gemacht hat
+
+
+
+Ich habe die Änderungen vorgenommen, die Sie angefordert haben. Die Abschnitte für den Präsidenten und den Vizepräsidenten sind jetzt so gestaltet, dass die Bilder über dem Text stehen, was für eine aufgeräumtere Optik sorgt.
+
+Zusätzlich habe ich den Text für Schnuartz aktualisiert, um seinen Beitrag auf dem EINUNDZWANZIG-Kanal hervorzuheben.
+
+Hier ist der aktualisierte Code:
+
+Sagen Sie mir Bescheid, wenn Sie weitere Änderungen vornehmen möchten!
+
+
+
+
+
+please make stepan snigirev and mortz behind the board members from the position.
+
+
+
+Make this text for Stepan:
+
+Main Developer of the Specter DIY and Specter Desktop now working on a quantum computer
+
+
+
+
+
+And add that the shop is called ClavaStack from Schnuartz and that Thomas also sells Specter DIYs at BitcoinStoreOrg
+
+
+
+Ich habe die Änderungen, die Sie angefordert haben, umgesetzt.
+
+Ich habe Stepan Snigirev und Moritz Wietersheim in der Sektion "Board of Directors & Members" neu positioniert, sodass sie nun am Ende der Liste erscheinen. Außerdem habe ich die Beschreibung von Stepan aktualisiert und die Namen der Online-Shops von Schnuartz (ClavaStack) und Thomas (BitcoinStoreOrg) hinzugefügt.
+
+Hier ist der aktualisierte Code:
+
+
+
+
+
+please change again the order. It doesn't worked last time.
+
+
+
+Moritz Wiedersheim behind Yan on the 3. place and Stepan Snigrev at position 4.
+
+
+
+Ich habe die Reihenfolge der Mitglieder entsprechend Ihren Anweisungen geändert. Moritz Wietersheim steht jetzt an dritter Stelle, gefolgt von Stepan Snigirev an vierter Stelle.
+
+Das Dokument auf der rechten Seite wurde mit der aktualisierten Reihenfolge überarbeitet.
+
+
+
+
+
+
+
+
+
+
+Deep Research
+
+Canvas
+
+
+Da Gemini Fehler machen kann, auch bei Informationen über Personen, solltest du die Antworten überprüfen. Datenschutz und GeminiWird in einem neuen Fenster geöffnet
+
+Specter Association Contact Page
+
+
+
+Code
+Vorschau
+
+Freigeben
+
+12345678910111213141516171819202122232425262728
+<!DOCTYPE html><html lang="en"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Specter Association | Contact</title>    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">    <script src="https://cdn.tailwindcss.com"></script>    <style>        body {            font-family: 'Inter', sans-serif;            background-color: #1a1a1a;            color: #e0e0e0;        }        .container {            max-width: 1200px;        }        .section-bg {            background-color: #2a2a2a;            border: 1px solid #444;        }    </style></head><body class="p-4 md:p-8">    <!-- Header Section -->
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specter Association | Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .section-bg {
+            background-color: #2a2a2a;
+            border: 1px solid #444;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">The Specter Association</h1>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+            We are an association of Bitcoin enthusiasts dedicated to promoting self-custody and securing hardware wallets. Our mission is to strengthen the community and continue the legacy of Specter.
+        </p>
+    </header>
+
+    <main class="container mx-auto space-y-12 md:space-y-16">
+        
+        <!-- Leadership Section -->
+        <section class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <!-- Schnuartz - President -->
+            <div class="section-bg rounded-2xl p-6 shadow-xl flex flex-col items-center space-y-4">
+                <div class="flex-shrink-0">
+                    <img src="https://placehold.co/120x120/4a4a4a/ffffff?text=Schnuartz" alt="Portrait of Schnuartz" class="rounded-full w-28 h-28 object-cover border-4 border-yellow-500">
+                </div>
+                <div class="text-center">
+                    <h2 class="text-2xl font-semibold text-white">Schnuartz</h2>
+                    <p class="text-yellow-500 font-medium">President</p>
+                    <p class="mt-2 text-gray-300 text-sm md:text-base">
+                        As the founder of a small German online shop named <span class="text-white font-bold">ClavaStack</span> that sold Specter hardware wallets and created numerous Specter tutorials on the EINUNDZWANZIG channel, Schnuartz has been living the association's mission from the very beginning. He was elected president to lead Specter into the future as an officially community-driven organization.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mike - Vice President -->
+            <div class="section-bg rounded-2xl p-6 shadow-xl flex flex-col items-center space-y-4">
+                <div class="flex-shrink-0">
+                    <img src="https://placehold.co/120x120/4a4a4a/ffffff?text=Mike" alt="Portrait of Mike" class="rounded-full w-28 h-28 object-cover border-4 border-yellow-500">
+                </div>
+                <div class="text-center">
+                    <h2 class="text-2xl font-semibold text-white">Mike</h2>
+                    <p class="text-yellow-500 font-medium">Vice President</p>
+                    <p class="mt-2 text-gray-300 text-sm md:text-base">
+                        Mike was a driving force behind the development of the Specter hardware wallet from the start. Although he was not part of the original company, he made invaluable contributions. Today, as vice president, he is working to make it easier for developers to contribute and to strengthen the community.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="section-bg rounded-2xl p-8 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-2 text-center">Contact Us</h2>
+            <p class="text-center text-gray-400 mb-6">Your message will be personally answered by our President.</p>
+            <form action="#" method="POST" class="space-y-6 max-w-xl mx-auto">
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-800 text-white shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-500 focus:ring-opacity-50 transition duration-300 px-4 py-2">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-400">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" class="mt-1 block w-full rounded-md border-gray-600 bg-gray-800 text-white shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-500 focus:ring-opacity-50 transition duration-300 px-4 py-2">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-medium text-gray-400">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Your message for us..." class="mt-1 block w-full rounded-md border-gray-600 bg-gray-800 text-white shadow-sm focus:border-yellow-500 focus:ring focus:ring-yellow-500 focus:ring-opacity-50 transition duration-300 px-4 py-2"></textarea>
+                </div>
+                <div>
+                    <button type="submit" class="w-full py-3 px-6 rounded-md bg-yellow-500 text-gray-900 font-bold hover:bg-yellow-600 transition-colors duration-300 ease-in-out">
+                        Send
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Board & Honorary Members -->
+        <section class="section-bg rounded-2xl p-8 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">Board of Directors & Members</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Board Members -->
+                <div class="flex flex-col items-center text-center p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                    <img src="https://placehold.co/80x80/444/fff?text=CryptoGuide" alt="CryptoGuide" class="rounded-full w-20 h-20 mb-2 object-cover">
+                    <h3 class="text-lg font-semibold text-white">CryptoGuide</h3>
+                    <p class="text-sm text-yellow-500">Board of Directors</p>
+                    <p class="text-xs text-gray-400 mt-1">Revived the Specter Shield with his PCB skills and created the cost-effective Shield Lite version.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                    <img src="https://placehold.co/80x80/444/fff?text=Yan" alt="Yan" class="rounded-full w-20 h-20 mb-2 object-cover">
+                    <h3 class="text-lg font-semibold text-white">Yan</h3>
+                    <p class="text-sm text-yellow-500">Board of Directors</p>
+                    <p class="text-xs text-gray-400 mt-1">Co-founder of Swan and a crucial bridge in transferring Specter into the hands of the community.</p>
+                </div>
+
+                <!-- Honorary Members -->
+                <div class="flex flex-col items-center text-center p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                    <img src="https://placehold.co/80x80/444/fff?text=Moritz" alt="Moritz Wietersheim" class="rounded-full w-20 h-20 mb-2 object-cover">
+                    <h3 class="text-lg font-semibold text-white">Moritz Wietersheim</h3>
+                    <p class="text-sm text-gray-400">Honorary Member</p>
+                    <p class="text-xs text-gray-400 mt-1">The founding partner who teamed up with Stepan to establish the company Specter Solutions.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                    <img src="https://placehold.co/80x80/444/fff?text=Stepan" alt="Stepan Snigirev" class="rounded-full w-20 h-20 mb-2 object-cover">
+                    <h3 class="text-lg font-semibold text-white">Stepan Snigirev</h3>
+                    <p class="text-sm text-gray-400">Honorary Member</p>
+                    <p class="text-xs text-gray-400 mt-1">Main Developer of the Specter DIY and Specter Desktop now working on a quantum computer.</p>
+                </div>
+                
+                <!-- General Members -->
+                <div class="flex flex-col items-center text-center p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                    <img src="https://placehold.co/80x80/444/fff?text=Kim" alt="Kim" class="rounded-full w-20 h-20 mb-2 object-cover">
+                    <h3 class="text-lg font-semibold text-white">Kim</h3>
+                    <p class="text-sm text-gray-400">Association Member</p>
+                    <p class="text-xs text-gray-400 mt-1">A former key member of the Specter team who contributed to improving the software wallet.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                    <img src="https://placehold.co/80x80/444/fff?text=Polto" alt="Polto" class="rounded-full w-20 h-20 mb-2 object-cover">
+                    <h3 class="text-lg font-semibold text-white">Polto</h3>
+                    <p class="text-sm text-gray-400">Association Member</p>
+                    <p class="text-xs text-gray-400 mt-1">Led Specter workshops at conferences to promote knowledge and adoption within the community.</p>
+                </div>
+                <div class="flex flex-col items-center text-center p-4 bg-gray-800 rounded-lg shadow-inner border border-gray-700">
+                    <img src="https://placehold.co/80x80/444/fff?text=Thomas" alt="Thomas" class="rounded-full w-20 h-20 mb-2 object-cover">
+                    <h3 class="text-lg font-semibold text-white">Thomas</h3>
+                    <p class="text-sm text-gray-400">Association Member</p>
+                    <p class="text-xs text-gray-400 mt-1">Designer of the Specter Snap Case, who also sells Specter DIYs at <span class="text-white font-bold">BitcoinStoreOrg</span>.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="section-bg rounded-2xl p-8 shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">The Specter Story</h2>
+            <div class="prose prose-invert max-w-none text-gray-300 leading-relaxed text-sm md:text-base">
+                <p>
+                    The Specter story begins in 2019, when the hardware wallet landscape was characterized by low-quality devices and security vulnerabilities. Out of this frustration, Stepan Snigirev, a physicist, decided to build a prototype that met his extremely high security standards. In 2018, he met Moritz Wietersheim, who had been looking for a partner to develop a hardware wallet for a year, and together they founded the company Specter Solutions.
+                </p>
+                <p>
+                    Their vision was to create an open ecosystem where anyone could build their own signing device from off-the-shelf components. Features like a temporary seed, air-gapped security via QR codes, and a large touchscreen made the device not only secure but also user-friendly. Everything was open-sourced—the firmware, build instructions, and parts list. The community, especially the SeedSigner guys, contributed from the beginning, showing that Specter was always a community project at heart.
+                </p>
+                <p>
+                    With the hardware prototype in place, a new challenge emerged: the lack of good tools to effectively use such a secure device. In response, Specter Desktop was born. It became an even greater success than the hardware itself, attracting key developers like Keith Mukai, Kim, and Ben Kaufman. Mike, who wasn't officially part of the company, also made invaluable contributions.
+                </p>
+                <p>
+                    When Swan decided not to continue development, the community saw its chance to take over Specter—but officially as an association. Nine Specter enthusiasts founded the association in Switzerland. Stepan and Moritz stepped down from their roles but became honorary members.
+                </p>
+            </div>
+        </section>
+
+    </main>
+</body>
+</html>
