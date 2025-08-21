@@ -27,46 +27,55 @@ export default function Desktop() {
         </nav>
       </header>
 
+      {/* Hero Section with Background */}
+      <section className="relative bg-gradient-to-b from-specter-dark to-specter-navy py-20 px-4">
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative container mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            Specter Desktop
+          </h1>
+          <h5 className="text-xl text-gray-300 mb-8 leading-relaxed">
+            Secure your bitcoin. Verify your transactions. Protect your privacy.
+          </h5>
+          <a 
+            href="https://specter.solutions/downloads/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 mb-8"
+          >
+            Download
+          </a>
+        </div>
+      </section>
+
       {/* Main Content */}
-      <main className="py-20">
-        <div className="container mx-auto px-4">
+      <main className="bg-specter-dark">
+        <div className="container mx-auto px-4 py-16">
           
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Specter Desktop
-            </h1>
-            <h5 className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Secure your bitcoin. Verify your transactions. Protect your privacy.
-            </h5>
-            <a 
-              href="https://specter.solutions/downloads/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 mb-8"
-            >
-              Download
-            </a>
-            <p className="text-gray-300 mb-4">
+          {/* Introduction Text */}
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <p className="text-gray-300 mb-4 text-lg">
               Specter Desktop is <strong>FOSS</strong> free open source software under the MIT license.
             </p>
-            <p className="text-gray-300 mb-4">
+            <p className="text-gray-300 mb-4 text-lg">
               It exists to empower you, to hold your own keys and follow <strong>self sovereign</strong> best practices.
             </p>
-            <p className="text-gray-300 mb-12">
+            <p className="text-gray-300 mb-12 text-lg">
               Your Bitcoin node, on your hardware, paired with your signing devices, creating secure wallets for <strong>bitcoin self-custody.</strong>
             </p>
           </div>
 
           {/* Add Devices Section */}
           <section className="mb-20">
-            <img 
-              src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_Device-1024x602.png" 
-              alt="Specter Desktop Add Device" 
-              className="w-full max-w-4xl mx-auto h-auto rounded-lg mb-8"
-            />
+            <div className="text-center mb-8">
+              <img 
+                src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_Device-1024x602.png" 
+                alt="Specter Desktop Add Device" 
+                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
+              />
+            </div>
             <h3 className="text-3xl font-bold mb-6 text-white text-center">Add your signing devices.</h3>
-            <p className="text-lg text-gray-300 mb-6 text-center max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 mb-6 text-center max-w-4xl mx-auto">
               All common hardware wallets are supported: Specter DIY, Seedsigner, BitBox, Trezor, Keystone, Coldcard, Jade, Ledger, KeepKey.. the list keeps growing.
             </p>
           </section>
@@ -74,17 +83,19 @@ export default function Desktop() {
           {/* Coordinate Wallets Section */}
           <section className="mb-20">
             <h3 className="text-3xl font-bold mb-6 text-white text-center">Coordinate secure wallets.</h3>
-            <p className="text-lg text-gray-300 mb-8 text-center max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 mb-6 text-center max-w-4xl mx-auto">
               A multi-sig scheme offers a high degree of security, a single-sig cold storage wallet is safe for smaller amounts and convenient to operate.
             </p>
-            <p className="text-lg text-gray-300 mb-8 text-center max-w-3xl mx-auto">
+            <p className="text-lg text-gray-300 mb-8 text-center max-w-4xl mx-auto">
               Define your optimal set up and use Specter Desktop to coordinate the wallet best suited to your needs.
             </p>
-            <img 
-              src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_New_Wallet-1024x602.png" 
-              alt="Specter Desktop Add New Wallet" 
-              className="w-full max-w-4xl mx-auto h-auto rounded-lg"
-            />
+            <div className="text-center">
+              <img 
+                src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_New_Wallet-1024x602.png" 
+                alt="Specter Desktop Add New Wallet" 
+                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
+              />
+            </div>
           </section>
 
           {/* Bitcoin Core Section */}
@@ -94,7 +105,7 @@ export default function Desktop() {
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/02/bitcoin_core-1024x728.png" 
                   alt="Bitcoin Core" 
-                  className="w-full h-auto rounded-lg"
+                  className="w-full max-w-lg h-auto rounded-lg shadow-lg"
                 />
               </div>
               <div>
@@ -111,29 +122,29 @@ export default function Desktop() {
 
           {/* Fast Start Section */}
           <section className="mb-20">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
+            <div className="grid md:grid-cols-2 gap-12">
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2021/12/Fast.svg" 
                   alt="Fast" 
-                  className="w-24 h-24 mb-6"
+                  className="w-16 h-16 mb-6"
                 />
-                <h3 className="text-3xl font-bold mb-6 text-white">Get started fast!</h3>
-                <p className="text-lg text-gray-300 mb-4">
+                <h3 className="text-2xl font-bold mb-4 text-white">Get started fast!</h3>
+                <p className="text-gray-300 mb-4">
                   One click to install Bitcoin Core directly from Specter Desktop, get your node set up quickly.
                 </p>
-                <p className="text-lg text-gray-300">
+                <p className="text-gray-300">
                   Run Bitcoin Core as a pruned mode to conserve storage space.
                 </p>
               </div>
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/QR-Code.svg" 
                   alt="QR Code" 
-                  className="w-24 h-24 mb-6"
+                  className="w-16 h-16 mb-6"
                 />
-                <h3 className="text-3xl font-bold mb-6 text-white">Signing experience.</h3>
-                <p className="text-lg text-gray-300">
+                <h3 className="text-2xl font-bold mb-4 text-white">Signing experience.</h3>
+                <p className="text-gray-300">
                   QR codes enable a fast and intuitive signing experience via PSBT. SD cards and USB connected devices are also supported.
                 </p>
               </div>
@@ -146,7 +157,7 @@ export default function Desktop() {
 
             {/* Send */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2021/12/Send.svg" 
                   alt="Send" 
@@ -164,7 +175,7 @@ export default function Desktop() {
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Send_Transaction.png" 
                   alt="Specter Send Transaction" 
-                  className="w-full h-auto rounded-lg"
+                  className="w-full max-w-lg h-auto rounded-lg shadow-lg"
                 />
               </div>
             </div>
@@ -175,10 +186,10 @@ export default function Desktop() {
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Receive_Transaction.png" 
                   alt="Specter Receive Transaction" 
-                  className="w-full h-auto rounded-lg"
+                  className="w-full max-w-lg h-auto rounded-lg shadow-lg"
                 />
               </div>
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2021/12/Receive.svg" 
                   alt="Receive" 
@@ -196,60 +207,60 @@ export default function Desktop() {
 
             {/* Optimize and Other Features */}
             <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2021/12/Adjust.svg" 
                   alt="Adjust" 
                   className="w-16 h-16 mb-6"
                 />
-                <h3 className="text-3xl font-bold mb-6 text-white">Optimise your transactions.</h3>
-                <p className="text-lg text-gray-300 mb-4">
+                <h3 className="text-2xl font-bold mb-4 text-white">Optimise your transactions.</h3>
+                <p className="text-gray-300 mb-3">
                   Fine tune each transaction for quick confirmation time or to minimize fees.
                 </p>
-                <p className="text-lg text-gray-300 mb-4">
+                <p className="text-gray-300 mb-3">
                   Specify a transaction fee and Specter Desktop will estimate the confirmation speed.
                 </p>
-                <p className="text-lg text-gray-300 mb-4">
+                <p className="text-gray-300 mb-3">
                   Add multiple recipients to one transaction.
                 </p>
-                <p className="text-lg text-gray-300">
+                <p className="text-gray-300">
                   Speed-up transactions with RBF (Replace-by-Fee).
                 </p>
               </div>
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/liquid-articles.svg" 
                   alt="Articles" 
                   className="w-16 h-16 mb-6"
                 />
-                <h3 className="text-3xl font-bold mb-6 text-white">Articles to Specter Liquid integration.</h3>
-                <p className="text-lg text-gray-300 mb-4">
+                <h3 className="text-2xl font-bold mb-4 text-white">Articles to Specter Liquid integration.</h3>
+                <p className="text-gray-300 mb-3">
                   View the full history of incoming and outgoing transactions.
                 </p>
-                <p className="text-lg text-gray-300 mb-4">
+                <p className="text-gray-300 mb-3">
                   Label individual UTXO's (Unspent Transaction Outputs).
                 </p>
-                <p className="text-lg text-gray-300 mb-4">
+                <p className="text-gray-300 mb-3">
                   Use the search function to find all matching labels or specific UTXO's.
                 </p>
-                <p className="text-lg text-gray-300">
+                <p className="text-gray-300">
                   Order transactions by label, amount, date, confirmations or TxID.
                 </p>
               </div>
             </div>
 
             {/* Select Coins */}
-            <div className="text-center">
+            <div className="bg-specter-navy rounded-xl p-8 border-0 text-center max-w-4xl mx-auto">
               <img 
                 src="https://specter.solutions/wp-content/uploads/2022/01/select-coins.svg" 
                 alt="Select Coins" 
                 className="w-16 h-16 mb-6 mx-auto"
               />
-              <h3 className="text-3xl font-bold mb-6 text-white">Select coins for spending.</h3>
-              <p className="text-lg text-gray-300 mb-4 max-w-3xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4 text-white">Select coins for spending.</h3>
+              <p className="text-gray-300 mb-3">
                 Use coin selection to spend from specific UTXO's and control your onchain visibility.
               </p>
-              <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+              <p className="text-gray-300">
                 Freeze or unfreeze specific UTXO's to control sending and improve your onchain privacy.
               </p>
             </div>
@@ -259,33 +270,33 @@ export default function Desktop() {
           <section className="mb-20">
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Liquid Network</h2>
 
-            <div className="mb-16">
+            <div className="mb-16 text-center">
               <img 
                 src="https://specter.solutions/wp-content/uploads/2022/02/liquid-network.png" 
                 alt="Liquid Network" 
-                className="w-full max-w-4xl mx-auto h-auto rounded-lg mb-8"
+                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg mb-8"
               />
-              <h3 className="text-3xl font-bold mb-6 text-white text-center">Self-Custody Liquid assets.</h3>
-              <p className="text-lg text-gray-300 mb-4 text-center max-w-3xl mx-auto">
+              <h3 className="text-3xl font-bold mb-6 text-white">Self-Custody Liquid assets.</h3>
+              <p className="text-lg text-gray-300 mb-4 max-w-4xl mx-auto">
                 Set up a Liquid Elements node from within Specter Desktop.
               </p>
-              <p className="text-lg text-gray-300 mb-4 text-center max-w-3xl mx-auto">
+              <p className="text-lg text-gray-300 mb-4 max-w-4xl mx-auto">
                 Create Multisig wallets with Specter DIY/Specter Shield and the Blockstream Jade to self-custody Liquid assets.
               </p>
-              <p className="text-lg text-gray-300 text-center max-w-3xl mx-auto">
+              <p className="text-lg text-gray-300 max-w-4xl mx-auto">
                 Create hot wallets (only recommended for testing and smaller amounts).
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/liquid.svg" 
                   alt="Liquid" 
                   className="w-16 h-16 mb-6"
                 />
-                <h3 className="text-3xl font-bold mb-6 text-white">Use confidential transactions on Liquid.</h3>
-                <p className="text-lg text-gray-300 mb-6">
+                <h3 className="text-2xl font-bold mb-4 text-white">Use confidential transactions on Liquid.</h3>
+                <p className="text-gray-300 mb-6">
                   All transactions are blinded by default on Liquid, keeping sensitive data out of public view. Test how this can become part of your workflow.
                 </p>
                 <a 
@@ -297,19 +308,19 @@ export default function Desktop() {
                   Read more at Liquid.net &gt;&gt;
                 </a>
               </div>
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/articles.svg" 
                   alt="Articles" 
                   className="w-16 h-16 mb-6"
                 />
-                <h3 className="text-3xl font-bold mb-6 text-white">Blog posts - why is Liquid interesting?</h3>
+                <h3 className="text-2xl font-bold mb-4 text-white">Blog posts - why is Liquid interesting?</h3>
                 <div className="space-y-2">
                   <a 
                     href="https://specter.solutions/liquid-for-bitcoiners-1-4-confidential-transactions/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-specter-coral hover:underline"
+                    className="block text-specter-coral hover:underline text-sm"
                   >
                     Confidential Transactions &gt;&gt;
                   </a>
@@ -317,7 +328,7 @@ export default function Desktop() {
                     href="https://specter.solutions/liquid-for-bitcoiners-2-4-stablecoin-self-custody/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-specter-coral hover:underline"
+                    className="block text-specter-coral hover:underline text-sm"
                   >
                     Stablecoin Self-Custody &gt;&gt;
                   </a>
@@ -325,7 +336,7 @@ export default function Desktop() {
                     href="https://specter.solutions/liquid-for-bitcoiners-3-4-stablecoins-for-working-capital-stability-remittances-and-bitcoin-backed-loans/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-specter-coral hover:underline"
+                    className="block text-specter-coral hover:underline text-sm"
                   >
                     Working Capital Stability, Remittances & Bitcoin-Backed Loans &gt;&gt;
                   </a>
@@ -333,7 +344,7 @@ export default function Desktop() {
                     href="https://specter.solutions/liquid-for-bitcoiners-4-4-financial-securities-infrastructure/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="block text-specter-coral hover:underline"
+                    className="block text-specter-coral hover:underline text-sm"
                   >
                     Financial Securities Infrastructure &gt;&gt;
                   </a>
@@ -346,17 +357,17 @@ export default function Desktop() {
           <section className="mb-20">
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Plugins & Extensions</h2>
 
-            <div className="mb-16">
+            <div className="mb-16 text-center">
               <img 
                 src="https://specter.solutions/wp-content/uploads/2022/02/Swan.png" 
                 alt="Swan" 
-                className="w-full max-w-4xl mx-auto h-auto rounded-lg mb-8"
+                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg mb-8"
               />
-              <h3 className="text-3xl font-bold mb-6 text-white text-center">Swan Integration.</h3>
-              <p className="text-lg text-gray-300 mb-4 text-center max-w-3xl mx-auto">
+              <h3 className="text-3xl font-bold mb-6 text-white">Swan Integration.</h3>
+              <p className="text-lg text-gray-300 mb-4 max-w-4xl mx-auto">
                 The integration enables auto withdrawals from a Swan account to be sent directly to your self-custody wallet. Stack with Swan and secure with Specter.
               </p>
-              <div className="text-center mb-8">
+              <div className="mb-8">
                 <a 
                   href="https://www.swanbitcoin.com/Specter/" 
                   target="_blank" 
@@ -370,18 +381,18 @@ export default function Desktop() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div>
-                <h3 className="text-3xl font-bold mb-6 text-white">Keeping your XPub Private.</h3>
-                <p className="text-lg text-gray-300">
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
+                <h3 className="text-2xl font-bold mb-4 text-white">Keeping your XPub Private.</h3>
+                <p className="text-gray-300">
                   Specter reserves addresses for your Swan withdrawals and is keeping your wallet XPub private.
                 </p>
               </div>
-              <div>
-                <h3 className="text-3xl font-bold mb-6 text-white">New Plugins & Extensions.</h3>
-                <p className="text-lg text-gray-300 mb-4">
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
+                <h3 className="text-2xl font-bold mb-4 text-white">New Plugins & Extensions.</h3>
+                <p className="text-gray-300 mb-4">
                   Further extensions are in development.
                 </p>
-                <p className="text-lg text-gray-300 mb-4">
+                <p className="text-gray-300 mb-4">
                   If you want to build an extension tool or service integration please contact Moritz.
                 </p>
                 <a 
@@ -400,22 +411,22 @@ export default function Desktop() {
           <section className="mb-20">
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Securely Connected</h2>
 
-            <div className="mb-16">
+            <div className="mb-16 text-center">
               <img 
                 src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Desktop_In_Use-scaled.jpg" 
                 alt="Specter Desktop In Use 2" 
-                className="w-full max-w-4xl mx-auto h-auto rounded-lg"
+                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
               />
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/tor.svg" 
                   alt="Tor" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Use Tor to protect your privacy.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Use Tor to protect your privacy.</h3>
                 <p className="text-gray-300 mb-4">
                   Enable Tor to anonymize your connections. Use the built in quick setup or create a custom configuration.
                 </p>
@@ -423,24 +434,24 @@ export default function Desktop() {
                   Run Specter as a Tor hidden service and access your wallets securely from anywhere.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/securely.svg" 
                   alt="Securely" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Securely access your wallets.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Securely access your wallets.</h3>
                 <p className="text-gray-300">
                   Add an extra layer of security and password protect your Specter wallets for remote access.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/connect.svg" 
                   alt="Connect" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Connect to your node in a box.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Connect to your node in a box.</h3>
                 <p className="text-gray-300 mb-4">
                   As an alternative to a local Bitcoin Core instance, you can connect Specter Desktop to your MyNode, RoninDojo, Raspiblitz or Umbrel node package.
                 </p>
@@ -456,14 +467,14 @@ export default function Desktop() {
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Wallet Backups</h2>
 
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/02/import_export.svg" 
                   alt="Import/Export" 
                   className="w-16 h-16 mb-6"
                 />
-                <h3 className="text-3xl font-bold mb-6 text-white">Backup your multi-sig.</h3>
-                <p className="text-lg text-gray-300">
+                <h3 className="text-2xl font-bold mb-4 text-white">Backup your multi-sig.</h3>
+                <p className="text-gray-300">
                   Export a PDF Backup from Specter Desktop, it is recommended you keep this with each device/seed word back-up especially for multi-sig wallets.
                 </p>
               </div>
@@ -471,19 +482,19 @@ export default function Desktop() {
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Backup_File-1-1024x511.png" 
                   alt="Specter Backup File" 
-                  className="w-full h-auto rounded-lg"
+                  className="w-full max-w-lg h-auto rounded-lg shadow-lg"
                 />
               </div>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/backup.svg" 
                   alt="Backup" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Backup Specter wallet data.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Backup Specter wallet data.</h3>
                 <p className="text-gray-300 mb-4">
                   Export Specter format creates a JSON file of an individual wallet with complete data including UTXO labels.
                 </p>
@@ -491,13 +502,13 @@ export default function Desktop() {
                   Specter Data Backup exports a .zip with your complete Specter Desktop configuration, this includes all signing devices and data of all wallets.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/import-export.svg" 
                   alt="Import Export" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Import and export between apps.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Import and export between apps.</h3>
                 <p className="text-gray-300 mb-4">
                   Import wallets from Electrum, Fully-Noded, Sparrow Wallet or another Specter instance.
                 </p>
@@ -508,13 +519,13 @@ export default function Desktop() {
                   Interoperable standards mean you are free to choose, and your funds are accessible also without Specter Desktop.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/scan.svg" 
                   alt="Scan" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Scan for existing funds.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Scan for existing funds.</h3>
                 <p className="text-gray-300 mb-4">
                   When importing an existing wallet, rescan the entire timechain for balances or specify a block height to scan from.
                 </p>
@@ -530,13 +541,13 @@ export default function Desktop() {
             <h2 className="text-4xl font-bold mb-16 text-white text-center">User Interface</h2>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/explore.svg" 
                   alt="Explore" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Explore Bitcoin.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Explore Bitcoin.</h3>
                 <p className="text-gray-300 mb-4">
                   View the Bitcoin Whitepaper directly from the timechain from your full node.
                 </p>
@@ -544,33 +555,33 @@ export default function Desktop() {
                   Run the numbers and verify the total current mined supply of bitcoin.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/customise-settings.svg" 
                   alt="Customise Settings" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Customise.</h3>
-                <p className="text-gray-300 mb-4">
+                <h3 className="text-xl font-bold mb-4 text-white">Customise.</h3>
+                <p className="text-gray-300 mb-3">
                   Set the interface to your preferred language.
                 </p>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-300 mb-3">
                   Make sats the standard and set Specter to show balances in sats or BTC.
                 </p>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-300 mb-3">
                   View the bitcoin price in fiat currency.
                 </p>
                 <p className="text-gray-300">
                   Hide sensitive info with a quick access button.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/supported-networks.svg" 
                   alt="Supported Networks" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Networks Supported.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Networks Supported.</h3>
                 <p className="text-gray-300">
                   Liquid, Testnet, Regtest and Signet are supported.
                 </p>
@@ -583,13 +594,13 @@ export default function Desktop() {
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Learn More</h2>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/tutorials.svg" 
                   alt="Tutorials" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-6 text-white">Tutorials.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Tutorials.</h3>
                 <div className="space-y-2">
                   <a 
                     href="https://mattodell.keybase.pub/coldcard.html" 
@@ -625,13 +636,13 @@ export default function Desktop() {
                   </a>
                 </div>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/documentation.svg" 
                   alt="Documentation" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-6 text-white">Specter Desktop documentation.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Specter Desktop documentation.</h3>
                 <p className="text-gray-300 mb-4">
                   View the Specter Desktop documentation for Instructions, Tips and Tricks, FAQ and more.
                 </p>
@@ -644,13 +655,13 @@ export default function Desktop() {
                   Docs &gt;&gt;
                 </a>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/community.svg" 
                   alt="Community" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-6 text-white">Join the Specter community.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Join the Specter community.</h3>
                 <p className="text-gray-300 mb-4">
                   Join our community on Telegram for support, questions, or head straight to github to open an issue or get involved.
                 </p>
@@ -671,24 +682,24 @@ export default function Desktop() {
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Contribute</h2>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/foss.svg" 
                   alt="FOSS" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-6 text-white">Free open source software.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Free open source software.</h3>
                 <p className="text-gray-300">
                   Specter Desktop is free and open source software under the MIT Licence, this gives everyone the freedom to review and use the code.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/code.svg" 
                   alt="Code" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-6 text-white">Contribute to the tools we all use.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Contribute to the tools we all use.</h3>
                 <p className="text-gray-300 mb-4">
                   We have a developer community, please reach out to the team.
                 </p>
@@ -704,13 +715,13 @@ export default function Desktop() {
                   Github &gt;&gt;
                 </a>
               </div>
-              <div className="text-center">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/donate.svg" 
                   alt="Donate" 
                   className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-6 text-white">Donate some sats.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Donate some sats.</h3>
                 <p className="text-gray-300 mb-4">
                   Show your appreciation for the open source projects you use.
                 </p>
