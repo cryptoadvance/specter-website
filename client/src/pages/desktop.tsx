@@ -478,7 +478,7 @@ export default function Desktop() {
                   Export a PDF Backup from Specter Desktop, it is recommended you keep this with each device/seed word back-up especially for multi-sig wallets.
                 </p>
               </div>
-              <div>
+              <div className="bg-specter-navy rounded-xl p-8 border-0 flex items-center justify-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Backup_File-1-1024x511.png" 
                   alt="Specter Backup File" 
