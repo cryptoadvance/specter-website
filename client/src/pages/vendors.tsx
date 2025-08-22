@@ -15,7 +15,7 @@ export default function Vendors() {
       url: "https://clavastack.com/",
       continent: "europe",
       country: "Germany",
-      tags: ["parts", "shield", "preassembled", "association-member"],
+      tags: ["parts", "shield", "preassembled"],
       member: "Schnuartz",
       color: "#60a5fa"
     },
@@ -58,8 +58,7 @@ export default function Vendors() {
     const labels: { [key: string]: string } = {
       'parts': 'Parts',
       'shield': 'Shield',
-      'preassembled': 'Preassembled',
-      'association-member': 'Association Member'
+      'preassembled': 'Preassembled'
     };
     return labels[tag] || tag;
   };
@@ -198,7 +197,7 @@ export default function Vendors() {
               <option value="parts">Parts</option>
               <option value="shield">Shield</option>
               <option value="preassembled">Preassembled</option>
-              <option value="association-member">Association Member</option>
+
             </select>
           </div>
         </div>
