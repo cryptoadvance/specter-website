@@ -217,7 +217,7 @@ export default function Vendors() {
                 <img 
                   src={vendor.logo} 
                   alt={`${vendor.name} logo`}
-                  className="h-16 w-16 object-contain rounded-lg bg-white p-2"
+                  className="h-16 w-16 object-contain"
                 />
               </div>
               <h2 className="text-2xl font-semibold mb-2 text-white">
