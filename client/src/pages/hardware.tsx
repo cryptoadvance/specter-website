@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Link } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
 
 export default function Hardware() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
 
   return (
     <div className="bg-specter-dark text-white font-sans min-h-screen">
@@ -33,9 +34,33 @@ export default function Hardware() {
               <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Desktop
               </Link>
-              <span className="text-specter-coral font-medium">
-                Hardware
-              </span>
+              <div className="relative">
+                <button
+                  onClick={() => setHardwareDropdownOpen(!hardwareDropdownOpen)}
+                  className="flex items-center text-specter-coral font-medium hover:text-white transition-colors duration-200"
+                >
+                  Hardware
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {hardwareDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                    <Link 
+                      href="/hardware" 
+                      className="block px-4 py-2 text-specter-coral font-medium bg-specter-dark rounded-t-lg"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Hardware Overview
+                    </Link>
+                    <Link 
+                      href="/vendors" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Vendors
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Contact
               </Link>
@@ -63,6 +88,9 @@ export default function Hardware() {
                 <span className="text-specter-coral font-medium py-2 text-left">
                   Hardware
                 </span>
+                <Link href="/vendors" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4">
+                  Vendors
+                </Link>
                 <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Contact
                 </Link>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Buy a Specter Wallet</title>
+    <!-- Use Tailwind CSS for rapid styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles to refine the look and feel */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d0f17; /* Dark background similar to specter.solutions */
+            color: #d1d5db; /* Light gray text for contrast */
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+        }
+        .tag-pill {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: #3b82f6; /* A clean blue for the tags */
+            color: #1f2937;
+        }
+        /* All tags are now a subtle gray */
+        .tag-pill { background-color: #4a5568; color: #cbd5e1; }
+        .select-filter {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-image: url('data:image/svg+xml;utf8,<svg fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em;
+        }
+    </style>
+</head>
+<body class="bg-[#0D0F17] text-gray-200">
+
+    <div class="container mx-auto px-4 py-8">
+        
+        <!-- Header Section -->
+        <header class="mb-12 text-center">
+            <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-2">
+                Specter Wallet Vendors
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-400">
+                Find vendors for the Specter Hardware Wallet.
+            </p>
+        </header>
+
+        <!-- Filter Section -->
+        <div class="mb-8 flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0 sm:space-x-4 p-4 rounded-xl bg-gray-800 shadow-xl">
+            <!-- Continent Filter -->
+            <div class="w-full sm:w-1/2">
+                <label for="continent-filter" class="block text-sm font-medium text-gray-400 mb-2">Filter by Continent</label>
+                <select id="continent-filter" class="select-filter block w-full pl-3 pr-10 py-2 text-base bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-lg">
+                    <option value="all">All Continents</option>
+                    <option value="europe">Europe</option>
+                    <option value="north-america">North America</option>
+                </select>
+            </div>
+            
+            <!-- Tags Filter -->
+            <div class="w-full sm:w-1/2">
+                <label for="tags-filter" class="block text-sm font-medium text-gray-400 mb-2">Filter by Product Type</label>
+                <select id="tags-filter" class="select-filter block w-full pl-3 pr-10 py-2 text-base bg-gray-700 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 rounded-lg">
+                    <option value="all">All Products</option>
+                    <option value="parts">Parts</option>
+                    <option value="shield">Shield</option>
+                    <option value="preassembled">Preassembled</option>
+                    <option value="association-member">Association Member</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Vendors List -->
+        <div id="vendor-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Clavastack Card -->
+            <div class="vendor-card p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105" data-continent="europe" data-country="Germany" data-tags="parts shield preassembled association-member">
+                <!-- Logo Placeholder for Clavastack -->
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#60a5fa" class="h-10 w-10 rounded-full">
+                        <circle cx="12" cy="12" r="12" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold mb-2 text-white">
+                    <a href="https://clavastack.com/" class="hover:underline" target="_blank">ClavaStack</a>
+                </h2>
+                <p class="text-gray-400 text-sm mb-4">Europe, Germany</p>
+                <p class="text-gray-500 text-xs mb-2">Association member: Schnuartz</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag-pill">Parts</span>
+                    <span class="tag-pill">Shield</span>
+                    <span class="tag-pill">Preassembled</span>
+                </div>
+            </div>
+
+            <!-- Pleb.style Card -->
+            <div class="vendor-card p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105" data-continent="europe" data-country="Germany" data-tags="shield preassembled">
+                <!-- Logo Placeholder for Pleb.style -->
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#38bdf8" class="h-10 w-10 rounded-full">
+                        <circle cx="12" cy="12" r="12" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold mb-2 text-white">
+                    <a href="https://pleb.style/" class="hover:underline" target="_blank">Pleb.style</a>
+                </h2>
+                <p class="text-gray-400 text-sm mb-4">Europe, Germany</p>
+                <p class="text-gray-500 text-xs mb-2">Association member: None</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag-pill">Shield</span>
+                    <span class="tag-pill">Preassembled</span>
+                </div>
+            </div>
+
+            <!-- Bitcoin-store.org Card -->
+            <div class="vendor-card p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105" data-continent="europe" data-country="Switzerland" data-tags="parts preassembled">
+                <!-- Logo Placeholder for Bitcoin-store.org -->
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#facc15" class="h-10 w-10 rounded-full">
+                        <circle cx="12" cy="12" r="12" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold mb-2 text-white">
+                    <a href="https://bitcoin-store.org/" class="hover:underline" target="_blank">Bitcoin-store.org</a>
+                </h2>
+                <p class="text-gray-400 text-sm mb-4">Europe, Switzerland</p>
+                <p class="text-gray-500 text-xs mb-2">Association member: Thomas</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag-pill">Parts</span>
+                    <span class="tag-pill">Preassembled</span>
+                </div>
+            </div>
+
+            <!-- Cryptoguide.tips Card -->
+            <div class="vendor-card p-6 bg-gray-800 rounded-xl shadow-lg transition-transform transform hover:scale-105" data-continent="north-america" data-country="Canada" data-tags="parts shield">
+                <!-- Logo Placeholder for Cryptoguide.tips -->
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#a78bfa" class="h-10 w-10 rounded-full">
+                        <circle cx="12" cy="12" r="12" />
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-semibold mb-2 text-white">
+                    <a href="https://cryptoguide.tips/shop/" class="hover:underline" target="_blank">Cryptoguide.tips</a>
+                </h2>
+                <p class="text-gray-400 text-sm mb-4">North America, Canada</p>
+                <p class="text-gray-500 text-xs mb-2">Association member: Crypto Guide</p>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tag-pill">Parts</span>
+                    <span class="tag-pill">Shield</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Warning Section -->
+        <div class="mt-12 p-6 rounded-xl bg-red-900/25 text-red-300 border border-red-900 text-center">
+            <p class="text-lg font-medium">
+                Buy at your own risk. Make sure yourself whether the shop is reputable or build the device yourself.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // Get references to all filter and vendor elements
+        const continentFilter = document.getElementById('continent-filter');
+        const tagsFilter = document.getElementById('tags-filter');
+        const vendorCards = document.querySelectorAll('.vendor-card');
+
+        // Function to filter vendors based on selected criteria
+        function filterVendors() {
+            const selectedContinent = continentFilter.value.toLowerCase();
+            const selectedTag = tagsFilter.value.toLowerCase();
+
+            vendorCards.forEach(card => {
+                const cardContinent = card.dataset.continent.toLowerCase();
+                const cardTags = card.dataset.tags.toLowerCase().split(' ');
+                
+                // Check if the card matches the continent filter
+                const continentMatch = selectedContinent === 'all' || cardContinent === selectedContinent;
+
+                // Check if the card matches the tags filter
+                const tagMatch = selectedTag === 'all' || cardTags.includes(selectedTag);
+
+                // Show the card if both filters match, otherwise hide it
+                if (continentMatch && tagMatch) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Add event listeners to the filters to trigger the filtering function
+        continentFilter.addEventListener('change', filterVendors);
+        tagsFilter.addEventListener('change', filterVendors);
+
+        // Initial call to set up the page state on load
+        window.addEventListener('load', filterVendors);
+    </script>
+
+</body>
+</html>

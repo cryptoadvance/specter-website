@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { insertContactSchema, insertNewsletterSchema } from "@shared/schema";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import type { InsertContact, InsertNewsletter } from "@shared/schema";
 import heroBackgroundImage from "@assets/imgi_6_Specter_Foss_Suite-scaled_1755535754418.png";
 import contactPersonImage from "@assets/Uncle Jim Tutorial (1)_1755536226982.png";
@@ -19,6 +19,7 @@ import contactPersonImage from "@assets/Uncle Jim Tutorial (1)_1755536226982.png
 export default function Home() {
   const { toast } = useToast();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
 
   // Contact form
   const contactForm = useForm<InsertContact>({
@@ -123,9 +124,33 @@ export default function Home() {
               <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Desktop
               </Link>
-              <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200">
-                Hardware
-              </Link>
+              <div className="relative">
+                <button
+                  onClick={() => setHardwareDropdownOpen(!hardwareDropdownOpen)}
+                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
+                >
+                  Hardware
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {hardwareDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                    <Link 
+                      href="/hardware" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Hardware Overview
+                    </Link>
+                    <Link 
+                      href="/vendors" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Vendors
+                    </Link>
+                  </div>
+                )}
+              </div>
               <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Contact
               </Link>
@@ -155,6 +180,9 @@ export default function Home() {
                 </Link>
                 <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Hardware
+                </Link>
+                <Link href="/vendors" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4">
+                  Vendors
                 </Link>
                 <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Contact
