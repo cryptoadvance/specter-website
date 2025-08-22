@@ -3,6 +3,12 @@ import { Link } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
+// Import vendor logos
+import clavaStackLogo from "@assets/BtcFrankenstein Logo 3.4.1_1755840288095.png";
+import plebStyleLogo from "@assets/imgi_1_YwTqyo_1_400x400_1755840295047.png";
+import bitcoinStoreLogo from "@assets/CalMPylj_400x400 (1)_1755840297048.jpg";
+import cryptoguideLogo from "@assets/Cryptoguide_1755840305434.jpg";
+
 export default function Vendors() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
@@ -17,7 +23,7 @@ export default function Vendors() {
       country: "Germany",
       tags: ["parts", "shield", "preassembled"],
       member: "Schnuartz",
-      color: "#60a5fa"
+      logo: clavaStackLogo
     },
     {
       name: "Pleb.style",
@@ -26,7 +32,7 @@ export default function Vendors() {
       country: "Germany",
       tags: ["shield", "preassembled"],
       member: "None",
-      color: "#38bdf8"
+      logo: plebStyleLogo
     },
     {
       name: "Bitcoin-store.org",
@@ -35,7 +41,7 @@ export default function Vendors() {
       country: "Switzerland",
       tags: ["parts", "preassembled"],
       member: "Thomas",
-      color: "#facc15"
+      logo: bitcoinStoreLogo
     },
     {
       name: "Cryptoguide.tips",
@@ -44,7 +50,7 @@ export default function Vendors() {
       country: "Canada",
       tags: ["parts", "shield"],
       member: "Crypto Guide",
-      color: "#a78bfa"
+      logo: cryptoguideLogo
     }
   ];
 
@@ -206,11 +212,12 @@ export default function Vendors() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredVendors.map((vendor, index) => (
             <Card key={index} className="p-6 bg-specter-navy rounded-xl shadow-lg transition-transform transform hover:scale-105 border-0">
-              {/* Logo Placeholder */}
+              {/* Logo */}
               <div className="mb-4">
-                <div 
-                  className="h-10 w-10 rounded-full"
-                  style={{ backgroundColor: vendor.color }}
+                <img 
+                  src={vendor.logo} 
+                  alt={`${vendor.name} logo`}
+                  className="h-16 w-16 object-contain rounded-lg bg-white p-2"
                 />
               </div>
               <h2 className="text-2xl font-semibold mb-2 text-white">
