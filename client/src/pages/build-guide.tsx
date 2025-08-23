@@ -1,0 +1,488 @@
+import { useState } from "react";
+import { Link } from "wouter";
+import { Menu, X, ChevronDown } from "lucide-react";
+
+export default function BuildGuide() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filterSections = (filter: string) => {
+    setActiveFilter(filter);
+    
+    // Show/hide case sections
+    const sections = document.querySelectorAll('.case-section');
+    sections.forEach(section => {
+      const sectionElement = section as HTMLElement;
+      if (filter === 'all' || sectionElement.dataset.case === filter) {
+        sectionElement.style.display = 'block';
+      } else {
+        sectionElement.style.display = 'none';
+      }
+    });
+
+    // Show/hide legend parts
+    const parts = document.querySelectorAll('#parts-list li');
+    parts.forEach(part => {
+      const partElement = part as HTMLElement;
+      const cases = partElement.dataset.cases?.split(' ') || [];
+      if (filter === 'all' || cases.includes(filter)) {
+        partElement.style.display = 'list-item';
+      } else {
+        partElement.style.display = 'none';
+      }
+    });
+  };
+
+  return (
+    <div className="min-h-screen bg-specter-dark text-white">
+      {/* Header */}
+      <header className="relative z-50">
+        <nav className="px-6 py-4">
+          <div className="max-w-7xl mx-auto flex justify-between items-center">
+            <Link href="/">
+              <span className="text-2xl font-bold text-specter-primary cursor-pointer">
+                Specter Solutions
+              </span>
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              <Link href="/">
+                <span className="hover:text-specter-primary cursor-pointer transition-colors">Home</span>
+              </Link>
+              <Link href="/desktop">
+                <span className="hover:text-specter-primary cursor-pointer transition-colors">Desktop</span>
+              </Link>
+              
+              {/* Hardware Dropdown */}
+              <div className="relative">
+                <button 
+                  className="flex items-center space-x-1 hover:text-specter-primary transition-colors"
+                  onClick={() => setHardwareDropdownOpen(!hardwareDropdownOpen)}
+                >
+                  <span>Hardware</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                {hardwareDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg py-2 z-50">
+                    <Link href="/hardware">
+                      <span className="block px-4 py-2 hover:bg-specter-primary hover:text-white cursor-pointer transition-colors">
+                        Hardware Overview
+                      </span>
+                    </Link>
+                    <Link href="/vendors">
+                      <span className="block px-4 py-2 hover:bg-specter-primary hover:text-white cursor-pointer transition-colors">
+                        Vendors
+                      </span>
+                    </Link>
+                    <Link href="/build-guide">
+                      <span className="block px-4 py-2 bg-specter-primary text-white cursor-pointer">
+                        Build Guide
+                      </span>
+                    </Link>
+                  </div>
+                )}
+              </div>
+              
+              <Link href="/contact">
+                <span className="hover:text-specter-primary cursor-pointer transition-colors">Contact</span>
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-white focus:outline-none"
+              >
+                {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Navigation */}
+          {mobileMenuOpen && (
+            <div className="md:hidden bg-specter-navy mt-4 rounded-lg">
+              <div className="px-4 py-2 space-y-2">
+                <Link href="/">
+                  <span className="block py-2 hover:text-specter-primary cursor-pointer transition-colors">Home</span>
+                </Link>
+                <Link href="/desktop">
+                  <span className="block py-2 hover:text-specter-primary cursor-pointer transition-colors">Desktop</span>
+                </Link>
+                <Link href="/hardware">
+                  <span className="block py-2 hover:text-specter-primary cursor-pointer transition-colors">Hardware Overview</span>
+                </Link>
+                <Link href="/vendors">
+                  <span className="block py-2 hover:text-specter-primary cursor-pointer transition-colors">Vendors</span>
+                </Link>
+                <Link href="/build-guide">
+                  <span className="block py-2 bg-specter-primary text-white rounded cursor-pointer">Build Guide</span>
+                </Link>
+                <Link href="/contact">
+                  <span className="block py-2 hover:text-specter-primary cursor-pointer transition-colors">Contact</span>
+                </Link>
+              </div>
+            </div>
+          )}
+        </nav>
+      </header>
+
+      <div className="container mx-auto px-4 py-8 max-w-7xl">
+        {/* Header Section */}
+        <header className="mb-12 text-center">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-2">
+            Specter DIY Build Guide
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-400">
+            A step-by-step guide to building your own Specter hardware wallet from scratch.
+          </p>
+          
+          <div className="mt-6 text-center text-gray-400 max-w-2xl mx-auto">
+            <p>
+              This guide features a few of the most popular Specter hardware wallet cases. There are many more options available for building your own wallet. You can find more information and resources on the official Specter GitHub pages:
+            </p>
+            <ul className="mt-4 list-disc list-inside space-y-1 mx-auto max-w-fit">
+              <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/docs/shopping.md" target="_blank" className="text-specter-link hover:underline">Shopping Guide</a></li>
+              <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/docs/enclosures" target="_blank" className="text-specter-link hover:underline">More Case Enclosures</a></li>
+              <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/docs/assembly.md" target="_blank" className="hover:underline text-specter-link">Assembly Instructions</a></li>
+              <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/shield" target="_blank" className="hover:underline text-specter-link">Shield GitHub Page</a></li>
+            </ul>
+          </div>
+        </header>
+
+        {/* Filter Controls */}
+        <div className="mb-8 flex flex-wrap justify-center items-center gap-2">
+          <h3 className="text-lg font-semibold text-white mr-4">Filter by Case:</h3>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'all' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('all')}
+          >
+            Show All
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-diy' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-diy')}
+          >
+            Specter DIY
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-shield' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-shield')}
+          >
+            Specter Shield
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-shield-lite' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-shield-lite')}
+          >
+            Specter Shield Lite
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-shield-lite-battery' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-shield-lite-battery')}
+          >
+            Shield Lite (Batteries)
+          </button>
+        </div>
+
+        {/* Specter DIY Section */}
+        <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-diy">
+          <div className="flex flex-col-reverse lg:flex-row gap-8">
+            <div className="lg:w-2/3">
+              <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2">Specter DIY</h2>
+              <p className="text-gray-400 text-sm mb-4">A simple 3D printed case with QR-Code scanner using micro USB.</p>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Case Name: Specter DIY</h3>
+              <p className="text-gray-300 mb-4">A simple 3D-printed case designed to snap together.</p>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Parts</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li><a href="#part-developer-board" className="hover:underline text-specter-link">Developer Board</a></li>
+                <li><a href="#part-gm65-scanner-board" className="hover:underline text-specter-link">GM65 Scanner with board</a></li>
+                <li><a href="#part-pins" className="hover:underline text-specter-link">PINs</a></li>
+                <li><a href="#case-specter-diy" className="hover:underline text-specter-link">Specter DIY Case</a></li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Tools</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Mini-USB Cable</li>
+                <li>Cross-head screwdriver</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">For Use</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Micro USB Cable</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">How to Build</h3>
+              <ul className="list-disc list-inside text-specter-link space-y-2">
+                <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/docs/enclosures/snapcase" target="_blank" className="hover:underline">Specter DIY Official Build Guide</a></li>
+              </ul>
+            </div>
+            <div className="lg:w-1/3 flex items-center justify-center">
+              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
+                Specter DIY Image Placeholder
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Specter Shield Section */}
+        <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-shield">
+          <div className="flex flex-col-reverse lg:flex-row gap-8">
+            <div className="lg:w-2/3">
+              <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2">Specter Shield</h2>
+              <p className="text-gray-400 text-sm mb-4">
+                An enhanced version with a secure element and a battery.
+              </p>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Case Name: Alternative 3D printed case</h3>
+              <p className="text-gray-300 mb-4">
+                This is a more print-friendly case for the Specter Shield that provides access to all ports.
+              </p>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Parts</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li><a href="#part-developer-board" className="hover:underline text-specter-link">Developer Board</a></li>
+                <li><a href="#part-gm65-scanner" className="hover:underline text-specter-link">GM65 Scanner</a></li>
+                <li><a href="#part-specter-shield-board" className="hover:underline text-specter-link">Specter Shield Extension Board</a></li>
+                <li><a href="#part-smart-card" className="hover:underline text-specter-link">Smart Card</a></li>
+                <li><a href="#part-rechargeable-battery" className="hover:underline text-specter-link">Rechargeable battery</a></li>
+                <li><a href="#case-specter-shield" className="hover:underline text-specter-link">Specter Shield Case</a></li>
+                <li><a href="#part-screws-shield" className="hover:underline text-specter-link">8x M3 flathead screws (4x 6mm, 2x 8mm, 2x 10mm or 8x 10mm)</a></li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Tools</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Mini-USB Cable</li>
+                <li>Cross-head screwdriver</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">For Use</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Micro USB Cable</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">How to Build</h3>
+              <ul className="list-disc list-inside text-specter-link space-y-2">
+                <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/shield/Alternative_3D_Printed_Case/Assembly_Instructions.pdf" target="_blank" className="hover:underline">Assembly Instructions</a></li>
+              </ul>
+            </div>
+            <div className="lg:w-1/3 flex items-center justify-center">
+              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
+                Specter Shield Image Placeholder
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Specter Shield Lite Section */}
+        <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-shield-lite">
+          <div className="flex flex-col-reverse lg:flex-row gap-8">
+            <div className="lg:w-2/3">
+              <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2" id="shield-lite">Specter Shield Lite</h2>
+              <p className="text-gray-400 text-sm mb-4">A streamlined, low-cost version of the Shield.</p>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Case Name: Specter Shield Lite Case</h3>
+              <p className="text-gray-300 mb-4">A case designed to fit the more compact Shield Lite board.</p>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Parts</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li><a href="#part-developer-board" className="hover:underline text-specter-link">Developer Board</a></li>
+                <li>
+                  <a href="#part-gm65-scanner" className="hover:underline text-specter-link">GM65</a> or <a href="#part-m3y-scanner" className="hover:underline text-specter-link">M3Y Scanner</a>
+                </li>
+                <li><a href="#part-specter-shield-lite-board" className="hover:underline text-specter-link">Specter Shield Lite Board</a></li>
+                <li><a href="#part-smart-card" className="hover:underline text-specter-link">Smart Card</a></li>
+                <li><a href="#case-specter-shield-lite" className="hover:underline text-specter-link">3D-printed Case</a></li>
+                <li>
+                  <a href="#part-screws-lite" className="hover:underline text-specter-link">8x M3 countersunk head screws 
+                    (2x 16mm, 2x 12mm, 2x 10mm, 2x 6mm
+                    or 6x 12mm, 2x 10mm)
+                  </a>
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Tools</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Mini-USB Cable</li>
+                <li>Cross-head screwdriver</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">For Use</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Micro USB Cable</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">How to Build</h3>
+              <ul className="list-disc list-inside text-specter-link space-y-2">
+                <li><a href="https://www.youtube.com/watch?v=NWD0xLyAras&t=332s" target="_blank" className="hover:underline">Specter Shield Lite Build Guide</a></li>
+              </ul>
+            </div>
+            <div className="lg:w-1/3 flex items-center justify-center">
+              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
+                Specter Shield Lite Image Placeholder
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Specter Shield Lite with Batteries Section */}
+        <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-shield-lite-battery">
+          <div className="flex flex-col-reverse lg:flex-row gap-8">
+            <div className="lg:w-2/3">
+              <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2">Specter Shield Lite with Batteries</h2>
+              <p className="text-gray-400 text-sm mb-4">A portable version of the Specter Shield Lite with a built-in AAA batteries and USB-C Port.</p>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Case Name: Specter Shield Lite with Batteries Case</h3>
+              <p className="text-gray-300 mb-4">A case designed specifically to accommodate the batteries and USB-C</p>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Parts</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li><a href="#shield-lite" className="hover:underline text-specter-link">Specter Shield Lite</a></li>
+                <li><a href="#part-usb-c-module" className="hover:underline text-specter-link">USB-C Power Module</a></li>
+                <li><a href="#part-switch" className="hover:underline text-specter-link">Switch</a></li>
+                <li><a href="#part-contact-springs" className="hover:underline text-specter-link">Contact Springs</a></li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">Necessary Tools</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Mini-USB Cable</li>
+                <li>Cross-head screwdriver</li>
+                <li>Soldering iron</li>
+              </ul>
+
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">For Use</h3>
+              <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4">
+                <li>Micro USB Cable</li>
+              </ul>
+              
+              <h3 className="text-xl font-semibold text-white mt-6 mb-2">How to Build</h3>
+              <ul className="list-disc list-inside text-specter-link space-y-2">
+                <li><a href="https://www.youtube.com/watch?v=NWD0xLyAras&t=332s" target="_blank" className="hover:underline">Specter Shield Lite with Batteries Case Instructions</a></li>
+              </ul>
+            </div>
+            <div className="lg:w-1/3 flex items-center justify-center">
+              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
+                Shield Lite Battery Image Placeholder
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Filter Controls for Legend */}
+        <div className="mb-8 flex flex-wrap justify-center items-center gap-2">
+          <h3 className="text-lg font-semibold text-white mr-4">Filter Legend by Case:</h3>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'all' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('all')}
+          >
+            Show All
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-diy' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-diy')}
+          >
+            Specter DIY
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-shield' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-shield')}
+          >
+            Specter Shield
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-shield-lite' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-shield-lite')}
+          >
+            Specter Shield Lite
+          </button>
+          <button 
+            className={`py-2 px-4 rounded-full font-medium transition-colors ${activeFilter === 'specter-shield-lite-battery' ? 'bg-specter-primary text-white' : 'bg-gray-700 text-gray-200 hover:bg-gray-600'}`}
+            onClick={() => filterSections('specter-shield-lite-battery')}
+          >
+            Shield Lite (Batteries)
+          </button>
+        </div>
+        
+        {/* Legend Section */}
+        <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12" id="legend-section">
+          <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2">Legend of Parts</h2>
+          <p className="text-gray-400 text-sm mb-4">A list of all the parts and components with short descriptions and links to a few suppliers.</p>
+
+          <ul className="list-none text-gray-300 space-y-8" id="parts-list">
+            <li id="part-developer-board" data-cases="specter-diy specter-shield specter-shield-lite specter-shield-lite-battery">
+              <h3 className="text-xl font-semibold text-white mb-2">Developer Board</h3>
+              <p className="text-gray-400 mb-4">This is the main Smartphone Developer Board that runs the Specter firmware. The STM32F469I-DISCO is the recommended model.</p>
+              <ul className="list-disc list-inside text-specter-link space-y-1">
+                <li><a href="https://eu.mouser.com/ProductDetail/STMicroelectronics/STM32F469I-DISCO?qs=kWQV1gtkNndotCjy2DKZ4w%3D%3D" target="_blank" className="hover:underline">Mouser</a></li>
+                <li><a href="https://de.rs-online.com/web/p/entwicklungstools-microcontroller/9092865" target="_blank" className="hover:underline">RS-Online</a></li>
+                <li><a href="https://www.digikey.com/en/products/detail/stmicroelectronics/STM32F469I-DISCO/5428811" target="_blank" className="hover:underline">Digi-Key</a></li>
+              </ul>
+            </li>
+            
+            <li id="part-gm65-scanner-board" data-cases="specter-diy">
+              <h3 className="text-xl font-semibold text-white mb-2">GM65 Scanner with board</h3>
+              <p className="text-gray-400 mb-4">A QR code scanner module used for air-gapped transactions.</p>
+              <ul className="list-disc list-inside text-specter-link space-y-1">
+                <li><a href="https://www.waveshare.com/barcode-scanner-module.htm" target="_blank" className="hover:underline">Waveshare</a></li>
+                <li><a href="https://www.sunsky-online.com/de/p/ZY14328032/Waveshare-Barcode-Scanner-Module-1D-2D-Codes-Reader.htm" target="_blank" className="hover:underline">Sunsky-Online</a></li>
+              </ul>
+            </li>
+            
+            <li id="part-gm65-scanner" data-cases="specter-shield specter-shield-lite specter-shield-lite-battery">
+              <h3 className="text-xl font-semibold text-white mb-2">GM65 or GM65-S Scanner</h3>
+              <p className="text-gray-400 mb-4">A standard GM65 barcode scanner for reading QR codes.</p>
+              <ul className="list-disc list-inside text-specter-link space-y-1">
+                <li><a href="https://www.alibaba.com/product-detail/Original-GM65-S-Barcode-QR-Code_1601114566992.html" target="_blank" className="hover:underline">Alibaba</a></li>
+                <li><a href="https://de.aliexpress.com/item/33008958186.html" target="_blank" className="hover:underline">AliExpress</a></li>
+                <li><a href="https://cryptoguide.tips/product/gm65-barcode-scanner/" target="_blank" className="hover:underline">Cryptoguide.tips</a></li>
+              </ul>
+            </li>
+
+            <li id="part-specter-shield-board" data-cases="specter-shield">
+              <h3 className="text-xl font-semibold text-white mb-2">Specter Shield Board</h3>
+              <p className="text-gray-400 mb-4">The main PCB for the Specter Shield, which includes secure element support.</p>
+              <ul className="list-disc list-inside text-specter-link space-y-1">
+                <li><a href="https://www.pcbway.com/project/shareproject/Specter_Shield_v1_0_0_2024_Update_ea6f25c5.html" target="_blank" className="hover:underline">PCBWay</a></li>
+                <li><a href="https://cryptoguide.tips/product/specter-shield-board/" target="_blank" className="hover:underline">Cryptoguide.tips</a></li>
+                <li><a href="https://clavastack.com/produkt/specter-shield-board/" target="_blank" className="hover:underline">Clavastack</a></li>
+              </ul>
+            </li>
+
+            <li id="part-specter-shield-lite-board" data-cases="specter-shield-lite specter-shield-lite-battery">
+              <h3 className="text-xl font-semibold text-white mb-2">Specter Shield Lite Board</h3>
+              <p className="text-gray-400 mb-4">A compact and simplified version of the Specter Shield PCB.</p>
+              <ul className="list-disc list-inside text-specter-link space-y-1">
+                <li><a href="https://www.pcbway.com/project/shareproject/Specter_Shield_Lite_ad02f25b.html" target="_blank" className="hover:underline">PCBWay</a></li>
+                <li><a href="https://cryptoguide.tips/product/specter-shield-lite-board/" target="_blank" className="hover:underline">Cryptoguide.tips</a></li>
+                <li><a href="https://clavastack.com/produkt/specter-shield-lite-board/" target="_blank" className="hover:underline">Clavastack</a></li>
+              </ul>
+            </li>
+
+            <li id="part-smart-card" data-cases="specter-shield specter-shield-lite specter-shield-lite-battery">
+              <h3 className="text-xl font-semibold text-white mb-2">Smart Card</h3>
+              <p className="text-gray-400 mb-4">A secure element card used to store cryptographic keys.</p>
+              <div className="mt-4">
+                <h4 className="font-semibold text-lg text-gray-200">Preflashed:</h4>
+                <ul className="list-disc list-inside text-specter-link space-y-1 ml-4">
+                  <li><a href="https://cryptoguide.tips/product/j3h145-javacard/" target="_blank" className="hover:underline">Cryptoguide.tips</a></li>
+                  <li><a href="https://clavastack.com/produkt/smartcard/" target="_blank" className="hover:underline">Clavastack</a></li>
+                </ul>
+              </div>
+              <div className="mt-4">
+                <h4 className="font-semibold text-lg text-gray-200">Raw:</h4>
+                <ul className="list-disc list-inside text-specter-link space-y-1 ml-4">
+                  <li><a href="https://www.alibaba.com/product-detail/J3H145-JCOP3-SecID-P60-JavaCard-Contact_1600717536549.html" target="_blank" className="hover:underline">Alibaba</a></li>
+                  <li><a href="https://de.aliexpress.com/item/1005001306297920.html" target="_blank" className="hover:underline">AliExpress</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}

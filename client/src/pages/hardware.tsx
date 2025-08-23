@@ -53,10 +53,17 @@ export default function Hardware() {
                     </Link>
                     <Link 
                       href="/vendors" 
-                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200"
                       onClick={() => setHardwareDropdownOpen(false)}
                     >
                       Vendors
+                    </Link>
+                    <Link 
+                      href="/build-guide" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Build Guide
                     </Link>
                   </div>
                 )}
@@ -90,6 +97,9 @@ export default function Hardware() {
                 </span>
                 <Link href="/vendors" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4">
                   Vendors
+                </Link>
+                <Link href="/build-guide" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4">
+                  Build Guide
                 </Link>
                 <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Contact

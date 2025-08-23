@@ -91,16 +91,41 @@ Preferred communication style: Simple, everyday language.
 - **nanoid**: Unique ID generation
 - **cmdk**: Command palette component
 
-# Recent Changes (August 21, 2025)
+# Recent Changes (August 23, 2025)
 
-## Website Structure Update
+## Build Guide Addition (August 23, 2025)
+- Created comprehensive Build Guide page (/build-guide) with detailed hardware wallet assembly instructions
+- Added four different hardware wallet case types: Specter DIY, Specter Shield, Specter Shield Lite, and Shield Lite with Batteries
+- Implemented filtering system to show/hide sections and legend parts based on selected case type
+- Integrated Build Guide into all page navigation dropdowns under Hardware section
+- Added detailed parts legend with authentic supplier links and specifications
+- Includes links to official GitHub documentation and assembly instructions
+- Features responsive design with image placeholders for each wallet type
+
+## Vendor Logo Integration (August 23, 2025)
+- Added authentic vendor logos to all 4 vendor cards replacing colored placeholder circles
+- ClavaStack: Orange character logo with crown (BtcFrankenstein)
+- Pleb.style: Black stylized "PLEB" text logo  
+- Bitcoin-store.org: Blue and gray geometric logo
+- Cryptoguide.tips: Blue map-style logo with "Crypto Guide" text
+- Removed white borders and background styling for pure logo display
+
+## Navigation Enhancement (August 23, 2025)
+- Updated Hardware dropdown navigation across all pages to include Build Guide option
+- Consistent three-item dropdown: Hardware Overview, Vendors, Build Guide
+- Updated both desktop and mobile navigation menus on all pages
+- Build Guide properly highlighted when active in navigation
+
+## Previous Changes (August 21, 2025)
+
+### Website Structure Update
 - Created dedicated Desktop page (/desktop) with detailed Specter Desktop information
 - Created dedicated Hardware page (/hardware) with Specter DIY hardware wallet details  
 - Created dedicated Contact page (/contact) with Specter Association team member profiles and contact form
 - Updated home page navigation to link to new dedicated pages
 - Removed Enterprise section per user request, focusing only on Desktop and Hardware
 
-## Navigation Integration (August 21, 2025)
+### Navigation Integration
 - Fully integrated contact page into main site navigation structure
 - Updated all pages (Home, Desktop, Hardware, Contact) with consistent header navigation
 - Replaced simple "Back to Home" buttons with full navigation menu on all pages
@@ -109,7 +134,7 @@ Preferred communication style: Simple, everyday language.
 - Updated Moritz profile picture to version with Bitcoin logo background
 - Contact form styling matches home page design patterns
 
-## Visual Design Changes
+### Visual Design Changes
 - Updated hero section with custom background image (man typing with Specter interface)
 - Changed hero text from "Free Open-Source Product Suite" to "Open-Source Specter Project"
 - Updated subtitle from "For Bitcoiners, Developers & Enterprise" to "Secure your Bitcoin with Specter"
@@ -117,7 +142,7 @@ Preferred communication style: Simple, everyday language.
 - Changed contact section title from "Contact Moritz for more information" to "Contact Association"
 - Redesigned contact form layout with centered form and contact image above
 
-## Brand Integration
+### Brand Integration
 - Applied Specter brand colors throughout the site
 - Integrated custom assets via @assets imports for better asset management
 - Maintained responsive design with mobile navigation

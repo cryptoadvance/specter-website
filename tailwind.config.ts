@@ -64,8 +64,10 @@ export default {
         // Specter Brand Colors
         "specter-primary": "#2D9CDB",
         "specter-coral": "#FF7C7C", 
+        "specter-link": "#FF7C7C",
         "specter-dark": "#05080F",
         "specter-navy": "#192432",
+        "specter-navy-lighter": "#253445",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
