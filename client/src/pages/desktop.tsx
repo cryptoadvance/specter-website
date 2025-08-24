@@ -767,19 +767,7 @@ export default function Desktop() {
             </div>
           </section>
 
-          {/* Contact Section */}
-          <section className="mb-20">
-            <div className="text-center">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2021/12/moritz-square-new-1500x1500.jpg" 
-                alt="Moritz" 
-                className="w-48 h-48 rounded-full mx-auto mb-8 object-cover"
-              />
-              <h5 className="text-xl font-semibold text-white mb-8">
-                Contact Moritz for more information
-              </h5>
-            </div>
-          </section>
+
 
         </div>
       </main>
