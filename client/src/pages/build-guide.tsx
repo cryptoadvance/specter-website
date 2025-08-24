@@ -9,6 +9,8 @@ import specterLogo from "@assets/Specter_logo_1756046218246.png";
 
 export default function BuildGuide() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
 
   useEffect(() => {
@@ -119,51 +121,77 @@ export default function BuildGuide() {
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
-              <div className="relative group">
-                <button className="flex items-center text-white hover:text-specter-coral transition-colors duration-200">
+              <div className="relative">
+                <button
+                  onMouseEnter={() => setDesktopDropdownOpen(true)}
+                  onMouseLeave={() => setDesktopDropdownOpen(false)}
+                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
+                >
                   Desktop
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <Link 
-                    href="/desktop" 
-                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                {desktopDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
+                    onMouseEnter={() => setDesktopDropdownOpen(true)}
+                    onMouseLeave={() => setDesktopDropdownOpen(false)}
                   >
-                    Desktop Overview
-                  </Link>
-                  <Link 
-                    href="/downloads" 
-                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
-                  >
-                    Downloads
-                  </Link>
-                </div>
+                    <Link 
+                      href="/desktop" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                      onClick={() => setDesktopDropdownOpen(false)}
+                    >
+                      Desktop Overview
+                    </Link>
+                    <Link 
+                      href="/downloads" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                      onClick={() => setDesktopDropdownOpen(false)}
+                    >
+                      Downloads
+                    </Link>
+                  </div>
+                )}
               </div>
-              <div className="relative group">
-                <button className="flex items-center text-white hover:text-specter-coral transition-colors duration-200">
+              <div className="relative">
+                <Link
+                  href="/hardware"
+                  onMouseEnter={() => setHardwareDropdownOpen(true)}
+                  onMouseLeave={() => setHardwareDropdownOpen(false)}
+                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
+                >
                   Hardware
                   <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                  <Link 
-                    href="/hardware" 
-                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                </Link>
+                {hardwareDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
+                    onMouseEnter={() => setHardwareDropdownOpen(true)}
+                    onMouseLeave={() => setHardwareDropdownOpen(false)}
                   >
-                    Hardware Overview
-                  </Link>
-                  <Link 
-                    href="/vendors" 
-                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200"
-                  >
-                    Vendors
-                  </Link>
-                  <Link 
-                    href="/build-guide" 
-                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
-                  >
-                    Build Guide
-                  </Link>
-                </div>
+                    <Link 
+                      href="/hardware" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Hardware Overview
+                    </Link>
+                    <Link 
+                      href="/vendors" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Vendors
+                    </Link>
+                    <Link 
+                      href="/build-guide" 
+                      className="block px-4 py-2 text-specter-coral font-medium bg-specter-dark rounded-b-lg"
+                      onClick={() => setHardwareDropdownOpen(false)}
+                    >
+                      Build Guide
+                    </Link>
+                  </div>
+                )}
               </div>
               <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Contact
