@@ -124,7 +124,7 @@ export default function Hardware() {
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-md">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-              Specter Hardware
+              Specter Hardware Wallet
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Open-source firmware on trust minimized signing devices.
