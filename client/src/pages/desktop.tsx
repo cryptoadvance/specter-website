@@ -283,27 +283,29 @@ export default function Desktop() {
             </div>
 
             {/* Receive */}
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div>
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Receive_Transaction.png" 
-                  alt="Specter Receive Transaction" 
-                  className="w-full max-w-lg h-auto rounded-lg shadow-lg"
-                />
-              </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2021/12/Receive.svg" 
-                  alt="Receive" 
-                  className="w-16 h-16 mb-6"
-                />
-                <h3 className="text-3xl font-bold mb-6 text-white">Receive</h3>
-                <p className="text-lg text-gray-300 mb-6">
-                  View all receive addresses to send funds to your wallets.
-                </p>
-                <p className="text-lg text-gray-300">
-                  Verify your wallet receive addresses match across Specter Desktop and your signing devices. This can be done via QR code or directly with USB connected signing devices.
-                </p>
+            <div className="bg-specter-navy rounded-xl border-0 mb-16 overflow-hidden">
+              <div className="grid md:grid-cols-3 gap-12 h-full">
+                <div className="md:col-span-2 flex items-end">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Receive_Transaction.png" 
+                    alt="Specter Receive Transaction" 
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <div className="p-8 flex flex-col justify-center">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2021/12/Receive.svg" 
+                    alt="Receive" 
+                    className="w-16 h-16 mb-6"
+                  />
+                  <h3 className="text-3xl font-bold mb-6 text-white">Receive</h3>
+                  <p className="text-lg text-gray-300 mb-6">
+                    View all receive addresses to send funds to your wallets.
+                  </p>
+                  <p className="text-lg text-gray-300">
+                    Verify your wallet receive addresses match across Specter Desktop and your signing devices. This can be done via QR code or directly with USB connected signing devices.
+                  </p>
+                </div>
               </div>
             </div>
 
