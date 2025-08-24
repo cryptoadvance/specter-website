@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
 import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
+import specterLogo from "@assets/Specter_logo_1756045582018.png";
 
 export default function Desktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,9 +22,9 @@ export default function Desktop() {
             <div className="flex items-center">
               <Link href="/">
                 <img 
-                  src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo%402x-180x15.png" 
-                  alt="Specter Solutions Logo" 
-                  className="h-6"
+                  src={specterLogo} 
+                  alt="Specter Logo" 
+                  className="h-10 w-auto"
                 />
               </Link>
             </div>

@@ -8,6 +8,7 @@ import clavaStackLogo from "@assets/BtcFrankenstein Logo 3.4.1_1755840288095.png
 import plebStyleLogo from "@assets/imgi_1_YwTqyo_1_400x400_1755840295047.png";
 import bitcoinStoreLogo from "@assets/CalMPylj_400x400 (1)_1755840297048.jpg";
 import cryptoguideLogo from "@assets/Cryptoguide_1755840305434.jpg";
+import specterLogo from "@assets/Specter_logo_1756045582018.png";
 
 export default function Vendors() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -80,9 +81,9 @@ export default function Vendors() {
             <div className="flex items-center">
               <Link href="/">
                 <img 
-                  src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo%402x-180x15.png" 
-                  alt="Specter Solutions Logo" 
-                  className="h-6"
+                  src={specterLogo} 
+                  alt="Specter Logo" 
+                  className="h-10 w-auto"
                 />
               </Link>
             </div>

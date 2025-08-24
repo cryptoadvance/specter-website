@@ -15,6 +15,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import type { InsertContact, InsertNewsletter } from "@shared/schema";
 import heroBackgroundImage from "@assets/imgi_6_Specter_Foss_Suite-scaled_1755535754418.png";
 import contactPersonImage from "@assets/Uncle Jim Tutorial (1)_1755536226982.png";
+import specterLogo from "@assets/Specter_logo_1756045582018.png";
 
 export default function Home() {
   const { toast } = useToast();
@@ -107,9 +108,9 @@ export default function Home() {
             {/* Logo */}
             <div className="flex items-center">
               <img 
-                src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo%402x-180x15.png" 
-                alt="Specter Solutions Logo" 
-                className="h-6"
+                src={specterLogo} 
+                alt="Specter Logo" 
+                className="h-10 w-auto"
               />
             </div>
             

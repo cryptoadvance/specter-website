@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
+import specterLogo from "@assets/Specter_logo_1756045582018.png";
 
 
 export default function Hardware() {
@@ -21,9 +22,9 @@ export default function Hardware() {
             <div className="flex items-center">
               <Link href="/">
                 <img 
-                  src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo%402x-180x15.png" 
-                  alt="Specter Solutions Logo" 
-                  className="h-6"
+                  src={specterLogo} 
+                  alt="Specter Logo" 
+                  className="h-10 w-auto"
                 />
               </Link>
             </div>

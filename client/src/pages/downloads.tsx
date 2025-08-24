@@ -3,9 +3,10 @@ import { Link } from 'wouter';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
-import { Info } from 'lucide-react';
+import { Info, Menu, X, ChevronDown } from 'lucide-react';
 import goodSigImage from '@assets/good_sig_1756045019493.png';
 import fileOkImage from '@assets/file_ok_1756045021825.png';
+import specterLogo from '@assets/Specter_logo_1756045582018.png';
 
 interface GitHubRelease {
   tag_name: string;
@@ -84,77 +85,155 @@ export default function Downloads() {
     return { macAsset, winAsset, linuxAsset };
   };
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
+
   return (
     <div className="bg-specter-dark text-white font-sans">
-      {/* Navigation */}
-      <nav className="bg-specter-navy py-4 sticky top-0 z-50">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center">
-            <Link href="/">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2020/09/SpecterSolutions_Logo@2x-180x15.png" 
-                alt="Specter Solutions" 
-                className="h-4"
-              />
-            </Link>
+      {/* Header */}
+      <header className="bg-specter-primary shadow-lg sticky top-0 z-50">
+        <nav className="container mx-auto px-4 py-3">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/">
+                <img 
+                  src={specterLogo} 
+                  alt="Specter Logo" 
+                  className="h-10 w-auto"
+                />
+              </Link>
+            </div>
             
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              <div className="relative group">
-                <button className="text-gray-300 hover:text-white py-2">
+              <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Home
+              </Link>
+              <div className="relative">
+                <button 
+                  className="text-white hover:text-specter-coral transition-colors duration-200 flex items-center"
+                  onMouseEnter={() => setDesktopDropdownOpen(true)}
+                  onMouseLeave={() => setDesktopDropdownOpen(false)}
+                >
                   Desktop
+                  <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <div className="absolute top-full left-0 w-48 bg-specter-navy rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                  <Link href="/desktop">
-                    <a className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-specter-dark rounded-t-lg">
+                {desktopDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-1 z-50"
+                    onMouseEnter={() => setDesktopDropdownOpen(true)}
+                    onMouseLeave={() => setDesktopDropdownOpen(false)}
+                  >
+                    <Link href="/desktop" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Desktop Overview
-                    </a>
-                  </Link>
-                  <Link href="/downloads">
-                    <a className="block px-4 py-2 text-sm text-specter-coral font-medium bg-specter-dark rounded-b-lg border-l-2 border-specter-coral">
+                    </Link>
+                    <Link href="/downloads" className="block px-4 py-2 text-sm text-specter-coral font-medium bg-gray-100">
                       Downloads
-                    </a>
-                  </Link>
-                </div>
+                    </Link>
+                  </div>
+                )}
               </div>
-              
-              <div className="relative group">
-                <button className="text-gray-300 hover:text-white py-2">
+              <div className="relative">
+                <button 
+                  className="text-white hover:text-specter-coral transition-colors duration-200 flex items-center"
+                  onMouseEnter={() => setHardwareDropdownOpen(true)}
+                  onMouseLeave={() => setHardwareDropdownOpen(false)}
+                >
                   Hardware
+                  <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
-                <div className="absolute top-full left-0 w-48 bg-specter-navy rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
-                  <Link href="/hardware">
-                    <a className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-specter-dark rounded-t-lg">
+                {hardwareDropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-1 z-50"
+                    onMouseEnter={() => setHardwareDropdownOpen(true)}
+                    onMouseLeave={() => setHardwareDropdownOpen(false)}
+                  >
+                    <Link href="/hardware" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Hardware Overview
-                    </a>
-                  </Link>
-                  <Link href="/vendors">
-                    <a className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-specter-dark">
+                    </Link>
+                    <Link href="/vendors" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Vendors
-                    </a>
-                  </Link>
-                  <Link href="/build-guide">
-                    <a className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-specter-dark rounded-b-lg">
+                    </Link>
+                    <Link href="/build-guide" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                       Build Guide
-                    </a>
-                  </Link>
-                </div>
+                    </Link>
+                  </div>
+                )}
               </div>
-              
-              <Link href="/contact">
-                <a className="text-gray-300 hover:text-white py-2">Contact</a>
+              <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
+                Contact
               </Link>
             </div>
 
             {/* Mobile Menu Button */}
-            <button className="md:hidden text-white">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              className="md:hidden text-white"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
-        </div>
-      </nav>
+        </nav>
+        
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-specter-primary border-t border-specter-navy">
+            <div className="px-4 py-2 space-y-1">
+              <Link 
+                href="/" 
+                className="block py-2 text-white hover:text-specter-coral transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link 
+                href="/desktop" 
+                className="block py-2 text-white hover:text-specter-coral transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Desktop Overview
+              </Link>
+              <Link 
+                href="/downloads" 
+                className="block py-2 text-specter-coral font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Downloads
+              </Link>
+              <Link 
+                href="/hardware" 
+                className="block py-2 text-white hover:text-specter-coral transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Hardware Overview
+              </Link>
+              <Link 
+                href="/vendors" 
+                className="block py-2 text-white hover:text-specter-coral transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Vendors
+              </Link>
+              <Link 
+                href="/build-guide" 
+                className="block py-2 text-white hover:text-specter-coral transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Build Guide
+              </Link>
+              <Link 
+                href="/contact" 
+                className="block py-2 text-white hover:text-specter-coral transition-colors duration-200"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+          </div>
+        )}
+      </header>
 
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-specter-dark to-specter-navy py-20">
