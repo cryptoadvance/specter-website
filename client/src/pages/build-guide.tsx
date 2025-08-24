@@ -118,10 +118,13 @@ export default function BuildGuide() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-6 items-center">
+            <div className="hidden md:flex space-x-8">
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
+              <button className="bg-red-500 text-white px-3 py-1 rounded font-bold">
+                NEW MENU
+              </button>
               <div className="relative">
                 <button
                   onMouseEnter={() => setDesktopDropdownOpen(true)}
