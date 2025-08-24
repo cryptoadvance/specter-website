@@ -168,19 +168,23 @@ export default function Desktop() {
 
           {/* Coordinate Wallets Section */}
           <section className="mb-20">
-            <h3 className="text-3xl font-bold mb-6 text-white text-center">Coordinate secure wallets.</h3>
-            <p className="text-lg text-gray-300 mb-6 text-center max-w-4xl mx-auto">
-              A multi-sig scheme offers a high degree of security, a single-sig cold storage wallet is safe for smaller amounts and convenient to operate.
-            </p>
-            <p className="text-lg text-gray-300 mb-8 text-center max-w-4xl mx-auto">
-              Define your optimal set up and use Specter Desktop to coordinate the wallet best suited to your needs.
-            </p>
-            <div className="text-center">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_New_Wallet-1024x602.png" 
-                alt="Specter Desktop Add New Wallet" 
-                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
-              />
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-3xl font-bold mb-6 text-white">Coordinate secure wallets.</h3>
+                <p className="text-lg text-gray-300 mb-6">
+                  A multi-sig scheme offers a high degree of security, a single-sig cold storage wallet is safe for smaller amounts and convenient to operate.
+                </p>
+                <p className="text-lg text-gray-300">
+                  Define your optimal set up and use Specter Desktop to coordinate the wallet best suited to your needs.
+                </p>
+              </div>
+              <div>
+                <img 
+                  src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_New_Wallet-1024x602.png" 
+                  alt="Specter Desktop Add New Wallet" 
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
             </div>
           </section>
 
