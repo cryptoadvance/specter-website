@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'wouter';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Info } from 'lucide-react';
 
 interface GitHubRelease {
@@ -183,10 +184,48 @@ export default function Downloads() {
                       >
                         For OS X
                       </Button>
-                      <div className="flex items-center justify-center gap-1 mb-4">
-                        <Info className="w-3 h-3 text-gray-400" />
-                        <span className="text-gray-400 text-xs">Verify signature</span>
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer">
+                            <Info className="w-3 h-3" />
+                            <span>Verify signature</span>
+                          </button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-specter-dark text-white">
+                          <DialogHeader>
+                            <DialogTitle className="text-xl font-bold text-white">Mac OS Signature Verification</DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-4 text-sm">
+                            <ol className="list-decimal list-inside space-y-3">
+                              <li>Download Specter for macOS (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-v2.0.5.dmg</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.</li>
+                              <li className="pl-4">
+                                <strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc
+                              </li>
+                              <li className="pl-4">
+                                <strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc
+                              </li>
+                              <li>Open the terminal app (you can search for it on the Launchpad)</li>
+                              <li>Paste in the following lines (Note: The first 2 commands are needed only if it's your first time doing this process):</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <ol className="list-decimal list-inside space-y-2 font-mono text-sm">
+                                <li><code>ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></li>
+                                <li><code>brew install gnupg</code></li>
+                                <li><code>cd Downloads</code></li>
+                                <li><code>gpg --import pgp_keys.asc</code></li>
+                                <li><code>gpg --verify SHA256SUMS.asc</code></li>
+                              </ol>
+                            </div>
+                            <p>5. After the last command, you should see a few lines of output - make sure they contain "Good signature" and the key identity and fingerprint are correct.</p>
+                            <p>6. Verify the sha256 of the Specter software file is indeed in the signed hashes file by running:</p>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">sha256sum -c SHA256SUMS --ignore-missing Specter-v2.0.5.dmg</code>
+                            </div>
+                            <p>7. Make sure the output shows "OK" next to the file name, like this:</p>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                       {macAsset && (
                         <p className="text-gray-400 text-sm">{formatFileSize(macAsset.size)}</p>
                       )}
@@ -203,10 +242,48 @@ export default function Downloads() {
                       >
                         For Windows
                       </Button>
-                      <div className="flex items-center justify-center gap-1 mb-4">
-                        <Info className="w-3 h-3 text-gray-400" />
-                        <span className="text-gray-400 text-xs">Verify signature</span>
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer">
+                            <Info className="w-3 h-3" />
+                            <span>Verify signature</span>
+                          </button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-specter-dark text-white">
+                          <DialogHeader>
+                            <DialogTitle className="text-xl font-bold text-white">Windows Signature Verification</DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-4 text-sm">
+                            <ol className="list-decimal list-inside space-y-3">
+                              <li>Download Specter for Windows (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-v2.0.5.exe</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download and import the PGP Public key of "Specter Signer". The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.</li>
+                              <li>Install GPG4Win from https://gpg4win.org/</li>
+                              <li>Open Command Prompt (cmd) or PowerShell</li>
+                              <li>Navigate to your Downloads folder:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">cd Downloads</code>
+                            </div>
+                            <ol start={6} className="list-decimal list-inside space-y-3">
+                              <li>Import the PGP key:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">gpg --import pgp_keys.asc</code>
+                            </div>
+                            <ol start={7} className="list-decimal list-inside space-y-3">
+                              <li>Verify the signature:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">gpg --verify SHA256SUMS.asc</code>
+                            </div>
+                            <p>8. Verify the sha256 hash:</p>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">certutil -hashfile Specter-v2.0.5.exe SHA256</code>
+                            </div>
+                            <p>9. Compare the output hash with the one listed in the SHA256SUMS file.</p>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                       {winAsset && (
                         <p className="text-gray-400 text-sm">{formatFileSize(winAsset.size)}</p>
                       )}
@@ -223,10 +300,56 @@ export default function Downloads() {
                       >
                         For Linux
                       </Button>
-                      <div className="flex items-center justify-center gap-1 mb-4">
-                        <Info className="w-3 h-3 text-gray-400" />
-                        <span className="text-gray-400 text-xs">Verify signature</span>
-                      </div>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer">
+                            <Info className="w-3 h-3" />
+                            <span>Verify signature</span>
+                          </button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto bg-specter-dark text-white">
+                          <DialogHeader>
+                            <DialogTitle className="text-xl font-bold text-white">Linux Signature Verification</DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-4 text-sm">
+                            <ol className="list-decimal list-inside space-y-3">
+                              <li>Download Specter for Linux (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-v2.0.5.tar.gz</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download and import the PGP Public key of "Specter Signer". The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.</li>
+                              <li>Install GPG if not already installed:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg space-y-2">
+                              <div><strong>Ubuntu/Debian:</strong> <code className="font-mono">sudo apt install gnupg</code></div>
+                              <div><strong>Fedora:</strong> <code className="font-mono">sudo dnf install gnupg2</code></div>
+                              <div><strong>Arch:</strong> <code className="font-mono">sudo pacman -S gnupg</code></div>
+                            </div>
+                            <ol start={4} className="list-decimal list-inside space-y-3">
+                              <li>Open terminal and navigate to Downloads:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">cd ~/Downloads</code>
+                            </div>
+                            <ol start={5} className="list-decimal list-inside space-y-3">
+                              <li>Import the PGP key:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">gpg --import pgp_keys.asc</code>
+                            </div>
+                            <ol start={6} className="list-decimal list-inside space-y-3">
+                              <li>Verify the signature:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">gpg --verify SHA256SUMS.asc</code>
+                            </div>
+                            <ol start={7} className="list-decimal list-inside space-y-3">
+                              <li>Verify the sha256 hash:</li>
+                            </ol>
+                            <div className="bg-specter-navy p-4 rounded-lg">
+                              <code className="font-mono text-sm">sha256sum -c SHA256SUMS --ignore-missing</code>
+                            </div>
+                            <p>8. Make sure the output shows "OK" next to the Specter file name.</p>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                       {linuxAsset && (
                         <p className="text-gray-400 text-sm">{formatFileSize(linuxAsset.size)}</p>
                       )}
