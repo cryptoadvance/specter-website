@@ -4,6 +4,8 @@ import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Info } from 'lucide-react';
+import goodSigImage from '@assets/good_sig_1756045019493.png';
+import fileOkImage from '@assets/file_ok_1756045021825.png';
 
 interface GitHubRelease {
   tag_name: string;
@@ -219,7 +221,13 @@ export default function Downloads() {
                             <ol start={5} className="list-decimal list-inside space-y-3">
                               <li>After the last command, you should see a few lines of output - make sure they contain "Good signature" and the key identity and fingerprint are correct.</li>
                             </ol>
-                            <img src="/attached_assets/good_sig_1756045019493.png" alt="Good signature verification output" className="my-4 rounded-lg border border-gray-600" />
+                            <div className="my-4 p-4 bg-gray-800 rounded-lg">
+                              <img 
+                                src={goodSigImage} 
+                                alt="Good signature verification output" 
+                                className="w-full max-w-full h-auto rounded border border-gray-600" 
+                              />
+                            </div>
                             <ol start={6} className="list-decimal list-inside space-y-3">
                               <li>Verify the sha256 of the Specter software file is indeed in the signed hashes file by running:</li>
                             </ol>
@@ -229,7 +237,13 @@ export default function Downloads() {
                             <ol start={7} className="list-decimal list-inside space-y-3">
                               <li>Make sure the output shows "OK" next to the file name, like this:</li>
                             </ol>
-                            <img src="/attached_assets/file_ok_1756045021825.png" alt="File verification OK output" className="my-4 rounded-lg border border-gray-600" />
+                            <div className="my-4 p-4 bg-gray-800 rounded-lg">
+                              <img 
+                                src={fileOkImage} 
+                                alt="File verification OK output" 
+                                className="w-full max-w-full h-auto rounded border border-gray-600" 
+                              />
+                            </div>
                           </div>
                         </DialogContent>
                       </Dialog>
