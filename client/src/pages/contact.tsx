@@ -441,16 +441,13 @@ export default function Contact() {
             <h2 className="text-3xl font-bold text-white mb-6 text-center">The Specter Story</h2>
             <div className="prose prose-invert max-w-none text-gray-300 leading-relaxed text-sm md:text-base space-y-4">
               <p>
-                The Specter story begins in 2019, when the hardware wallet landscape was characterized by low-quality devices and security vulnerabilities. Out of this frustration, Stepan Snigirev, a physicist, decided to build a prototype that met his extremely high security standards. In 2018, he met Moritz Wietersheim, who had been looking for a partner to develop a hardware wallet for a year, and together they founded the company Specter Solutions.
+                In 2017, Moritz Wietersheim sought better hardware wallets. In 2018, he met Stepan Snigirev in Lisbon, who had developed a secure, open-source DIY signing device prototype. They founded Specter Solutions, releasing a 2019 prototype featuring air-gapped QR codes, a touchscreen, and true entropy via coin flips, empowering users to build wallets with off-the-shelf components. The community's high-quality case designs highlighted Specter's collaborative ethos.
               </p>
               <p>
-                Their vision was to create an open ecosystem where anyone could build their own signing device from off-the-shelf components. Features like a temporary seed, air-gapped security via QR codes, and a large touchscreen made the device not only secure but also user-friendly. Everything was open-sourced—the firmware, build instructions, and parts list. The community, especially the SeedSigner guys, contributed from the beginning, showing that Specter was always a community project.
+                To complement the hardware, Specter Desktop was developed to provide user-friendly tools for air-gapped and multi-signature setups, filling a critical gap. In September 2022, Swan, a prominent Bitcoin company, invested in Specter, boosting its growth. However, COVID-19 supply chain issues and the Ukraine war disrupted progress, and Swan redirected the Specter team to other projects.
               </p>
               <p>
-                With the hardware prototype in place, a new challenge emerged: the lack of good tools to effectively use such a secure device. In response, Specter Desktop was born. It became an even greater success than the hardware itself, attracting key developers like Keith Mukai, Kim, and Ben Kaufman. Mike, who wasn't officially part of the company, also made invaluable contributions.
-              </p>
-              <p>
-                When Swan decided not to continue development, the community saw its chance to take over Specter—but officially as an association. Nine Specter enthusiasts founded the association in Switzerland. Stepan and Moritz stepped down from their roles but became honorary members.
+                In 2025, the Specter Association was formed in Switzerland, taking full ownership of the project. Swan donated the logo rights, X channel, YouTube, and GitHub to the association, solidifying its community-driven mission to advance Bitcoin self-custody.
               </p>
             </div>
           </Card>
