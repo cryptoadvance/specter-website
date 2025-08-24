@@ -658,7 +658,7 @@ export default function BuildGuide() {
               
               <div className="mt-4" data-cases="specter-shield-lite" id="case-specter-shield-lite">
                 <h4 className="font-semibold text-lg text-gray-200">Specter Shield Lite Case:</h4>
-                <p className="text-gray-400 text-sm mb-2">A case designed to fit the more compact Shield Lite board.</p>
+                <p className="text-gray-400 text-sm mb-2">A case designed to fit the more compact Shield Lite board and would work with Batteries and USB-C as well.</p>
                 <h5 className="font-semibold text-md text-gray-300 ml-4">Print Files:</h5>
                 <ul className="list-disc list-inside text-specter-link space-y-1 ml-8">
                   <li><a href="https://www.printables.com/model/1054878-specter-shield-lite-case/comments" target="_blank" className="hover:underline">Printables.com</a></li>
