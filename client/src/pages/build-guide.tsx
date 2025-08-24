@@ -256,7 +256,7 @@ export default function BuildGuide() {
         {/* Specter DIY Section */}
         <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-diy">
           <div className="flex flex-col-reverse lg:flex-row gap-8">
-            <div className="lg:w-2/3">
+            <div className="lg:w-3/5">
               <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2">Specter DIY</h2>
               <p className="text-gray-400 text-sm mb-4">A simple 3D printed case with QR-Code scanner using micro USB.</p>
               
@@ -287,11 +287,11 @@ export default function BuildGuide() {
                 <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/docs/enclosures/snapcase" target="_blank" className="hover:underline">Specter DIY Official Build Guide</a></li>
               </ul>
             </div>
-            <div className="lg:w-1/3 flex items-center justify-center">
+            <div className="lg:w-2/5 flex items-center justify-center">
               <img 
                 src={specterDiyImage} 
                 alt="Specter DIY Hardware Wallet"
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -300,7 +300,7 @@ export default function BuildGuide() {
         {/* Specter Shield Section */}
         <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-shield">
           <div className="flex flex-col-reverse lg:flex-row gap-8">
-            <div className="lg:w-2/3">
+            <div className="lg:w-3/5">
               <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2">Specter Shield</h2>
               <p className="text-gray-400 text-sm mb-4">
                 An enhanced version with a secure element and a battery.
@@ -338,11 +338,11 @@ export default function BuildGuide() {
                 <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/shield/Alternative_3D_Printed_Case/Assembly_Instructions.pdf" target="_blank" className="hover:underline">Assembly Instructions</a></li>
               </ul>
             </div>
-            <div className="lg:w-1/3 flex items-center justify-center">
+            <div className="lg:w-2/5 flex items-center justify-center">
               <img 
                 src={specterShieldImage} 
                 alt="Specter Shield Hardware Wallet with Smart Card"
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -351,7 +351,7 @@ export default function BuildGuide() {
         {/* Specter Shield Lite Section */}
         <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-shield-lite">
           <div className="flex flex-col-reverse lg:flex-row gap-8">
-            <div className="lg:w-2/3">
+            <div className="lg:w-3/5">
               <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2" id="shield-lite">Specter Shield Lite</h2>
               <p className="text-gray-400 text-sm mb-4">A streamlined, low-cost version of the Shield.</p>
               
@@ -368,9 +368,9 @@ export default function BuildGuide() {
                 <li><a href="#part-smart-card" className="hover:underline text-specter-link">Smart Card</a></li>
                 <li><a href="#case-specter-shield-lite" className="hover:underline text-specter-link">3D-printed Case</a></li>
                 <li>
-                  <a href="#part-screws-lite" className="hover:underline text-specter-link">8x M3 countersunk head screws 
-                    (2x 16mm, 2x 12mm, 2x 10mm, 2x 6mm
-                    or 6x 12mm, 2x 10mm)
+                  <a href="#part-screws-lite" className="hover:underline text-specter-link">
+                    8x M3 countersunk head screws<br/>
+                    (2x 16mm, 2x 12mm, 2x 10mm, 2x 6mm or 6x 12mm, 2x 10mm)
                   </a>
                 </li>
               </ul>
@@ -391,11 +391,11 @@ export default function BuildGuide() {
                 <li><a href="https://www.youtube.com/watch?v=NWD0xLyAras&t=332s" target="_blank" className="hover:underline">Specter Shield Lite Build Guide</a></li>
               </ul>
             </div>
-            <div className="lg:w-1/3 flex items-center justify-center">
+            <div className="lg:w-2/5 flex items-center justify-center">
               <img 
                 src={specterShieldLiteImage} 
                 alt="Specter Shield Lite Hardware Wallet"
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-full h-auto"
               />
             </div>
           </div>
@@ -404,7 +404,7 @@ export default function BuildGuide() {
         {/* Specter Shield Lite with Batteries Section */}
         <div className="bg-specter-navy rounded-xl shadow-lg p-6 sm:p-8 mb-12 case-section" data-case="specter-shield-lite-battery">
           <div className="flex flex-col-reverse lg:flex-row gap-8">
-            <div className="lg:w-2/3">
+            <div className="lg:w-3/5">
               <h2 className="text-3xl font-semibold text-white mb-4 border-b-2 border-gray-700 pb-2">Specter Shield Lite with Batteries</h2>
               <p className="text-gray-400 text-sm mb-4">A portable version of the Specter Shield Lite with a built-in AAA batteries and USB-C Port.</p>
               
@@ -436,11 +436,11 @@ export default function BuildGuide() {
                 <li><a href="https://www.youtube.com/watch?v=NWD0xLyAras&t=332s" target="_blank" className="hover:underline">Specter Shield Lite with Batteries Case Instructions</a></li>
               </ul>
             </div>
-            <div className="lg:w-1/3 flex items-center justify-center">
+            <div className="lg:w-2/5 flex items-center justify-center">
               <img 
                 src={specterShieldLiteBatteryImage} 
                 alt="Specter Shield Lite with Batteries (internal view)"
-                className="w-full h-auto rounded-xl shadow-lg"
+                className="w-full h-auto"
               />
             </div>
           </div>
