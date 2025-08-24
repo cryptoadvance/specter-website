@@ -358,38 +358,7 @@ export default function Hardware() {
             </Card>
           </div>
 
-          {/* Components Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">Components</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-              <div>
-                <div className="space-y-6">
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">Developer Board</h3>
-                    <p className="text-gray-300">STM Discovery board (STM32F469I)</p>
-                  </Card>
-                  
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">QR Code Scanner</h3>
-                    <p className="text-gray-300">Waveshare Barcode Scanner</p>
-                  </Card>
-                  
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">3D Printable Case</h3>
-                    <p className="text-gray-300">Barebones case designed by Seedsigner</p>
-                  </Card>
-                </div>
-              </div>
-              <div>
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/03/IMG_0064.png" 
-                  alt="Specter Barebones Exploded" 
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </section>
+
 
           {/* Specter Shield Section */}
           <section className="mb-20">
