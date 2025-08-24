@@ -193,6 +193,7 @@ export default function BuildGuide() {
                   </div>
                 )}
               </div>
+              <span style={{backgroundColor: 'red', color: 'white', padding: '8px', margin: '0 8px'}}>TEST</span>
               <div className="relative">
                 <button
                   onMouseEnter={() => setHardware2DropdownOpen(true)}
