@@ -115,7 +115,7 @@ export default function BuildGuide() {
     if (!desktopPinned) {
       const timeout = setTimeout(() => {
         setDesktopDropdownOpen(false);
-      }, 500);
+      }, 1000);
       setDesktopTimeout(timeout);
     }
   };
@@ -146,7 +146,7 @@ export default function BuildGuide() {
     if (!hardwarePinned) {
       const timeout = setTimeout(() => {
         setHardwareDropdownOpen(false);
-      }, 500);
+      }, 1000);
       setHardwareTimeout(timeout);
     }
   };
