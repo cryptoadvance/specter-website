@@ -17,20 +17,20 @@ interface GitHubRelease {
 
 // Platform icons as SVG components
 const WindowsIcon = () => (
-  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+  <svg className="w-12 h-12 mb-4" viewBox="0 0 24 24" fill="currentColor">
     <path d="M0,0 L10,1.5 L10,11.5 L0,10 L0,0 Z M11,1.27 L24,3.4 L24,13.6 L11,11.47 L11,1.27 Z M0,14 L10,12.5 L10,22.5 L0,24 L0,14 Z M11,12.73 L24,10.6 L24,20.8 L11,22.93 L11,12.73 Z"/>
   </svg>
 );
 
 const MacIcon = () => (
-  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+  <svg className="w-12 h-12 mb-4" viewBox="0 0 24 24" fill="currentColor">
     <path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.1 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/>
   </svg>
 );
 
 const LinuxIcon = () => (
-  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12.504,0.314 C11.876,0.314 11.223,0.394 10.68,0.631 C10.68,0.631 10.395,2.375 10.507,3.491 C10.507,3.491 9.653,4.483 9.653,5.759 C9.653,7.036 10.395,8.312 11.362,8.312 C12.329,8.312 13.071,7.036 13.071,5.759 C13.071,4.483 12.217,3.491 12.217,3.491 C12.329,2.375 12.044,0.631 12.044,0.631 C11.501,0.394 10.848,0.314 10.22,0.314 C9.425,0.314 8.63,0.498 7.947,0.866 C7.265,1.234 6.694,1.784 6.234,2.517 C5.774,3.249 5.425,4.165 5.187,5.263 C4.949,6.361 4.822,7.641 4.806,9.103 C4.789,10.564 4.884,12.208 5.09,13.033 C5.296,13.858 5.613,14.465 6.041,14.854 C6.469,15.243 7.008,15.414 7.658,15.367 C8.308,15.32 9.069,15.055 9.941,14.572 C10.813,14.089 11.796,13.388 12.891,12.469 C13.985,13.388 14.968,14.089 15.84,14.572 C16.712,15.055 17.473,15.32 18.123,15.367 C18.773,15.414 19.312,15.243 19.74,14.854 C20.168,14.465 20.485,13.858 20.691,13.033 C20.897,12.208 20.992,10.564 20.975,9.103 C20.959,7.641 20.832,6.361 20.594,5.263 C20.356,4.165 20.007,3.249 19.547,2.517 C19.087,1.784 18.516,1.234 17.834,0.866 C17.151,0.498 16.356,0.314 15.561,0.314 C14.933,0.314 14.28,0.394 13.737,0.631 C13.737,0.631 13.452,2.375 13.564,3.491 C13.564,3.491 12.71,4.483 12.71,5.759 C12.71,7.036 13.452,8.312 14.419,8.312 C15.386,8.312 16.128,7.036 16.128,5.759 C16.128,4.483 15.274,3.491 15.274,3.491 C15.386,2.375 15.101,0.631 15.101,0.631 C14.558,0.394 13.905,0.314 13.277,0.314 L12.504,0.314 Z"/>
+  <svg className="w-12 h-12 mb-4" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.504,0.314 C11.876,0.314 11.223,0.394 10.68,0.631 C10.68,0.631 10.395,2.375 10.507,3.491 C10.507,3.491 9.653,4.483 9.653,5.759 C9.653,7.036 10.395,8.312 11.362,8.312 C12.329,8.312 13.071,7.036 13.071,5.759 C13.071,4.483 12.217,3.491 12.217,3.491 C12.329,2.375 12.044,0.631 12.044,0.631 C11.501,0.394 10.848,0.314 10.22,0.314 C9.425,0.314 8.63,0.498 7.947,0.866 C7.265,1.234 6.694,1.784 6.234,2.517 C5.774,3.249 5.425,4.165 5.187,5.263 C4.949,6.361 4.822,7.641 4.806,9.103 C4.789,10.564 4.884,12.208 5.09,13.033 C5.296,13.858 5.613,14.465 6.041,14.854 C6.469,15.243 7.008,15.414 7.658,15.367 C8.308,15.32 9.069,15.055 9.941,14.572 C10.813,14.089 11.796,13.388 12.891,12.469 C13.985,13.388 14.968,14.089 15.84,14.572 C16.712,15.055 17.473,15.32 18.123,15.367 C18.773,15.414 19.312,15.243 19.74,14.854 C20.168,14.465 20.485,13.858 20.691,13.033 C20.897,12.208 20.992,10.564 20.975,9.103 C20.959,7.641 20.832,6.361 20.594,5.263 C20.356,4.165 20.007,3.249 19.547,2.517 C19.087,1.784 18.516,1.234 17.834,0.866 C17.151,0.498 16.356,0.314 15.561,0.314 C14.933,0.314 14.28,0.394 13.737,0.631 C13.737,0.631 13.452,2.375 13.564,3.491 C13.564,3.491 12.710,4.483 12.710,5.759 C12.710,7.036 13.452,8.312 14.419,8.312 C15.386,8.312 16.128,7.036 16.128,5.759 C16.128,4.483 15.274,3.491 15.274,3.491 C15.386,2.375 15.101,0.631 15.101,0.631 C14.558,0.394 13.905,0.314 13.277,0.314 L12.504,0.314 Z"/>
   </svg>
 );
 
@@ -172,73 +172,85 @@ export default function Downloads() {
                 return (
                   <>
                     {/* macOS */}
-                    <Card className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                      <MacIcon />
-                      <h3 className="text-xl font-bold mb-4 text-white">For macOS</h3>
+                    <div className="bg-specter-navy rounded-xl p-8 text-center">
+                      <div className="flex justify-center text-white">
+                        <MacIcon />
+                      </div>
+                      <h3 className="text-xl font-bold mb-6 text-white">For OS X</h3>
                       {macAsset && (
                         <>
-                          <a 
-                            href={macAsset.browser_download_url}
-                            className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 mb-4"
+                          <Button
+                            onClick={() => window.open(macAsset.browser_download_url, '_blank')}
+                            className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-4 w-full"
                           >
                             Download
-                          </a>
+                          </Button>
                           <p className="text-gray-400 text-sm mb-2">{formatFileSize(macAsset.size)}</p>
                           <a 
                             href={`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`}
                             className="text-specter-coral hover:underline text-sm"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             Verify signature
                           </a>
                         </>
                       )}
-                    </Card>
+                    </div>
 
                     {/* Windows */}
-                    <Card className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                      <WindowsIcon />
-                      <h3 className="text-xl font-bold mb-4 text-white">For Windows</h3>
+                    <div className="bg-specter-navy rounded-xl p-8 text-center">
+                      <div className="flex justify-center text-white">
+                        <WindowsIcon />
+                      </div>
+                      <h3 className="text-xl font-bold mb-6 text-white">For Windows</h3>
                       {winAsset && (
                         <>
-                          <a 
-                            href={winAsset.browser_download_url}
-                            className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 mb-4"
+                          <Button
+                            onClick={() => window.open(winAsset.browser_download_url, '_blank')}
+                            className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-4 w-full"
                           >
                             Download
-                          </a>
+                          </Button>
                           <p className="text-gray-400 text-sm mb-2">{formatFileSize(winAsset.size)}</p>
                           <a 
                             href={`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`}
                             className="text-specter-coral hover:underline text-sm"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             Verify signature
                           </a>
                         </>
                       )}
-                    </Card>
+                    </div>
 
                     {/* Linux */}
-                    <Card className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                      <LinuxIcon />
-                      <h3 className="text-xl font-bold mb-4 text-white">For Linux</h3>
+                    <div className="bg-specter-navy rounded-xl p-8 text-center">
+                      <div className="flex justify-center text-white">
+                        <LinuxIcon />
+                      </div>
+                      <h3 className="text-xl font-bold mb-6 text-white">For Linux</h3>
                       {linuxAsset && (
                         <>
-                          <a 
-                            href={linuxAsset.browser_download_url}
-                            className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 mb-4"
+                          <Button
+                            onClick={() => window.open(linuxAsset.browser_download_url, '_blank')}
+                            className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-4 w-full"
                           >
                             Download
-                          </a>
+                          </Button>
                           <p className="text-gray-400 text-sm mb-2">{formatFileSize(linuxAsset.size)}</p>
                           <a 
                             href={`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`}
                             className="text-specter-coral hover:underline text-sm"
+                            target="_blank"
+                            rel="noopener noreferrer"
                           >
                             Verify signature
                           </a>
                         </>
                       )}
-                    </Card>
+                    </div>
                   </>
                 );
               })()}
