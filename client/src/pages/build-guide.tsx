@@ -118,7 +118,7 @@ export default function BuildGuide() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="flex space-x-2 items-center overflow-x-auto">
+            <div className="hidden md:flex space-x-6 items-center">
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
@@ -193,7 +193,7 @@ export default function BuildGuide() {
                   </div>
                 )}
               </div>
-              <div style={{backgroundColor: 'red', color: 'white', padding: '8px', fontSize: '14px', whiteSpace: 'nowrap'}}>HARDWARE2</div>
+
               <div className="relative">
                 <button
                   onMouseEnter={() => setHardware2DropdownOpen(true)}
