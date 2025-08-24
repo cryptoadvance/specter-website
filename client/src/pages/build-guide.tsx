@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
+import specterDiyImage from "@assets/Specter_diy_startscreen_1756029214790.png";
+import specterShieldImage from "@assets/Specter_Shield_vorne_Smarcard_removed_1756029281093.png";
+import specterShieldLiteImage from "@assets/Front_Smartcard_Kabel_removed_orange-scaled_1756029302530.png";
+import specterShieldLiteBatteryImage from "@assets/Specter Shield Lite von hinten ohne case_1756030601602.png";
 
 export default function BuildGuide() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -284,9 +288,11 @@ export default function BuildGuide() {
               </ul>
             </div>
             <div className="lg:w-1/3 flex items-center justify-center">
-              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
-                Specter DIY Image Placeholder
-              </div>
+              <img 
+                src={specterDiyImage} 
+                alt="Specter DIY Hardware Wallet"
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
             </div>
           </div>
         </div>
@@ -333,9 +339,11 @@ export default function BuildGuide() {
               </ul>
             </div>
             <div className="lg:w-1/3 flex items-center justify-center">
-              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
-                Specter Shield Image Placeholder
-              </div>
+              <img 
+                src={specterShieldImage} 
+                alt="Specter Shield Hardware Wallet with Smart Card"
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
             </div>
           </div>
         </div>
@@ -384,9 +392,11 @@ export default function BuildGuide() {
               </ul>
             </div>
             <div className="lg:w-1/3 flex items-center justify-center">
-              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
-                Specter Shield Lite Image Placeholder
-              </div>
+              <img 
+                src={specterShieldLiteImage} 
+                alt="Specter Shield Lite Hardware Wallet"
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
             </div>
           </div>
         </div>
@@ -427,9 +437,11 @@ export default function BuildGuide() {
               </ul>
             </div>
             <div className="lg:w-1/3 flex items-center justify-center">
-              <div className="w-full h-64 bg-specter-navy-lighter rounded-xl flex items-center justify-center text-gray-500 text-center font-semibold">
-                Shield Lite Battery Image Placeholder
-              </div>
+              <img 
+                src={specterShieldLiteBatteryImage} 
+                alt="Specter Shield Lite with Batteries (internal view)"
+                className="w-full h-auto rounded-xl shadow-lg"
+              />
             </div>
           </div>
         </div>
