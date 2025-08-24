@@ -10,6 +10,7 @@ import specterLogo from "@assets/Specter_logo_1756046218246.png";
 export default function BuildGuide() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
+  const [hardware2DropdownOpen, setHardware2DropdownOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
 
@@ -188,6 +189,45 @@ export default function BuildGuide() {
                       onClick={() => setHardwareDropdownOpen(false)}
                     >
                       Build Guide
+                    </Link>
+                  </div>
+                )}
+              </div>
+              <div className="relative">
+                <button
+                  onMouseEnter={() => setHardware2DropdownOpen(true)}
+                  onMouseLeave={() => setHardware2DropdownOpen(false)}
+                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
+                >
+                  Hardware2
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {hardware2DropdownOpen && (
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
+                    onMouseEnter={() => setHardware2DropdownOpen(true)}
+                    onMouseLeave={() => setHardware2DropdownOpen(false)}
+                  >
+                    <Link 
+                      href="/hardware" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                      onClick={() => setHardware2DropdownOpen(false)}
+                    >
+                      Hardware Overview
+                    </Link>
+                    <Link 
+                      href="/vendors" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200"
+                      onClick={() => setHardware2DropdownOpen(false)}
+                    >
+                      Vendors
+                    </Link>
+                    <Link 
+                      href="/build-guide" 
+                      className="block px-4 py-2 text-specter-coral font-medium bg-specter-dark rounded-b-lg"
+                      onClick={() => setHardware2DropdownOpen(false)}
+                    >
+                      Build Instructions
                     </Link>
                   </div>
                 )}
