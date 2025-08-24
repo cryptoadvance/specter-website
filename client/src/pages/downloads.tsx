@@ -198,12 +198,11 @@ export default function Downloads() {
                           <div className="space-y-4 text-sm">
                             <ol className="list-decimal list-inside space-y-3">
                               <li>Download Specter for macOS (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-v2.0.5.dmg</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
-                              <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.</li>
-                              <li className="pl-4">
-                                <strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc
-                              </li>
-                              <li className="pl-4">
-                                <strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc
+                              <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.
+                                <div className="pl-4 mt-2 space-y-1">
+                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc</div>
+                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc</div>
+                                </div>
                               </li>
                               <li>Open the terminal app (you can search for it on the Launchpad)</li>
                               <li>Paste in the following lines (Note: The first 2 commands are needed only if it's your first time doing this process):</li>
@@ -217,12 +216,20 @@ export default function Downloads() {
                                 <li><code>gpg --verify SHA256SUMS.asc</code></li>
                               </ol>
                             </div>
-                            <p>5. After the last command, you should see a few lines of output - make sure they contain "Good signature" and the key identity and fingerprint are correct.</p>
-                            <p>6. Verify the sha256 of the Specter software file is indeed in the signed hashes file by running:</p>
+                            <ol start={5} className="list-decimal list-inside space-y-3">
+                              <li>After the last command, you should see a few lines of output - make sure they contain "Good signature" and the key identity and fingerprint are correct.</li>
+                            </ol>
+                            <img src="/attached_assets/good_sig_1756045019493.png" alt="Good signature verification output" className="my-4 rounded-lg border border-gray-600" />
+                            <ol start={6} className="list-decimal list-inside space-y-3">
+                              <li>Verify the sha256 of the Specter software file is indeed in the signed hashes file by running:</li>
+                            </ol>
                             <div className="bg-specter-navy p-4 rounded-lg">
                               <code className="font-mono text-sm">sha256sum -c SHA256SUMS --ignore-missing Specter-v2.0.5.dmg</code>
                             </div>
-                            <p>7. Make sure the output shows "OK" next to the file name, like this:</p>
+                            <ol start={7} className="list-decimal list-inside space-y-3">
+                              <li>Make sure the output shows "OK" next to the file name, like this:</li>
+                            </ol>
+                            <img src="/attached_assets/file_ok_1756045021825.png" alt="File verification OK output" className="my-4 rounded-lg border border-gray-600" />
                           </div>
                         </DialogContent>
                       </Dialog>
