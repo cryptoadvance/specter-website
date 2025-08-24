@@ -336,25 +336,17 @@ export default function Hardware() {
             </Card>
             
             <Card className="bg-specter-navy rounded-xl p-6 border-0">
-              <h3 className="text-xl font-bold mb-4 text-white">Stateless</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">Temporary Seed Mode</h3>
               <p className="text-gray-300">
-                To remove the need for a built in secure element Specter DIY can be run in agnostic mode, seed words are deleted every time the device is powered off and re-imported with each use.
+                To eliminate the need for a built-in secure element, Specter DIY can operate in Temporary Seed Mode. In this mode, seed words are deleted each time the device is powered off and must be re-imported with each use.
               </p>
             </Card>
             
             <Card className="bg-specter-navy rounded-xl p-6 border-0">
-              <h3 className="text-xl font-bold mb-4 text-white">3D Printed Case</h3>
-              <p className="text-gray-300 mb-4">
-                Case designed by Seedsigner. Purchase a case or 3D print your own.
+              <h3 className="text-xl font-bold mb-4 text-white">Easy Seed Import</h3>
+              <p className="text-gray-300">
+                The smartphone-sized touchscreen display makes it simple to enter the Bitcoin seed phrase. Additionally, SeedQR codes are supported for added convenience.
               </p>
-              <a 
-                href="https://github.com/cryptoadvance/specter-diy/tree/master/docs/enclosures"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-specter-coral hover:underline"
-              >
-                Download &gt;&gt;
-              </a>
             </Card>
           </div>
 
@@ -367,7 +359,7 @@ export default function Hardware() {
                 <div>
                   <h2 className="text-4xl font-bold mb-6 text-white">Specter Shield</h2>
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                    Open Source Extension board with QR Code Scanner, Battery and Smart Card Reader.
+                    An open-source extension board for the Specter DIY, the Specter Shield enables highly secure seed phrase encryption using smartcards.
                   </p>
                   <a 
                     href="#"
@@ -390,32 +382,24 @@ export default function Hardware() {
           {/* Shield Features */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             <Card className="bg-specter-navy rounded-xl p-6 border-0">
-              <h3 className="text-xl font-bold mb-4 text-white">Optimized Usability</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">Secure Element</h3>
               <p className="text-gray-300">
-                The Specter Shield extension board combined with the STM Discovery Board enables full functionality of the Specter Firmware. With integrated QR code scanner, battery and Smart Cards it provides an optimized user experience.
+                With the Specter Shield, you can encrypt your Bitcoin seed phrase securely using a secure chip. Even if an attacker gains physical access to the device, they are limited to 10 PIN attempts to access the seed phrase.
               </p>
             </Card>
             
             <Card className="bg-specter-navy rounded-xl p-6 border-0">
-              <h3 className="text-xl font-bold mb-4 text-white">Smart Card Reader</h3>
+              <h3 className="text-xl font-bold mb-4 text-white">Multiple Smartcards</h3>
               <p className="text-gray-300">
-                Smart Cards are an alternative to a secure element, secrets stored on the card leave the device stateless. Your funds are secure and quickly accessible.
+                Support for multiple smartcards allows you to manage multiple seed phrases, functioning like several independent hardware wallets.
               </p>
             </Card>
             
             <Card className="bg-specter-navy rounded-xl p-6 border-0">
-              <h3 className="text-xl font-bold mb-4 text-white">3D Printed Case</h3>
-              <p className="text-gray-300 mb-4">
-                Case designed by Geometrick. Purchase a case or 3D print your own.
+              <h3 className="text-xl font-bold mb-4 text-white">Family Hardware Wallet</h3>
+              <p className="text-gray-300">
+                The Specter Shield can be shared among family members. Each member can use their own smartcard with a unique seed phrase, eliminating the need to purchase multiple hardware wallets.
               </p>
-              <a 
-                href="https://github.com/cryptoadvance/specter-diy/blob/master/shield/3dprinting.md"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-specter-coral hover:underline"
-              >
-                Download &gt;&gt;
-              </a>
             </Card>
           </div>
 
