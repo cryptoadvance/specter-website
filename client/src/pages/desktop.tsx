@@ -257,7 +257,7 @@ export default function Desktop() {
 
             {/* Send */}
             <div className="bg-specter-navy rounded-xl p-8 border-0 mb-16">
-              <div className="grid md:grid-cols-3 gap-12 items-center">
+              <div className="grid md:grid-cols-3 gap-12 items-end">
                 <div className="p-4">
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2021/12/Send.svg" 
@@ -276,7 +276,7 @@ export default function Desktop() {
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Send_Transaction.png" 
                     alt="Specter Send Transaction" 
-                    className="w-full h-auto rounded-lg shadow-lg"
+                    className="w-full h-auto"
                   />
                 </div>
               </div>
