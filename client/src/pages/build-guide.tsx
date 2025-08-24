@@ -14,6 +14,8 @@ export default function BuildGuide() {
   const [activeFilter, setActiveFilter] = useState("all");
   const [desktopTimeout, setDesktopTimeout] = useState<NodeJS.Timeout | null>(null);
   const [hardwareTimeout, setHardwareTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [desktopPinned, setDesktopPinned] = useState(false);
+  const [hardwarePinned, setHardwarePinned] = useState(false);
 
   useEffect(() => {
     // Initialize filtering when component mounts
@@ -104,14 +106,30 @@ export default function BuildGuide() {
       clearTimeout(desktopTimeout);
       setDesktopTimeout(null);
     }
-    setDesktopDropdownOpen(true);
+    if (!desktopPinned) {
+      setDesktopDropdownOpen(true);
+    }
   };
 
   const handleDesktopMouseLeave = () => {
-    const timeout = setTimeout(() => {
+    if (!desktopPinned) {
+      const timeout = setTimeout(() => {
+        setDesktopDropdownOpen(false);
+      }, 500);
+      setDesktopTimeout(timeout);
+    }
+  };
+
+  const handleDesktopArrowClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (desktopPinned) {
+      setDesktopPinned(false);
       setDesktopDropdownOpen(false);
-    }, 200);
-    setDesktopTimeout(timeout);
+    } else {
+      setDesktopPinned(true);
+      setDesktopDropdownOpen(true);
+    }
   };
 
   const handleHardwareMouseEnter = () => {
@@ -119,15 +137,51 @@ export default function BuildGuide() {
       clearTimeout(hardwareTimeout);
       setHardwareTimeout(null);
     }
-    setHardwareDropdownOpen(true);
+    if (!hardwarePinned) {
+      setHardwareDropdownOpen(true);
+    }
   };
 
   const handleHardwareMouseLeave = () => {
-    const timeout = setTimeout(() => {
-      setHardwareDropdownOpen(false);
-    }, 200);
-    setHardwareTimeout(timeout);
+    if (!hardwarePinned) {
+      const timeout = setTimeout(() => {
+        setHardwareDropdownOpen(false);
+      }, 500);
+      setHardwareTimeout(timeout);
+    }
   };
+
+  const handleHardwareArrowClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (hardwarePinned) {
+      setHardwarePinned(false);
+      setHardwareDropdownOpen(false);
+    } else {
+      setHardwarePinned(true);
+      setHardwareDropdownOpen(true);
+    }
+  };
+
+  // Close pinned dropdowns when clicking elsewhere
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (!target.closest('.desktop-dropdown') && !target.closest('.hardware-dropdown')) {
+        if (desktopPinned) {
+          setDesktopPinned(false);
+          setDesktopDropdownOpen(false);
+        }
+        if (hardwarePinned) {
+          setHardwarePinned(false);
+          setHardwareDropdownOpen(false);
+        }
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [desktopPinned, hardwarePinned]);
 
   return (
     <div className="min-h-screen bg-specter-dark text-white">
@@ -151,15 +205,25 @@ export default function BuildGuide() {
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
-              <div className="relative">
-                <button
+              <div className="relative desktop-dropdown">
+                <div 
+                  className="flex items-center"
                   onMouseEnter={handleDesktopMouseEnter}
                   onMouseLeave={handleDesktopMouseLeave}
-                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
                 >
-                  Desktop
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
+                  <Link 
+                    href="/desktop"
+                    className="text-white hover:text-specter-coral transition-colors duration-200"
+                  >
+                    Desktop
+                  </Link>
+                  <button
+                    onClick={handleDesktopArrowClick}
+                    className="ml-1 p-1 text-white hover:text-specter-coral transition-colors duration-200"
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </div>
                 {desktopDropdownOpen && (
                   <div 
                     className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
@@ -169,30 +233,45 @@ export default function BuildGuide() {
                     <Link 
                       href="/desktop" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
-                      onClick={() => setDesktopDropdownOpen(false)}
+                      onClick={() => {
+                        setDesktopDropdownOpen(false);
+                        setDesktopPinned(false);
+                      }}
                     >
                       Desktop Overview
                     </Link>
                     <Link 
                       href="/downloads" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
-                      onClick={() => setDesktopDropdownOpen(false)}
+                      onClick={() => {
+                        setDesktopDropdownOpen(false);
+                        setDesktopPinned(false);
+                      }}
                     >
                       Downloads
                     </Link>
                   </div>
                 )}
               </div>
-              <div className="relative">
-                <Link
-                  href="/hardware"
+              <div className="relative hardware-dropdown">
+                <div 
+                  className="flex items-center"
                   onMouseEnter={handleHardwareMouseEnter}
                   onMouseLeave={handleHardwareMouseLeave}
-                  className="flex items-center text-black font-medium hover:text-white transition-colors duration-200"
                 >
-                  Hardware
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </Link>
+                  <Link 
+                    href="/hardware"
+                    className="text-black font-medium hover:text-white transition-colors duration-200"
+                  >
+                    Hardware
+                  </Link>
+                  <button
+                    onClick={handleHardwareArrowClick}
+                    className="ml-1 p-1 text-black hover:text-white transition-colors duration-200"
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
+                </div>
                 {hardwareDropdownOpen && (
                   <div 
                     className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
@@ -202,21 +281,30 @@ export default function BuildGuide() {
                     <Link 
                       href="/hardware" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
-                      onClick={() => setHardwareDropdownOpen(false)}
+                      onClick={() => {
+                        setHardwareDropdownOpen(false);
+                        setHardwarePinned(false);
+                      }}
                     >
                       Hardware Overview
                     </Link>
                     <Link 
                       href="/vendors" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200"
-                      onClick={() => setHardwareDropdownOpen(false)}
+                      onClick={() => {
+                        setHardwareDropdownOpen(false);
+                        setHardwarePinned(false);
+                      }}
                     >
                       Vendors
                     </Link>
                     <Link 
                       href="/build-guide" 
                       className="block px-4 py-2 text-black font-medium bg-specter-dark rounded-b-lg"
-                      onClick={() => setHardwareDropdownOpen(false)}
+                      onClick={() => {
+                        setHardwareDropdownOpen(false);
+                        setHardwarePinned(false);
+                      }}
                     >
                       Build Guide
                     </Link>
