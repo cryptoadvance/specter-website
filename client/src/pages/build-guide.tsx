@@ -106,9 +106,7 @@ export default function BuildGuide() {
       clearTimeout(desktopTimeout);
       setDesktopTimeout(null);
     }
-    if (!desktopPinned) {
-      setDesktopDropdownOpen(true);
-    }
+    setDesktopDropdownOpen(true);
   };
 
   const handleDesktopMouseLeave = () => {
@@ -137,9 +135,7 @@ export default function BuildGuide() {
       clearTimeout(hardwareTimeout);
       setHardwareTimeout(null);
     }
-    if (!hardwarePinned) {
-      setHardwareDropdownOpen(true);
-    }
+    setHardwareDropdownOpen(true);
   };
 
   const handleHardwareMouseLeave = () => {
@@ -205,12 +201,12 @@ export default function BuildGuide() {
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
-              <div className="relative desktop-dropdown">
-                <div 
-                  className="flex items-center"
-                  onMouseEnter={handleDesktopMouseEnter}
-                  onMouseLeave={handleDesktopMouseLeave}
-                >
+              <div 
+                className="relative desktop-dropdown"
+                onMouseEnter={handleDesktopMouseEnter}
+                onMouseLeave={handleDesktopMouseLeave}
+              >
+                <div className="flex items-center">
                   <Link 
                     href="/desktop"
                     className="text-white hover:text-specter-coral transition-colors duration-200"
@@ -225,11 +221,7 @@ export default function BuildGuide() {
                   </button>
                 </div>
                 {desktopDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
-                    onMouseEnter={handleDesktopMouseEnter}
-                    onMouseLeave={handleDesktopMouseLeave}
-                  >
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
                     <Link 
                       href="/desktop" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
@@ -253,12 +245,12 @@ export default function BuildGuide() {
                   </div>
                 )}
               </div>
-              <div className="relative hardware-dropdown">
-                <div 
-                  className="flex items-center"
-                  onMouseEnter={handleHardwareMouseEnter}
-                  onMouseLeave={handleHardwareMouseLeave}
-                >
+              <div 
+                className="relative hardware-dropdown"
+                onMouseEnter={handleHardwareMouseEnter}
+                onMouseLeave={handleHardwareMouseLeave}
+              >
+                <div className="flex items-center">
                   <Link 
                     href="/hardware"
                     className="text-black font-medium hover:text-white transition-colors duration-200"
@@ -273,11 +265,7 @@ export default function BuildGuide() {
                   </button>
                 </div>
                 {hardwareDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
-                    onMouseEnter={handleHardwareMouseEnter}
-                    onMouseLeave={handleHardwareMouseLeave}
-                  >
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
                     <Link 
                       href="/hardware" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
