@@ -37,6 +37,7 @@ export default function Contact() {
   const { toast } = useToast();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   
   const contactForm = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -102,9 +103,33 @@ export default function Contact() {
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
-              <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200">
-                Desktop
-              </Link>
+              <div className="relative">
+                <button
+                  onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
+                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
+                >
+                  Desktop
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {desktopDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                    <Link 
+                      href="/desktop" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                      onClick={() => setDesktopDropdownOpen(false)}
+                    >
+                      Desktop Overview
+                    </Link>
+                    <Link 
+                      href="/downloads" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                      onClick={() => setDesktopDropdownOpen(false)}
+                    >
+                      Downloads
+                    </Link>
+                  </div>
+                )}
+              </div>
               <div className="relative">
                 <button
                   onClick={() => setHardwareDropdownOpen(!hardwareDropdownOpen)}

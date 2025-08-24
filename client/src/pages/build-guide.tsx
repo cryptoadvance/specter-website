@@ -9,6 +9,7 @@ import specterShieldLiteBatteryImage from "@assets/Specter Shield Lite von hinte
 export default function BuildGuide() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
 
   useEffect(() => {
@@ -112,9 +113,29 @@ export default function BuildGuide() {
               <Link href="/">
                 <span className="hover:text-specter-primary cursor-pointer transition-colors">Home</span>
               </Link>
-              <Link href="/desktop">
-                <span className="hover:text-specter-primary cursor-pointer transition-colors">Desktop</span>
-              </Link>
+              <div className="relative">
+                <button 
+                  className="flex items-center space-x-1 hover:text-specter-primary transition-colors"
+                  onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
+                >
+                  <span>Desktop</span>
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+                {desktopDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg py-2 z-50">
+                    <Link href="/desktop">
+                      <span className="block px-4 py-2 hover:bg-specter-primary hover:text-white cursor-pointer transition-colors">
+                        Desktop Overview
+                      </span>
+                    </Link>
+                    <Link href="/downloads">
+                      <span className="block px-4 py-2 hover:bg-specter-primary hover:text-white cursor-pointer transition-colors">
+                        Downloads
+                      </span>
+                    </Link>
+                  </div>
+                )}
+              </div>
               
               {/* Hardware Dropdown */}
               <div className="relative">

@@ -9,6 +9,7 @@ import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_175603716699
 export default function Desktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
+  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
 
   return (
     <div className="bg-specter-dark text-white font-sans min-h-screen">
@@ -32,9 +33,33 @@ export default function Desktop() {
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
-              <span className="text-specter-coral font-medium">
-                Desktop
-              </span>
+              <div className="relative">
+                <button
+                  onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
+                  className="flex items-center text-specter-coral font-medium hover:text-white transition-colors duration-200"
+                >
+                  Desktop
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                </button>
+                {desktopDropdownOpen && (
+                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                    <Link 
+                      href="/desktop" 
+                      className="block px-4 py-2 text-specter-coral font-medium bg-specter-dark rounded-t-lg"
+                      onClick={() => setDesktopDropdownOpen(false)}
+                    >
+                      Desktop Overview
+                    </Link>
+                    <Link 
+                      href="/downloads" 
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                      onClick={() => setDesktopDropdownOpen(false)}
+                    >
+                      Downloads
+                    </Link>
+                  </div>
+                )}
+              </div>
               <div className="relative">
                 <button
                   onClick={() => setHardwareDropdownOpen(!hardwareDropdownOpen)}
