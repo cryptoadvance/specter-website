@@ -230,14 +230,12 @@ export default function Hardware() {
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     Very easy to build from off-the-shelf components to minimize supply chain risk.
                   </p>
-                  <a 
-                    href="https://github.com/cryptoadvance/specter-diy"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link 
+                    href="/build-guide"
                     className="inline-block bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
                   >
                     Build Instructions &gt;&gt;
-                  </a>
+                  </Link>
                 </div>
                 <div className="md:col-span-2 flex items-end">
                   <img 
