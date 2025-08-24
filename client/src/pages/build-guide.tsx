@@ -117,13 +117,17 @@ export default function BuildGuide() {
               </Link>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
+            {/* Desktop Navigation - ALWAYS VISIBLE */}
+            <div className="flex space-x-8 bg-yellow-300 p-2">
+              <span className="text-black font-bold">NAVIGATION:</span>
+              <Link href="/" className="text-black hover:text-blue-600 font-bold">
                 Home
               </Link>
               <button className="bg-red-500 text-white px-3 py-1 rounded font-bold">
                 NEW MENU
+              </button>
+              <button className="bg-green-500 text-white px-3 py-1 rounded font-bold">
+                Hardware2
               </button>
               <div className="relative">
                 <button
