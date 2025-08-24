@@ -121,14 +121,19 @@ export default function BuildGuide() {
               </Link>
               <div className="relative">
                 <button
-                  onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
+                  onMouseEnter={() => setDesktopDropdownOpen(true)}
+                  onMouseLeave={() => setDesktopDropdownOpen(false)}
                   className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
                 >
                   Desktop
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
                 {desktopDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
+                    onMouseEnter={() => setDesktopDropdownOpen(true)}
+                    onMouseLeave={() => setDesktopDropdownOpen(false)}
+                  >
                     <Link 
                       href="/desktop" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
