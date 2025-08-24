@@ -149,17 +149,21 @@ export default function Desktop() {
 
           {/* Add Devices Section */}
           <section className="mb-20">
-            <div className="text-center mb-8">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_Device-1024x602.png" 
-                alt="Specter Desktop Add Device" 
-                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
-              />
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <img 
+                  src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_Device-1024x602.png" 
+                  alt="Specter Desktop Add Device" 
+                  className="w-full h-auto rounded-lg shadow-lg"
+                />
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold mb-6 text-white">Add your signing devices.</h3>
+                <p className="text-lg text-gray-300">
+                  All common hardware wallets are supported: Specter DIY, Seedsigner, BitBox, Trezor, Keystone, Coldcard, Jade, Ledger, KeepKey.. the list keeps growing.
+                </p>
+              </div>
             </div>
-            <h3 className="text-3xl font-bold mb-6 text-white text-center">Add your signing devices.</h3>
-            <p className="text-lg text-gray-300 mb-6 text-center max-w-4xl mx-auto">
-              All common hardware wallets are supported: Specter DIY, Seedsigner, BitBox, Trezor, Keystone, Coldcard, Jade, Ledger, KeepKey.. the list keeps growing.
-            </p>
           </section>
 
           {/* Coordinate Wallets Section */}
