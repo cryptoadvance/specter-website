@@ -120,30 +120,28 @@ export default function Hardware() {
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 w-full">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-3 gap-12 h-full">
-              <div className="flex flex-col justify-center">
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-                  Specter Hardware
-                </h1>
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                  Open-source firmware on trust minimized signing devices.
-                </p>
-                <div>
-                  <a 
-                    href="https://github.com/cryptoadvance/specter-diy/releases"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-                  >
-                    Specter Firmware
-                  </a>
-                </div>
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-12 min-h-screen items-center">
+            <div className="flex flex-col justify-center py-20">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+                Specter Hardware
+              </h1>
+              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                Open-source firmware on trust minimized signing devices.
+              </p>
+              <div>
+                <a 
+                  href="https://github.com/cryptoadvance/specter-diy/releases"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                >
+                  Specter Firmware
+                </a>
               </div>
-              <div className="md:col-span-2"></div>
             </div>
+            <div className="md:col-span-2"></div>
           </div>
         </div>
       </section>
