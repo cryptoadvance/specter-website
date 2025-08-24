@@ -185,15 +185,13 @@ export default function Downloads() {
                           >
                             Download
                           </Button>
-                          <p className="text-gray-400 text-sm mb-2">{formatFileSize(macAsset.size)}</p>
-                          <a 
-                            href={`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`}
-                            className="text-specter-coral hover:underline text-sm"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <p className="text-gray-400 text-sm mb-4">{formatFileSize(macAsset.size)}</p>
+                          <Button
+                            onClick={() => window.open(`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`, '_blank')}
+                            className="bg-[#46B2CB] hover:bg-[#3A9BB4] text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 text-sm w-full"
                           >
                             Verify signature
-                          </a>
+                          </Button>
                         </>
                       )}
                     </div>
@@ -212,15 +210,13 @@ export default function Downloads() {
                           >
                             Download
                           </Button>
-                          <p className="text-gray-400 text-sm mb-2">{formatFileSize(winAsset.size)}</p>
-                          <a 
-                            href={`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`}
-                            className="text-specter-coral hover:underline text-sm"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <p className="text-gray-400 text-sm mb-4">{formatFileSize(winAsset.size)}</p>
+                          <Button
+                            onClick={() => window.open(`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`, '_blank')}
+                            className="bg-[#46B2CB] hover:bg-[#3A9BB4] text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 text-sm w-full"
                           >
                             Verify signature
-                          </a>
+                          </Button>
                         </>
                       )}
                     </div>
@@ -239,15 +235,13 @@ export default function Downloads() {
                           >
                             Download
                           </Button>
-                          <p className="text-gray-400 text-sm mb-2">{formatFileSize(linuxAsset.size)}</p>
-                          <a 
-                            href={`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`}
-                            className="text-specter-coral hover:underline text-sm"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                          <p className="text-gray-400 text-sm mb-4">{formatFileSize(linuxAsset.size)}</p>
+                          <Button
+                            onClick={() => window.open(`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`, '_blank')}
+                            className="bg-[#46B2CB] hover:bg-[#3A9BB4] text-white font-medium py-2 px-6 rounded-lg transition-colors duration-200 text-sm w-full"
                           >
                             Verify signature
-                          </a>
+                          </Button>
                         </>
                       )}
                     </div>
