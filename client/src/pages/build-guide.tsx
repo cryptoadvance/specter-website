@@ -12,6 +12,8 @@ export default function BuildGuide() {
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all");
+  const [desktopTimeout, setDesktopTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [hardwareTimeout, setHardwareTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     // Initialize filtering when component mounts
@@ -97,6 +99,36 @@ export default function BuildGuide() {
     }
   };
 
+  const handleDesktopMouseEnter = () => {
+    if (desktopTimeout) {
+      clearTimeout(desktopTimeout);
+      setDesktopTimeout(null);
+    }
+    setDesktopDropdownOpen(true);
+  };
+
+  const handleDesktopMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setDesktopDropdownOpen(false);
+    }, 200);
+    setDesktopTimeout(timeout);
+  };
+
+  const handleHardwareMouseEnter = () => {
+    if (hardwareTimeout) {
+      clearTimeout(hardwareTimeout);
+      setHardwareTimeout(null);
+    }
+    setHardwareDropdownOpen(true);
+  };
+
+  const handleHardwareMouseLeave = () => {
+    const timeout = setTimeout(() => {
+      setHardwareDropdownOpen(false);
+    }, 200);
+    setHardwareTimeout(timeout);
+  };
+
   return (
     <div className="min-h-screen bg-specter-dark text-white">
       {/* Header */}
@@ -121,8 +153,8 @@ export default function BuildGuide() {
               </Link>
               <div className="relative">
                 <button
-                  onMouseEnter={() => setDesktopDropdownOpen(true)}
-                  onMouseLeave={() => setDesktopDropdownOpen(false)}
+                  onMouseEnter={handleDesktopMouseEnter}
+                  onMouseLeave={handleDesktopMouseLeave}
                   className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
                 >
                   Desktop
@@ -131,8 +163,8 @@ export default function BuildGuide() {
                 {desktopDropdownOpen && (
                   <div 
                     className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
-                    onMouseEnter={() => setDesktopDropdownOpen(true)}
-                    onMouseLeave={() => setDesktopDropdownOpen(false)}
+                    onMouseEnter={handleDesktopMouseEnter}
+                    onMouseLeave={handleDesktopMouseLeave}
                   >
                     <Link 
                       href="/desktop" 
@@ -154,8 +186,8 @@ export default function BuildGuide() {
               <div className="relative">
                 <Link
                   href="/hardware"
-                  onMouseEnter={() => setHardwareDropdownOpen(true)}
-                  onMouseLeave={() => setHardwareDropdownOpen(false)}
+                  onMouseEnter={handleHardwareMouseEnter}
+                  onMouseLeave={handleHardwareMouseLeave}
                   className="flex items-center text-black font-medium hover:text-white transition-colors duration-200"
                 >
                   Hardware
@@ -164,8 +196,8 @@ export default function BuildGuide() {
                 {hardwareDropdownOpen && (
                   <div 
                     className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
-                    onMouseEnter={() => setHardwareDropdownOpen(true)}
-                    onMouseLeave={() => setHardwareDropdownOpen(false)}
+                    onMouseEnter={handleHardwareMouseEnter}
+                    onMouseLeave={handleHardwareMouseLeave}
                   >
                     <Link 
                       href="/hardware" 
