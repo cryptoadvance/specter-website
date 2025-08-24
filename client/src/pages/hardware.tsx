@@ -450,48 +450,7 @@ export default function Hardware() {
             </Card>
           </div>
 
-          {/* Shield Components Section */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">Components Specter Shield</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
-              <div>
-                <div className="space-y-6">
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">Developer Board</h3>
-                    <p className="text-gray-300">STM Discovery board (STM32F469I)</p>
-                  </Card>
-                  
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">Battery</h3>
-                    <p className="text-gray-300">1400 mAh 3.7v</p>
-                  </Card>
-                  
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">Specter Shield</h3>
-                    <p className="text-gray-300">QR code scanner<br />Smart card Reader</p>
-                  </Card>
-                  
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">Smart Card</h3>
-                    <p className="text-gray-300">NXP J3H145 Dual Interface Java card</p>
-                  </Card>
-                  
-                  <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                    <h3 className="text-xl font-bold mb-2 text-white">3D Printable Case</h3>
-                    <p className="text-gray-300">Designed by Specter & Geometrick</p>
-                  </Card>
-                </div>
-              </div>
-              <div>
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/Specter-Shield-Exploded-566x1024.png" 
-                  alt="Specter Shield Exploded" 
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </section>
+
 
           {/* Usage Image */}
           <div className="mb-20 text-center">
