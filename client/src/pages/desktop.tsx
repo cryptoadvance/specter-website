@@ -242,7 +242,7 @@ export default function Desktop() {
               </div>
               <div className="md:col-span-2">
                 <img 
-                  src="@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034261271.png" 
+                  src="@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png" 
                   alt="Specter Desktop In Use" 
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
