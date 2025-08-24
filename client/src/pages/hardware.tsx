@@ -24,7 +24,7 @@ export default function Hardware() {
                 <img 
                   src={specterLogo} 
                   alt="Specter Logo" 
-                  className="h-10 w-auto"
+                  className="h-12 w-auto"
                 />
               </Link>
             </div>
