@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
-import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756036474369.jpg";
+import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
 
 export default function Hardware() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
