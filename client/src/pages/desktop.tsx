@@ -570,9 +570,9 @@ export default function Desktop() {
           <section className="mb-20">
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Wallet Backups</h2>
 
-            <div className="bg-specter-navy rounded-xl p-8 border-0 mb-16">
-              <div className="grid md:grid-cols-2 gap-12 items-start">
-                <div>
+            <div className="bg-specter-navy rounded-xl border-0 mb-16 overflow-hidden">
+              <div className="grid md:grid-cols-3 gap-12 h-full">
+                <div className="p-8 flex flex-col justify-center">
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2022/02/import_export.svg" 
                     alt="Import/Export" 
@@ -583,11 +583,11 @@ export default function Desktop() {
                     Export a PDF Backup from Specter Desktop, it is recommended you keep this with each device/seed word back-up especially for multi-sig wallets.
                   </p>
                 </div>
-                <div className="flex flex-col h-full">
+                <div className="md:col-span-2 flex items-end">
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Backup_File-1-1024x511.png" 
                     alt="Specter Backup File" 
-                    className="w-full h-auto rounded-lg shadow-lg mt-auto"
+                    className="w-full h-auto block"
                   />
                 </div>
               </div>
