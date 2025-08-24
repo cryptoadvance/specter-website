@@ -140,7 +140,7 @@ export default function BuildGuide() {
                 </div>
               </div>
               <div className="relative group">
-                <button className="flex items-center text-black font-medium hover:text-white transition-colors duration-200">
+                <button className="flex items-center text-white hover:text-specter-coral transition-colors duration-200">
                   Hardware
                   <ChevronDown className="ml-1 h-4 w-4" />
                 </button>
@@ -159,7 +159,7 @@ export default function BuildGuide() {
                   </Link>
                   <Link 
                     href="/build-guide" 
-                    className="block px-4 py-2 text-black font-medium bg-specter-dark rounded-b-lg"
+                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
                   >
                     Build Guide
                   </Link>
