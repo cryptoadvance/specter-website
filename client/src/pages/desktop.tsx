@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
+import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
 
 export default function Desktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -110,24 +111,36 @@ export default function Desktop() {
         </nav>
       </header>
 
-      {/* Hero Section with Background */}
-      <section className="relative bg-gradient-to-b from-specter-dark to-specter-navy py-20 px-4">
-        <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative container mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
-            Specter Desktop
-          </h1>
-          <h5 className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Secure your bitcoin. Verify your transactions. Protect your privacy.
-          </h5>
-          <a 
-            href="https://specter.solutions/downloads/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 mb-8"
-          >
-            Download
-          </a>
+      {/* Hero Section with Background Image */}
+      <section 
+        className="relative min-h-screen flex items-center overflow-hidden" 
+        style={{
+          backgroundImage: `url(${specterDesktopHeroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-md">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+              Specter Desktop
+            </h1>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Secure your bitcoin. Verify your transactions. Protect your privacy.
+            </p>
+            <div>
+              <a 
+                href="https://specter.solutions/downloads/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+              >
+                Download
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 

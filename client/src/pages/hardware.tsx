@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
-import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
+
 
 export default function Hardware() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -114,7 +114,7 @@ export default function Hardware() {
       <section 
         className="relative min-h-screen flex items-center overflow-hidden" 
         style={{
-          backgroundImage: `url(${specterDesktopHeroImage})`,
+          backgroundImage: `url(${hardwareBackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
