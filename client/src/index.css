@@ -161,3 +161,12 @@
     border-color: var(--specter-primary);
   }
 }
+
+/* Build Guide Highlight Effect */
+.highlight {
+  background-color: rgba(43, 108, 176, 0.3) !important;
+  transition: background-color 0.5s ease-in-out;
+  border-radius: 8px;
+  padding: 12px;
+  margin: -12px;
+}
