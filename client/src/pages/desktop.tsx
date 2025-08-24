@@ -387,38 +387,44 @@ export default function Desktop() {
           <section className="mb-20">
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Plugins & Extensions</h2>
 
-            <div className="mb-16 text-center">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2022/02/Swan.png" 
-                alt="Swan" 
-                className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg mb-8"
-              />
-              <h3 className="text-3xl font-bold mb-6 text-white">Swan Integration.</h3>
-              <p className="text-lg text-gray-300 mb-4 max-w-4xl mx-auto">
-                The integration enables auto withdrawals from a Swan account to be sent directly to your self-custody wallet. Stack with Swan and secure with Specter.
-              </p>
-              <div className="mb-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
+                <img 
+                  src="https://specter.solutions/wp-content/uploads/2022/02/Swan.png" 
+                  alt="Swan" 
+                  className="w-24 h-24 mx-auto mb-6 object-contain"
+                />
+                <h3 className="text-xl font-bold mb-4 text-white">Swan Integration.</h3>
+                <p className="text-gray-300 mb-4">
+                  The integration enables auto withdrawals from a Swan account to be sent directly to your self-custody wallet. Stack with Swan and secure with Specter.
+                </p>
                 <a 
                   href="https://www.swanbitcoin.com/Specter/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-specter-coral hover:underline"
+                  className="text-specter-coral hover:underline text-sm"
                 >
-                  Sign up at Swan
+                  Sign up at Swan to support Specter development &gt;&gt;
                 </a>
-                <span className="text-gray-300"> to support Specter development.</span>
               </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
-                <h3 className="text-2xl font-bold mb-4 text-white">Keeping your XPub Private.</h3>
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
+                <div className="w-16 h-16 mx-auto mb-6 bg-specter-primary rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">Keeping your XPub Private.</h3>
                 <p className="text-gray-300">
                   Specter reserves addresses for your Swan withdrawals and is keeping your wallet XPub private.
                 </p>
               </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
-                <h3 className="text-2xl font-bold mb-4 text-white">New Plugins & Extensions.</h3>
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
+                <div className="w-16 h-16 mx-auto mb-6 bg-specter-coral rounded-full flex items-center justify-center">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-4 text-white">New Plugins & Extensions.</h3>
                 <p className="text-gray-300 mb-4">
                   Further extensions are in development.
                 </p>
@@ -429,7 +435,7 @@ export default function Desktop() {
                   href="https://specter.solutions/desktop/#contact" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-specter-coral hover:underline"
+                  className="text-specter-coral hover:underline text-sm"
                 >
                   Contact &gt;&gt;
                 </a>
