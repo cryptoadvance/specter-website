@@ -232,6 +232,9 @@ export default function BuildGuide() {
                   </div>
                 )}
               </div>
+              <button className="text-white hover:text-specter-coral transition-colors duration-200">
+                Hardware2 TEST
+              </button>
               <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Contact
               </Link>
