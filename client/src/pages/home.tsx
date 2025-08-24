@@ -214,17 +214,21 @@ export default function Home() {
         }}
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-specter-coral">Open-Source</span><br />
-            Specter Project
-          </h1>
-          <h2 className="text-xl md:text-2xl font-light mb-8 text-gray-300">
-            Secure your Bitcoin with Specter
-          </h2>
-          <Link href="/hardware">
-            <Button className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200">Specter Hardware Wallet</Button>
-          </Link>
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="max-w-md">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <span className="text-specter-coral">Open-Source</span><br />
+              Specter Project
+            </h1>
+            <h2 className="text-xl md:text-2xl font-light mb-8 text-gray-300">
+              Secure your Bitcoin with Specter
+            </h2>
+            <div>
+              <Link href="/hardware">
+                <Button className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200">Specter Hardware Wallet</Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
       {/* Main Content */}
