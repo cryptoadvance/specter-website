@@ -397,7 +397,7 @@ export default function Contact() {
                 />
                 <h3 className="text-lg font-semibold text-white">Thomas</h3>
                 <p className="text-sm text-gray-400">Association Member</p>
-                <p className="text-xs text-gray-400 mt-1">Designer of the Specter Snap Case, who also sells Specter DIYs at <span className="text-white">BitcoinStoreOrg</span>.</p>
+                <p className="text-xs text-gray-400 mt-1">Designer of the Specter Snap Case, who also sells Specter DIYs at BitcoinStoreOrg.</p>
               </div>
             </div>
           </Card>
