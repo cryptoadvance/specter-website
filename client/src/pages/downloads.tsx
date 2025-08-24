@@ -140,14 +140,15 @@ export default function Downloads() {
                 )}
               </div>
               <div className="relative">
-                <button 
+                <Link 
+                  href="/hardware"
                   className="text-white hover:text-specter-coral transition-colors duration-200 flex items-center"
                   onMouseEnter={() => setHardwareDropdownOpen(true)}
                   onMouseLeave={() => setHardwareDropdownOpen(false)}
                 >
                   Hardware
                   <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
+                </Link>
                 {hardwareDropdownOpen && (
                   <div 
                     className="absolute top-full left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-1 z-50"

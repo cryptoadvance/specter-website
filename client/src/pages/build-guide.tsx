@@ -147,15 +147,21 @@ export default function BuildGuide() {
                 )}
               </div>
               <div className="relative">
-                <button
-                  onClick={() => setHardwareDropdownOpen(!hardwareDropdownOpen)}
+                <Link
+                  href="/hardware"
+                  onMouseEnter={() => setHardwareDropdownOpen(true)}
+                  onMouseLeave={() => setHardwareDropdownOpen(false)}
                   className="flex items-center text-specter-coral font-medium hover:text-white transition-colors duration-200"
                 >
                   Hardware
                   <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
+                </Link>
                 {hardwareDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                  <div 
+                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
+                    onMouseEnter={() => setHardwareDropdownOpen(true)}
+                    onMouseLeave={() => setHardwareDropdownOpen(false)}
+                  >
                     <Link 
                       href="/hardware" 
                       className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
