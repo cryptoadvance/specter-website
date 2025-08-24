@@ -294,7 +294,7 @@ export default function Hardware() {
                     href="/vendors"
                     className="inline-block bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
                   >
-                    Find vendors
+                    Find vendors &gt;&gt;
                   </Link>
                 </div>
               </div>
