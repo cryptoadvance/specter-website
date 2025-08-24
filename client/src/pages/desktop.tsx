@@ -212,31 +212,40 @@ export default function Desktop() {
 
           {/* Fast Start Section */}
           <section className="mb-20">
-            <div className="grid md:grid-cols-2 gap-12">
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2021/12/Fast.svg" 
-                  alt="Fast" 
-                  className="w-16 h-16 mb-6"
-                />
-                <h3 className="text-2xl font-bold mb-4 text-white">Get started fast!</h3>
-                <p className="text-gray-300 mb-4">
-                  One click to install Bitcoin Core directly from Specter Desktop, get your node set up quickly.
-                </p>
-                <p className="text-gray-300">
-                  Run Bitcoin Core as a pruned mode to conserve storage space.
-                </p>
+            <div className="grid md:grid-cols-3 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="p-6 rounded-xl">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2021/12/Fast.svg" 
+                    alt="Fast" 
+                    className="w-16 h-16 mb-6"
+                  />
+                  <h3 className="text-2xl font-bold mb-4 text-white">Get started fast!</h3>
+                  <p className="text-gray-300 mb-4">
+                    One click to install Bitcoin Core directly from Specter Desktop, get your node set up quickly.
+                  </p>
+                  <p className="text-gray-300">
+                    Run Bitcoin Core as a pruned mode to conserve storage space.
+                  </p>
+                </div>
+                <div className="p-6 rounded-xl">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2022/01/QR-Code.svg" 
+                    alt="QR Code" 
+                    className="w-16 h-16 mb-6"
+                  />
+                  <h3 className="text-2xl font-bold mb-4 text-white">Signing experience.</h3>
+                  <p className="text-gray-300">
+                    QR codes enable a fast and intuitive signing experience via PSBT. SD cards and USB connected devices are also supported.
+                  </p>
+                </div>
               </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
+              <div className="md:col-span-2">
                 <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/QR-Code.svg" 
-                  alt="QR Code" 
-                  className="w-16 h-16 mb-6"
+                  src="@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034261271.png" 
+                  alt="Specter Desktop In Use" 
+                  className="w-full h-auto rounded-lg shadow-lg"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Signing experience.</h3>
-                <p className="text-gray-300">
-                  QR codes enable a fast and intuitive signing experience via PSBT. SD cards and USB connected devices are also supported.
-                </p>
               </div>
             </div>
           </section>
