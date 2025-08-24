@@ -322,15 +322,15 @@ export default function Desktop() {
               </div>
             </div>
 
-            {/* Optimize and Other Features */}
-            <div className="grid md:grid-cols-2 gap-12 mb-16">
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
+            {/* Three Feature Boxes */}
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2021/12/Adjust.svg" 
                   alt="Adjust" 
-                  className="w-16 h-16 mb-6"
+                  className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Optimise your transactions.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Optimise your transactions.</h3>
                 <p className="text-gray-300 mb-3">
                   Fine tune each transaction for quick confirmation time or to minimize fees.
                 </p>
@@ -344,13 +344,13 @@ export default function Desktop() {
                   Speed-up transactions with RBF (Replace-by-Fee).
                 </p>
               </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <img 
                   src="https://specter.solutions/wp-content/uploads/2022/01/liquid-articles.svg" 
                   alt="Articles" 
-                  className="w-16 h-16 mb-6"
+                  className="w-16 h-16 mb-6 mx-auto"
                 />
-                <h3 className="text-2xl font-bold mb-4 text-white">Articles to Specter Liquid integration.</h3>
+                <h3 className="text-xl font-bold mb-4 text-white">Transaction History & Labels.</h3>
                 <p className="text-gray-300 mb-3">
                   View the full history of incoming and outgoing transactions.
                 </p>
@@ -364,22 +364,20 @@ export default function Desktop() {
                   Order transactions by label, amount, date, confirmations or TxID.
                 </p>
               </div>
-            </div>
-
-            {/* Select Coins */}
-            <div className="bg-specter-navy rounded-xl p-8 border-0 text-center max-w-4xl mx-auto">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2022/01/select-coins.svg" 
-                alt="Select Coins" 
-                className="w-16 h-16 mb-6 mx-auto"
-              />
-              <h3 className="text-2xl font-bold mb-4 text-white">Select coins for spending.</h3>
-              <p className="text-gray-300 mb-3">
-                Use coin selection to spend from specific UTXO's and control your onchain visibility.
-              </p>
-              <p className="text-gray-300">
-                Freeze or unfreeze specific UTXO's to control sending and improve your onchain privacy.
-              </p>
+              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
+                <img 
+                  src="https://specter.solutions/wp-content/uploads/2022/01/select-coins.svg" 
+                  alt="Select Coins" 
+                  className="w-16 h-16 mb-6 mx-auto"
+                />
+                <h3 className="text-xl font-bold mb-4 text-white">Select coins for spending.</h3>
+                <p className="text-gray-300 mb-3">
+                  Use coin selection to spend from specific UTXO's and control your onchain visibility.
+                </p>
+                <p className="text-gray-300">
+                  Freeze or unfreeze specific UTXO's to control sending and improve your onchain privacy.
+                </p>
+              </div>
             </div>
           </section>
 
