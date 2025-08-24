@@ -4,6 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
+import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756036474369.jpg";
 
 export default function Hardware() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -111,28 +112,39 @@ export default function Hardware() {
       </header>
       {/* Hero Section with Background Image */}
       <section 
-        className="relative min-h-screen flex items-center justify-center overflow-hidden" 
+        className="relative min-h-screen flex items-center overflow-hidden" 
         style={{
-          backgroundImage: `url(${hardwareBackgroundImage})`,
+          backgroundImage: `url(${specterDesktopHeroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Specter Hardware
-          </h1>
-          <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-            Open-source firmware on trust minimized signing devices.
-          </p>
-          <a 
-            href="https://github.com/cryptoadvance/specter-diy/releases"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
-          >Specter Firmware</a>
+        <div className="relative z-10 w-full">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-3 gap-12 h-full">
+              <div className="flex flex-col justify-center">
+                <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+                  Specter Hardware
+                </h1>
+                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                  Open-source firmware on trust minimized signing devices.
+                </p>
+                <div>
+                  <a 
+                    href="https://github.com/cryptoadvance/specter-diy/releases"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                  >
+                    Specter Firmware
+                  </a>
+                </div>
+              </div>
+              <div className="md:col-span-2"></div>
+            </div>
+          </div>
         </div>
       </section>
       {/* Main Content */}
