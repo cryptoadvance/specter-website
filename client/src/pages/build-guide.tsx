@@ -102,6 +102,7 @@ export default function BuildGuide() {
   };
 
   const handleDesktopMouseEnter = () => {
+    console.log('Desktop mouse enter');
     if (desktopTimeout) {
       clearTimeout(desktopTimeout);
       setDesktopTimeout(null);
@@ -110,8 +111,10 @@ export default function BuildGuide() {
   };
 
   const handleDesktopMouseLeave = () => {
+    console.log('Desktop mouse leave, pinned:', desktopPinned);
     if (!desktopPinned) {
       const timeout = setTimeout(() => {
+        console.log('Closing desktop dropdown after timeout');
         setDesktopDropdownOpen(false);
       }, 1000);
       setDesktopTimeout(timeout);
@@ -121,6 +124,7 @@ export default function BuildGuide() {
   const handleDesktopArrowClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    console.log('Desktop arrow clicked, currently pinned:', desktopPinned);
     if (desktopPinned) {
       setDesktopPinned(false);
       setDesktopDropdownOpen(false);
@@ -131,6 +135,7 @@ export default function BuildGuide() {
   };
 
   const handleHardwareMouseEnter = () => {
+    console.log('Hardware mouse enter');
     if (hardwareTimeout) {
       clearTimeout(hardwareTimeout);
       setHardwareTimeout(null);
@@ -139,8 +144,10 @@ export default function BuildGuide() {
   };
 
   const handleHardwareMouseLeave = () => {
+    console.log('Hardware mouse leave, pinned:', hardwarePinned);
     if (!hardwarePinned) {
       const timeout = setTimeout(() => {
+        console.log('Closing hardware dropdown after timeout');
         setHardwareDropdownOpen(false);
       }, 1000);
       setHardwareTimeout(timeout);
@@ -150,6 +157,7 @@ export default function BuildGuide() {
   const handleHardwareArrowClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    console.log('Hardware arrow clicked, currently pinned:', hardwarePinned);
     if (hardwarePinned) {
       setHardwarePinned(false);
       setHardwareDropdownOpen(false);
