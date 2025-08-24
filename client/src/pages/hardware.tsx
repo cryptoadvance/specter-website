@@ -180,122 +180,7 @@ export default function Hardware() {
             </Card>
           </section>
 
-          {/* Firmware Features */}
-          <section className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">Firmware Features</h2>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Embit Library</h3>
-                <p className="text-gray-300">
-                  Specter firmware uses our <a href="https://embit.rocks/#/" className="text-specter-coral hover:underline">Embit bitcoin library</a>. It is designed to run either with Python 3 on a PC or with MicroPython on embedded devices.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Liquid Support</h3>
-                <p className="text-gray-300">
-                  Use Specter Hardware wallets in singlesig or multisig wallets for self custody of Liquid assets.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Intuitive Interaction</h3>
-                <p className="text-gray-300">
-                  Interface optimized for a 4inch touch display.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Anti-phishing words</h3>
-                <p className="text-gray-300">
-                  Seed displayed after each pin entry verifies the device was not tampered with.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Secure Element</h3>
-                <p className="text-gray-300">Shield board enables smart cards to encrypt wallet seeds. Multiple cards are acting like separate hardware wallets.</p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Airgapped</h3>
-                <p className="text-gray-300">
-                  Use QR codes to stay completely offline.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">QR Code Wallet Import</h3>
-                <p className="text-gray-300">Scan QR code to import wallet descriptor to the device.</p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Temporary Seed</h3>
-                <p className="text-gray-300">
-                  Private keys can be stored locally in device memory.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Added Entropy</h3>
-                <p className="text-gray-300">
-                  Use coin-flips to introduce extra randomness to key generation.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Key Generation</h3>
-                <p className="text-gray-300">Securely generate seed words using the microcontrollers true random number generator and entropy from koordinates and timestamps of every display touch.</p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Pin Generation</h3>
-                <p className="text-gray-300">
-                  Lock device access with a pin.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">PSBT</h3>
-                <p className="text-gray-300">
-                  Partially signed bitcoin transaction support.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">Verify Addresses</h3>
-                <p className="text-gray-300">
-                  Verify and export receive addresses.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">SeedQR</h3>
-                <p className="text-gray-300">
-                  Import Seeds instant into the device by just scanning classic or compact seedQR Codes.
-                </p>
-              </Card>
-              
-              <Card className="bg-specter-navy rounded-xl p-6 border-0">
-                <h3 className="text-xl font-bold mb-4 text-white">BIP85</h3>
-                <p className="text-gray-300">
-                  Derive child seed phrases from your primary seed phrase for use on less secure devices, such as hot wallets, lightning wallets, etc.
-                </p>
-              </Card>
-            </div>
-            
-            <div className="text-center mt-12">
-              <a 
-                href="https://github.com/cryptoadvance/specter-diy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
-              >
-                View GitHub for full details &gt;&gt;
-              </a>
-            </div>
-          </section>
+
 
           {/* Specter DIY Section */}
           <section className="mb-20">
@@ -414,145 +299,123 @@ export default function Hardware() {
             />
           </div>
 
-          {/* Comparison Section - moved here to be below hardware wallets */}
+
+
+          {/* Firmware Features - moved to bottom */}
           <section className="mb-20">
-            <Card className="bg-specter-navy rounded-xl p-8 border-0 max-w-4xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-                
-                {/* Left side - Title and Hardware Images */}
-                <div className="text-center">
-                  <h2 className="text-3xl font-bold mb-8 text-white">Specter Signer Comparison</h2>
-                  <div className="flex justify-center items-center space-x-4 mb-8">
-                    <div className="text-center">
-                      <img 
-                        src="https://specter.solutions/wp-content/uploads/2022/02/Specter-DIY-Barebones.png" 
-                        alt="Specter DIY" 
-                        className="w-24 h-auto mx-auto mb-2"
-                      />
-                      <span className="text-sm text-gray-300">DIY</span>
-                    </div>
-                    <div className="text-center">
-                      <img 
-                        src="https://specter.solutions/wp-content/uploads/2022/01/Specter-Shield.png" 
-                        alt="Specter Shield" 
-                        className="w-24 h-auto mx-auto mb-2"
-                      />
-                      <span className="text-sm text-gray-300">Shield</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Middle and Right - Features Table */}
-                <div className="md:col-span-2">
-                  <div className="space-y-6">
-                    
-                    {/* Header Row */}
-                    <div className="grid grid-cols-3 gap-4 pb-4 border-b border-gray-600">
-                      <div className="text-white font-semibold">Feature</div>
-                      <div className="text-white font-semibold text-center">DIY</div>
-                      <div className="text-white font-semibold text-center">Shield</div>
-                    </div>
-
-                    {/* Feature Rows */}
-                    <div className="grid grid-cols-3 gap-4 items-center py-2">
-                      <div className="text-white">4" Touch Display</div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4 items-center py-2">
-                      <div className="text-white">True Random Number Generation + Coin Flip Added Randomness</div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4 items-center py-2">
-                      <div className="text-white">Smart Card Secure Element</div>
-                      <div className="text-center">
-                        <span className="text-gray-500">-</span>
-                      </div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4 items-center py-2">
-                      <div className="text-white">Agnostic Mode</div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4 items-center py-2">
-                      <div className="text-white">Airgapped PSBT QR Code Operation</div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4 items-center py-2">
-                      <div className="text-white">Liquid Support</div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-3 gap-4 items-center py-2">
-                      <div className="text-white">Integrated Battery</div>
-                      <div className="text-center">
-                        <span className="text-gray-500">-</span>
-                      </div>
-                      <div className="text-center">
-                        <svg className="w-5 h-5 text-green-500 mx-auto" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
-                        </svg>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-
-              </div>
-            </Card>
+            <h2 className="text-3xl font-bold text-center mb-12">Firmware Features</h2>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Embit Library</h3>
+                <p className="text-gray-300">
+                  Specter firmware uses our <a href="https://embit.rocks/#/" className="text-specter-coral hover:underline">Embit bitcoin library</a>. It is designed to run either with Python 3 on a PC or with MicroPython on embedded devices.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Liquid Support</h3>
+                <p className="text-gray-300">
+                  Use Specter Hardware wallets in singlesig or multisig wallets for self custody of Liquid assets.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Intuitive Interaction</h3>
+                <p className="text-gray-300">
+                  Interface optimized for a 4inch touch display.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Anti-phishing words</h3>
+                <p className="text-gray-300">
+                  Seed displayed after each pin entry verifies the device was not tampered with.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Secure Element</h3>
+                <p className="text-gray-300">Shield board enables smart cards to encrypt wallet seeds. Multiple cards are acting like separate hardware wallets.</p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Airgapped</h3>
+                <p className="text-gray-300">
+                  Use QR codes to stay completely offline.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">QR Code Wallet Import</h3>
+                <p className="text-gray-300">Scan QR code to import wallet descriptor to the device.</p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Temporary Seed</h3>
+                <p className="text-gray-300">
+                  Private keys can be stored locally in device memory.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Added Entropy</h3>
+                <p className="text-gray-300">
+                  Use coin-flips to introduce extra randomness to key generation.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Key Generation</h3>
+                <p className="text-gray-300">Securely generate seed words using the microcontrollers true random number generator and entropy from koordinates and timestamps of every display touch.</p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Pin Generation</h3>
+                <p className="text-gray-300">
+                  Lock device access with a pin.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">PSBT</h3>
+                <p className="text-gray-300">
+                  Partially signed bitcoin transaction support.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">Verify Addresses</h3>
+                <p className="text-gray-300">
+                  Verify and export receive addresses.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">SeedQR</h3>
+                <p className="text-gray-300">
+                  Import Seeds instant into the device by just scanning classic or compact seedQR Codes.
+                </p>
+              </Card>
+              
+              <Card className="bg-specter-navy rounded-xl p-6 border-0">
+                <h3 className="text-xl font-bold mb-4 text-white">BIP85</h3>
+                <p className="text-gray-300">
+                  Derive child seed phrases from your primary seed phrase for use on less secure devices, such as hot wallets, lightning wallets, etc.
+                </p>
+              </Card>
+            </div>
+            
+            <div className="text-center mt-12">
+              <a 
+                href="https://github.com/cryptoadvance/specter-diy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
+              >
+                View GitHub for full details &gt;&gt;
+              </a>
+            </div>
           </section>
 
         </div>
