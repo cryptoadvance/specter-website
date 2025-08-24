@@ -23,7 +23,7 @@ import stepanImage from "@assets/Stepan-Snigirev_1755804956177.jpg";
 import kimImage from "@assets/Kim_1755804970556.jpg";
 import poltoImage from "@assets/polto_1755804982512.jpg";
 import thomasImage from "@assets/Thomas_1755804997253.jpg";
-import specterLogo from "@assets/Specter_logo_1756045582018.png";
+import specterLogo from "@assets/Specter_logo_1756046218246.png";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),

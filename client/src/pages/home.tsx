@@ -15,7 +15,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import type { InsertContact, InsertNewsletter } from "@shared/schema";
 import heroBackgroundImage from "@assets/imgi_6_Specter_Foss_Suite-scaled_1755535754418.png";
 import contactPersonImage from "@assets/Uncle Jim Tutorial (1)_1755536226982.png";
-import specterLogo from "@assets/Specter_logo_1756045582018.png";
+import specterLogo from "@assets/Specter_logo_1756046218246.png";
 
 export default function Home() {
   const { toast } = useToast();

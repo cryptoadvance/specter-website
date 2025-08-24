@@ -8,7 +8,7 @@ import clavaStackLogo from "@assets/BtcFrankenstein Logo 3.4.1_1755840288095.png
 import plebStyleLogo from "@assets/imgi_1_YwTqyo_1_400x400_1755840295047.png";
 import bitcoinStoreLogo from "@assets/CalMPylj_400x400 (1)_1755840297048.jpg";
 import cryptoguideLogo from "@assets/Cryptoguide_1755840305434.jpg";
-import specterLogo from "@assets/Specter_logo_1756045582018.png";
+import specterLogo from "@assets/Specter_logo_1756046218246.png";
 
 export default function Vendors() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

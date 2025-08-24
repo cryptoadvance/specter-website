@@ -4,7 +4,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
-import specterLogo from "@assets/Specter_logo_1756045582018.png";
+import specterLogo from "@assets/Specter_logo_1756046218246.png";
 
 
 export default function Hardware() {

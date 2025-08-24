@@ -6,7 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Info, Menu, X, ChevronDown } from 'lucide-react';
 import goodSigImage from '@assets/good_sig_1756045019493.png';
 import fileOkImage from '@assets/file_ok_1756045021825.png';
-import specterLogo from '@assets/Specter_logo_1756045582018.png';
+import specterLogo from '@assets/Specter_logo_1756046218246.png';
 
 interface GitHubRelease {
   tag_name: string;

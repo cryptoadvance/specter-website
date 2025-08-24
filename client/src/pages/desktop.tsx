@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
 import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
-import specterLogo from "@assets/Specter_logo_1756045582018.png";
+import specterLogo from "@assets/Specter_logo_1756046218246.png";
 
 export default function Desktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
