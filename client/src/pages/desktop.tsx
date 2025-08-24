@@ -256,27 +256,29 @@ export default function Desktop() {
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Coin Control Features</h2>
 
             {/* Send */}
-            <div className="grid md:grid-cols-3 gap-12 items-center mb-16">
-              <div className="bg-specter-navy rounded-xl p-8 border-0">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2021/12/Send.svg" 
-                  alt="Send" 
-                  className="w-16 h-16 mb-6"
-                />
-                <h3 className="text-3xl font-bold mb-6 text-white">Send</h3>
-                <p className="text-lg text-gray-300 mb-6">
-                  Create, sign and broadcast transactions through Specter Desktop.
-                </p>
-                <p className="text-lg text-gray-300">
-                  PSBTs (Partially Signed Bitcoin Transactions) can be signed air-gapped via QR codes or SD card, or directly with USB connected signing devices.
-                </p>
-              </div>
-              <div className="md:col-span-2">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Send_Transaction.png" 
-                  alt="Specter Send Transaction" 
-                  className="w-full h-auto rounded-lg shadow-lg"
-                />
+            <div className="bg-specter-navy rounded-xl p-8 border-0 mb-16">
+              <div className="grid md:grid-cols-3 gap-12 items-center">
+                <div className="p-4">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2021/12/Send.svg" 
+                    alt="Send" 
+                    className="w-16 h-16 mb-6"
+                  />
+                  <h3 className="text-3xl font-bold mb-6 text-white">Send</h3>
+                  <p className="text-lg text-gray-300 mb-6">
+                    Create, sign and broadcast transactions through Specter Desktop.
+                  </p>
+                  <p className="text-lg text-gray-300">
+                    PSBTs (Partially Signed Bitcoin Transactions) can be signed air-gapped via QR codes or SD card, or directly with USB connected signing devices.
+                  </p>
+                </div>
+                <div className="md:col-span-2 p-4">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Send_Transaction.png" 
+                    alt="Specter Send Transaction" 
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                </div>
               </div>
             </div>
 
