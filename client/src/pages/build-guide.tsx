@@ -10,7 +10,7 @@ import specterLogo from "@assets/Specter_logo_1756046218246.png";
 export default function BuildGuide() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
-  const [hardware2DropdownOpen, setHardware2DropdownOpen] = useState(false);
+
   const [activeFilter, setActiveFilter] = useState("all");
 
   useEffect(() => {
@@ -104,9 +104,12 @@ export default function BuildGuide() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
+              <button 
+                onClick={() => window.location.href = '/'}
+                className="text-white hover:text-specter-coral transition-colors duration-200"
+              >
                 Home
-              </Link>
+              </button>
               <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Desktop
               </Link>
@@ -142,49 +145,10 @@ export default function BuildGuide() {
                     </Link>
                     <Link 
                       href="/build-guide" 
-                      className="block px-4 py-2 text-specter-coral font-medium bg-specter-dark rounded-b-lg"
+                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
                       onClick={() => setHardwareDropdownOpen(false)}
                     >
                       Build Guide
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <div className="relative">
-                <button
-                  onMouseEnter={() => setHardware2DropdownOpen(true)}
-                  onMouseLeave={() => setHardware2DropdownOpen(false)}
-                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
-                >
-                  Hardware2
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                {hardware2DropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
-                    onMouseEnter={() => setHardware2DropdownOpen(true)}
-                    onMouseLeave={() => setHardware2DropdownOpen(false)}
-                  >
-                    <Link 
-                      href="/hardware" 
-                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
-                      onClick={() => setHardware2DropdownOpen(false)}
-                    >
-                      Hardware Overview
-                    </Link>
-                    <Link 
-                      href="/vendors" 
-                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200"
-                      onClick={() => setHardware2DropdownOpen(false)}
-                    >
-                      Vendors
-                    </Link>
-                    <Link 
-                      href="/build-guide" 
-                      className="block px-4 py-2 text-specter-coral font-medium bg-specter-dark rounded-b-lg"
-                      onClick={() => setHardware2DropdownOpen(false)}
-                    >
-                      Build Instructions
                     </Link>
                   </div>
                 )}
@@ -207,9 +171,12 @@ export default function BuildGuide() {
           {mobileMenuOpen && (
             <div className="md:hidden mt-4">
               <div className="flex flex-col space-y-2">
-                <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
+                <button 
+                  onClick={() => window.location.href = '/'}
+                  className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
+                >
                   Home
-                </Link>
+                </button>
                 <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
                   Desktop
                 </Link>
@@ -231,10 +198,12 @@ export default function BuildGuide() {
         </nav>
       </header>
 
-      {/* Rest of the page content will be added here */}
-      <div className="bg-yellow-300 text-black p-8 text-center">
-        <h1 className="text-2xl font-bold">Clean Build Guide Page with Hardware2 Menu</h1>
-        <p>The navigation should now work properly with the Hardware2 dropdown menu!</p>
+      {/* Build Guide Content */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-specter-coral mb-4">Build Guide</h1>
+          <p className="text-lg text-gray-300">Navigation has been synchronized with the home page</p>
+        </div>
       </div>
     </div>
   );
