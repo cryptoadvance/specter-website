@@ -259,16 +259,16 @@ export default function Home() {
 
           {/* Hardware Section */}
           <section id="hardware" className="mb-20">
-            <Card className="bg-specter-navy rounded-xl p-8 md:p-12 shadow-2xl border-0">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
+            <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
+              <div className="grid md:grid-cols-3 gap-12 h-full">
+                <div className="md:col-span-2 flex items-end">
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2022/03/IMG_0062.png" 
                     alt="Specter DIY Hardware Wallet" 
-                    className="w-full h-auto"
+                    className="w-full h-auto block"
                   />
                 </div>
-                <div>
+                <div className="p-8 md:p-12 flex flex-col justify-center">
                   <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Hardware</h2>
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     Trust minimised signing devices running Specter open source firmware.
