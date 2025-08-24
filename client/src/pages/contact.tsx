@@ -238,7 +238,7 @@ export default function Contact() {
               <h2 className="text-2xl font-semibold text-white">Schnuartz</h2>
               <p className="text-specter-coral font-medium mb-4">President</p>
               <p className="text-gray-300 text-sm md:text-base">
-                As the founder of a small German online shop named ClavaStack that sold Specter hardware wallets and created numerous Specter tutorials on the EINUNDZWANZIG channel, Schnuartz has been living the association's mission from the very beginning. He was elected president to lead Specter into the future as an officially community-driven organization.
+                As the founder of a German online shop named ClavaStack that sold Specter hardware wallets and created numerous Specter tutorials on the EINUNDZWANZIG channel, Schnuartz has been living the association's mission from the very beginning. He was elected president to lead Specter into the future as an officially community-driven organization.
               </p>
             </div>
           </Card>
