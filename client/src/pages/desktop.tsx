@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
 
 export default function Desktop() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -242,7 +243,7 @@ export default function Desktop() {
               </div>
               <div className="md:col-span-2">
                 <img 
-                  src="@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png" 
+                  src={desktopImage} 
                   alt="Specter Desktop In Use" 
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
