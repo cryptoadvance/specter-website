@@ -333,40 +333,51 @@ export default function Downloads() {
                           </DialogHeader>
                           <div className="space-y-4 text-sm">
                             <ol className="list-decimal list-inside space-y-3">
-                              <li>Download Specter for Linux (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-v2.0.5.tar.gz</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
-                              <li>Download and import the PGP Public key of "Specter Signer". The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.</li>
-                              <li>Install GPG if not already installed:</li>
-                            </ol>
-                            <div className="bg-specter-navy p-4 rounded-lg space-y-2">
-                              <div><strong>Ubuntu/Debian:</strong> <code className="font-mono">sudo apt install gnupg</code></div>
-                              <div><strong>Fedora:</strong> <code className="font-mono">sudo dnf install gnupg2</code></div>
-                              <div><strong>Arch:</strong> <code className="font-mono">sudo pacman -S gnupg</code></div>
-                            </div>
-                            <ol start={4} className="list-decimal list-inside space-y-3">
-                              <li>Open terminal and navigate to Downloads:</li>
+                              <li>Download Specter for Linux (<code className="bg-specter-navy px-1 py-0.5 rounded">specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.
+                                <div className="pl-4 mt-2 space-y-1">
+                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc</div>
+                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc</div>
+                                </div>
+                              </li>
+                              <li>Open the terminal app (you can search for it on the Launchpad)</li>
+                              <li>Paste in the following lines (Note: The first 2 commands are needed only if it's your first time doing this process):</li>
                             </ol>
                             <div className="bg-specter-navy p-4 rounded-lg">
-                              <code className="font-mono text-sm">cd ~/Downloads</code>
+                              <ol className="list-decimal list-inside space-y-2 font-mono text-sm">
+                                <li><code>sudo apt update</code></li>
+                                <li><code>sudo apt-get install gnupg</code></li>
+                                <li><code>cd Downloads</code></li>
+                                <li><code>gpg --import pgp_keys.asc</code></li>
+                                <li><code>gpg --verify SHA256SUMS.asc</code></li>
+                              </ol>
                             </div>
                             <ol start={5} className="list-decimal list-inside space-y-3">
-                              <li>Import the PGP key:</li>
+                              <li>After the last command, you should see a few lines of output - make sure they contain "Good signature" and the key identity and fingerprint are correct.</li>
                             </ol>
-                            <div className="bg-specter-navy p-4 rounded-lg">
-                              <code className="font-mono text-sm">gpg --import pgp_keys.asc</code>
+                            <div className="my-4 p-4 bg-gray-800 rounded-lg">
+                              <img 
+                                src={goodSigImage} 
+                                alt="Good signature verification output" 
+                                className="w-full max-w-full h-auto rounded border border-gray-600" 
+                              />
                             </div>
                             <ol start={6} className="list-decimal list-inside space-y-3">
-                              <li>Verify the signature:</li>
-                            </ol>
-                            <div className="bg-specter-navy p-4 rounded-lg">
-                              <code className="font-mono text-sm">gpg --verify SHA256SUMS.asc</code>
-                            </div>
-                            <ol start={7} className="list-decimal list-inside space-y-3">
-                              <li>Verify the sha256 hash:</li>
+                              <li>Verify the sha256 of the Specter software file is indeed in the signed hashes file by running:</li>
                             </ol>
                             <div className="bg-specter-navy p-4 rounded-lg">
                               <code className="font-mono text-sm">sha256sum -c SHA256SUMS --ignore-missing</code>
                             </div>
-                            <p>8. Make sure the output shows "OK" next to the Specter file name.</p>
+                            <ol start={7} className="list-decimal list-inside space-y-3">
+                              <li>Make sure the output shows "OK" next to the file name, similar to this (example from MacOS but you get the idea):</li>
+                            </ol>
+                            <div className="my-4 p-4 bg-gray-800 rounded-lg">
+                              <img 
+                                src={fileOkImage} 
+                                alt="File verification OK output" 
+                                className="w-full max-w-full h-auto rounded border border-gray-600" 
+                              />
+                            </div>
                           </div>
                         </DialogContent>
                       </Dialog>
