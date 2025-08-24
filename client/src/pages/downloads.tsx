@@ -179,23 +179,16 @@ export default function Downloads() {
                       </div>
                       <Button
                         onClick={() => macAsset && window.open(macAsset.browser_download_url, '_blank')}
-                        className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-4 w-full text-xl"
+                        className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-2 w-full text-xl"
                       >
                         For OS X
                       </Button>
+                      <div className="flex items-center justify-center gap-1 mb-4">
+                        <Info className="w-3 h-3 text-gray-400" />
+                        <span className="text-gray-400 text-xs">Verify signature</span>
+                      </div>
                       {macAsset && (
-                        <>
-                          <div className="flex items-center justify-center gap-1 mb-4">
-                            <Info className="w-3 h-3 text-gray-400" />
-                            <button
-                              onClick={() => window.open(`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`, '_blank')}
-                              className="text-gray-400 hover:text-white text-xs underline"
-                            >
-                              Verify signature
-                            </button>
-                          </div>
-                          <p className="text-gray-400 text-sm">{formatFileSize(macAsset.size)}</p>
-                        </>
+                        <p className="text-gray-400 text-sm">{formatFileSize(macAsset.size)}</p>
                       )}
                     </div>
 
@@ -206,23 +199,16 @@ export default function Downloads() {
                       </div>
                       <Button
                         onClick={() => winAsset && window.open(winAsset.browser_download_url, '_blank')}
-                        className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-4 w-full text-xl"
+                        className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-2 w-full text-xl"
                       >
                         For Windows
                       </Button>
+                      <div className="flex items-center justify-center gap-1 mb-4">
+                        <Info className="w-3 h-3 text-gray-400" />
+                        <span className="text-gray-400 text-xs">Verify signature</span>
+                      </div>
                       {winAsset && (
-                        <>
-                          <div className="flex items-center justify-center gap-1 mb-4">
-                            <Info className="w-3 h-3 text-gray-400" />
-                            <button
-                              onClick={() => window.open(`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`, '_blank')}
-                              className="text-gray-400 hover:text-white text-xs underline"
-                            >
-                              Verify signature
-                            </button>
-                          </div>
-                          <p className="text-gray-400 text-sm">{formatFileSize(winAsset.size)}</p>
-                        </>
+                        <p className="text-gray-400 text-sm">{formatFileSize(winAsset.size)}</p>
                       )}
                     </div>
 
@@ -233,23 +219,16 @@ export default function Downloads() {
                       </div>
                       <Button
                         onClick={() => linuxAsset && window.open(linuxAsset.browser_download_url, '_blank')}
-                        className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-4 w-full text-xl"
+                        className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-2 w-full text-xl"
                       >
                         For Linux
                       </Button>
+                      <div className="flex items-center justify-center gap-1 mb-4">
+                        <Info className="w-3 h-3 text-gray-400" />
+                        <span className="text-gray-400 text-xs">Verify signature</span>
+                      </div>
                       {linuxAsset && (
-                        <>
-                          <div className="flex items-center justify-center gap-1 mb-4">
-                            <Info className="w-3 h-3 text-gray-400" />
-                            <button
-                              onClick={() => window.open(`https://github.com/cryptoadvance/specter-desktop/releases/download/${latestRelease.tag_name}/SHA256SUMS.asc`, '_blank')}
-                              className="text-gray-400 hover:text-white text-xs underline"
-                            >
-                              Verify signature
-                            </button>
-                          </div>
-                          <p className="text-gray-400 text-sm">{formatFileSize(linuxAsset.size)}</p>
-                        </>
+                        <p className="text-gray-400 text-sm">{formatFileSize(linuxAsset.size)}</p>
                       )}
                     </div>
                   </>
