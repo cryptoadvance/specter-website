@@ -154,15 +154,14 @@ export default function BuildGuide() {
                 )}
               </div>
               <div className="relative">
-                <Link
-                  href="/hardware"
+                <button
                   onMouseEnter={() => setHardwareDropdownOpen(true)}
                   onMouseLeave={() => setHardwareDropdownOpen(false)}
                   className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
                 >
                   Hardware
                   <ChevronDown className="ml-1 h-4 w-4" />
-                </Link>
+                </button>
                 {hardwareDropdownOpen && (
                   <div 
                     className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
