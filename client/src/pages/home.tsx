@@ -235,32 +235,6 @@ export default function Home() {
       <main className="py-20">
         <div className="container mx-auto px-4">
           
-          {/* Desktop Section */}
-          <section id="desktop" className="mb-20">
-            <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
-              <div className="grid md:grid-cols-3 gap-12 h-full">
-                <div className="p-8 md:p-12 flex flex-col justify-center">
-                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Desktop</h2>
-                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                    Secure your bitcoin. Verify your transactions. Protect your privacy.
-                  </p>
-                  <Link href="/desktop">
-                    <Button className="bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
-                      Get Specter &gt;&gt;
-                    </Button>
-                  </Link>
-                </div>
-                <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/02/Home-Specter_Add_Device.png" 
-                    alt="Specter Desktop - Add your devices interface" 
-                    className="w-full h-auto block"
-                  />
-                </div>
-              </div>
-            </Card>
-          </section>
-
           {/* Hardware Section */}
           <section id="hardware" className="mb-20">
             <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
@@ -282,6 +256,32 @@ export default function Home() {
                       Build yours &gt;&gt;
                     </Button>
                   </Link>
+                </div>
+              </div>
+            </Card>
+          </section>
+
+          {/* Desktop Section */}
+          <section id="desktop" className="mb-20">
+            <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
+              <div className="grid md:grid-cols-3 gap-12 h-full">
+                <div className="p-8 md:p-12 flex flex-col justify-center">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Desktop</h2>
+                  <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+                    Secure your bitcoin. Verify your transactions. Protect your privacy.
+                  </p>
+                  <Link href="/desktop">
+                    <Button className="bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200">
+                      Get Specter &gt;&gt;
+                    </Button>
+                  </Link>
+                </div>
+                <div className="md:col-span-2 flex items-end">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2022/02/Home-Specter_Add_Device.png" 
+                    alt="Specter Desktop - Add your devices interface" 
+                    className="w-full h-auto block"
+                  />
                 </div>
               </div>
             </Card>
