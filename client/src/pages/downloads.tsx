@@ -276,32 +276,31 @@ export default function Downloads() {
                           </DialogHeader>
                           <div className="space-y-4 text-sm">
                             <ol className="list-decimal list-inside space-y-3">
-                              <li>Download Specter for Windows (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-v2.0.5.exe</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
-                              <li>Download and import the PGP Public key of "Specter Signer". The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.</li>
-                              <li>Install GPG4Win from https://gpg4win.org/</li>
-                              <li>Open Command Prompt (cmd) or PowerShell</li>
-                              <li>Navigate to your Downloads folder:</li>
+                              <li>Download Specter for Windows (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-Setup-v2.0.5.exe</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.
+                                <div className="pl-4 mt-2 space-y-1">
+                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc</div>
+                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc</div>
+                                </div>
+                              </li>
+                              <li>Download and install Gpg4Win (you can get it directly here)</li>
+                              <li>Wait for it to open up or open Kleopatra from the Windows search bar</li>
+                              <li>Click "Import" on the main screen and choose the pgp_keys.asc key you have downloaded in step 2</li>
+                              <li>Click Decrypt/Verify on the upper bar and select the SHA256SUMS.asc file downloaded in step 1</li>
+                              <li>Make sure verification passes successfully and returned the key you have imported as the signer of the file</li>
+                              <li>Right click on the Windows button and choose PowerShell</li>
+                              <li>In the PowerShell terminal, type:</li>
                             </ol>
                             <div className="bg-specter-navy p-4 rounded-lg">
-                              <code className="font-mono text-sm">cd Downloads</code>
+                              <ol className="list-decimal list-inside space-y-2 font-mono text-sm">
+                                <li><code>cd Downloads</code></li>
+                                <li><code>Get-FileHash Specter-Setup-v2.0.5.exe</code></li>
+                              </ol>
                             </div>
-                            <ol start={6} className="list-decimal list-inside space-y-3">
-                              <li>Import the PGP key:</li>
+                            <ol start={10} className="list-decimal list-inside space-y-3">
+                              <li>Open the SHA256SUMS file</li>
+                              <li>Verify the result of the hash from the PowerShell matches the hash that is aligned with the name of the file written inside SHA256SUMS</li>
                             </ol>
-                            <div className="bg-specter-navy p-4 rounded-lg">
-                              <code className="font-mono text-sm">gpg --import pgp_keys.asc</code>
-                            </div>
-                            <ol start={7} className="list-decimal list-inside space-y-3">
-                              <li>Verify the signature:</li>
-                            </ol>
-                            <div className="bg-specter-navy p-4 rounded-lg">
-                              <code className="font-mono text-sm">gpg --verify SHA256SUMS.asc</code>
-                            </div>
-                            <p>8. Verify the sha256 hash:</p>
-                            <div className="bg-specter-navy p-4 rounded-lg">
-                              <code className="font-mono text-sm">certutil -hashfile Specter-v2.0.5.exe SHA256</code>
-                            </div>
-                            <p>9. Compare the output hash with the one listed in the SHA256SUMS file.</p>
                           </div>
                         </DialogContent>
                       </Dialog>
