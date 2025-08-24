@@ -290,12 +290,12 @@ export default function Hardware() {
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     An open-source extension board for the Specter DIY, the Specter Shield enables highly secure seed phrase encryption using smartcards.
                   </p>
-                  <a 
-                    href="#"
+                  <Link 
+                    href="/vendors"
                     className="inline-block bg-transparent border-2 border-specter-coral text-specter-coral hover:bg-specter-coral hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200"
                   >
-                    Order Specter Shield &gt;&gt;
-                  </a>
+                    Find vendors
+                  </Link>
                 </div>
               </div>
             </Card>
