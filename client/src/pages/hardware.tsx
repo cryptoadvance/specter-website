@@ -184,9 +184,9 @@ export default function Hardware() {
 
           {/* Specter DIY Section */}
           <section className="mb-20">
-            <Card className="bg-specter-navy rounded-xl p-8 md:p-12 shadow-2xl border-0">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
+            <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
+              <div className="grid md:grid-cols-3 gap-12 h-full">
+                <div className="p-8 md:p-12 flex flex-col justify-center">
                   <h2 className="text-4xl font-bold mb-6 text-white">Specter DIY</h2>
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     Very easy to build from off-the-shelf components to minimize supply chain risk.
@@ -200,11 +200,11 @@ export default function Hardware() {
                     Build Instructions &gt;&gt;
                   </a>
                 </div>
-                <div>
+                <div className="md:col-span-2 flex items-end">
                   <img 
                     src="https://specter.solutions/wp-content/uploads/2022/02/Specter-DIY-Barebones.png" 
                     alt="Specter DIY Barebones" 
-                    className="w-full h-auto"
+                    className="w-full h-auto block"
                   />
                 </div>
               </div>
@@ -239,9 +239,16 @@ export default function Hardware() {
 
           {/* Specter Shield Section */}
           <section className="mb-20">
-            <Card className="bg-specter-navy rounded-xl p-8 md:p-12 shadow-2xl border-0">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
+            <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
+              <div className="grid md:grid-cols-3 gap-12 h-full">
+                <div className="md:col-span-2 flex items-end">
+                  <img 
+                    src="https://specter.solutions/wp-content/uploads/2022/01/Specter-Shield.png" 
+                    alt="Specter Shield" 
+                    className="w-full h-auto block"
+                  />
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center">
                   <h2 className="text-4xl font-bold mb-6 text-white">Specter Shield</h2>
                   <p className="text-xl text-gray-300 mb-8 leading-relaxed">
                     An open-source extension board for the Specter DIY, the Specter Shield enables highly secure seed phrase encryption using smartcards.
@@ -252,13 +259,6 @@ export default function Hardware() {
                   >
                     Order Specter Shield &gt;&gt;
                   </a>
-                </div>
-                <div>
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/01/Specter-Shield.png" 
-                    alt="Specter Shield" 
-                    className="w-full h-auto"
-                  />
                 </div>
               </div>
             </Card>

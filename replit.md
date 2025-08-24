@@ -91,7 +91,18 @@ Preferred communication style: Simple, everyday language.
 - **nanoid**: Unique ID generation
 - **cmdk**: Command palette component
 
-# Recent Changes (August 23, 2025)
+# Recent Changes (August 24, 2025)
+
+## Comprehensive Layout Standardization (August 24, 2025)
+- Applied consistent 1/3 text and 2/3 image layout pattern across all major sections website-wide
+- Updated Desktop page: Send, Receive, and Backup sections use professional shared background boxes
+- Updated Hardware page: Specter DIY and Specter Shield sections now use consistent layout pattern
+- Updated Home page: Desktop and Hardware sections converted to match layout pattern
+- Updated Build Guide page: All four wallet sections (DIY, Shield, Shield Lite, Shield Lite w/ Batteries) use standardized layout
+- All sections now feature precise bottom/edge alignment with shared specter-navy background boxes
+- Images display cleanly without rounded corners or shadows for professional appearance
+- Text content is vertically centered with proper padding within 1/3 column space
+- Layout pattern ensures consistent visual hierarchy and professional presentation across entire website
 
 ## Build Guide Addition (August 23, 2025)
 - Created comprehensive Build Guide page (/build-guide) with detailed hardware wallet assembly instructions
