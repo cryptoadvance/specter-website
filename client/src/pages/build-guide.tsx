@@ -118,7 +118,7 @@ export default function BuildGuide() {
             </div>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
+            <div className="hidden md:flex space-x-4 flex-wrap">
               <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Home
               </Link>
@@ -232,9 +232,9 @@ export default function BuildGuide() {
                   </div>
                 )}
               </div>
-              <button className="text-white hover:text-specter-coral transition-colors duration-200">
-                Hardware2 TEST
-              </button>
+              <div className="bg-red-500 px-4 py-2 text-white font-bold">
+                HARDWARE2 TEST
+              </div>
               <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
                 Contact
               </Link>
