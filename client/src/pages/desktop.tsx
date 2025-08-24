@@ -410,7 +410,7 @@ export default function Desktop() {
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
                 <div className="w-16 h-16 mx-auto mb-6 bg-specter-primary rounded-full flex items-center justify-center">
                   <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    <path d="M18 10V8c0-3.3-2.7-6-6-6s-6 2.7-6 6v2c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8c0-1.1-.9-2-2-2zm-7-6c1.1 0 2 .9 2 2v2H9V6c0-1.1.9-2 2-2zm3 2v2h-2V6c0-.6-.4-1-1-1s-1 .4-1 1v2H8V6c0-2.2 1.8-4 4-4s4 1.8 4 4z"/>
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">Keeping your XPub Private.</h3>
@@ -419,9 +419,11 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <div className="w-16 h-16 mx-auto mb-6 bg-specter-coral rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                <div className="w-16 h-16 mx-auto mb-6 bg-gray-100 rounded-full flex items-center justify-center">
+                  <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 3L7 8H5V16H12V12L17 17H19V9H12V3Z" fill="black"/>
+                    <path d="M12 12V16H19V17L12 10V12H5V8L12 15V12Z" fill="white"/>
+                    <path d="M12 10L19 17V9H12L7 8V16H12L17 17H19V9H12V10Z" stroke="black" strokeWidth="0.5" fill="none"/>
                   </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-white">New Plugins & Extensions.</h3>
