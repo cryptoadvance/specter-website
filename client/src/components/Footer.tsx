@@ -74,6 +74,8 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
 
         {/* Newsletter Signup - Only show if showNewsletter is true */}
         {showNewsletter && (
+          <>
+
           <div className="text-center mb-12">
             <h4 className="text-xl font-semibold mb-4 text-white">
               Stay up to date<br />with Specter
@@ -100,6 +102,13 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
               Newsletter integration with external service
             </p>
           </div>
+          <div className="text-center mb-12">
+            <h4 className="text-xl font-semibold mb-4 text-white">
+              Stay up to date<br />with Specter
+            </h4>
+<script async src="https://eomail6.com/form/c51600a0-81ab-11f0-b46e-69c761b60369.js" data-form="c51600a0-81ab-11f0-b46e-69c761b60369"></script>
+          </div>
+          </>
         )}
 
         {/* Copyright and Legal */}
