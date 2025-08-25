@@ -159,20 +159,7 @@ export default function Desktop() {
           <section className="mb-20">
             <div className="grid md:grid-cols-3 gap-12 items-center">
               <div className="space-y-8">
-                <div className="p-6 rounded-xl">
-                  <img
-                    src={fastIcon}
-                    alt="Fast"
-                    className="w-16 h-16 mb-6"
-                  />
-                  <h3 className="text-2xl font-bold mb-4 text-white">Get started fast!</h3>
-                  <p className="text-gray-300 mb-4">
-                    One click to install Bitcoin Core directly from Specter Desktop, get your node set up quickly.
-                  </p>
-                  <p className="text-gray-300">
-                    Run Bitcoin Core as a pruned mode to conserve storage space.
-                  </p>
-                </div>
+
                 <div className="p-6 rounded-xl">
                   <img
                     src={qrCodeIcon}
@@ -345,24 +332,7 @@ export default function Desktop() {
                   Specter reserves addresses for your Swan withdrawals and is keeping your wallet XPub private.
                 </p>
               </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <div className="h-16 mb-6"></div>
-                <h3 className="text-xl font-bold mb-4 text-white">New Plugins & Extensions.</h3>
-                <p className="text-gray-300 mb-4">
-                  Further extensions are in development.
-                </p>
-                <p className="text-gray-300 mb-4">
-                  If you want to build an extension tool or service integration please contact Moritz.
-                </p>
-                <a 
-                  href="https://specter.solutions/desktop/#contact" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-specter-coral hover:underline text-sm"
-                >
-                  Contact &gt;&gt;
-                </a>
-              </div>
+              
             </div>
           </section>
 
