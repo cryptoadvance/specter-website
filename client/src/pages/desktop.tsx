@@ -4,6 +4,39 @@ import Layout from "@/components/Layout";
 import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
 import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
 
+// Desktop page specific images
+import adjustIcon from "@assets/desktop/Adjust.svg";
+import backupIcon from "@assets/desktop/backup.svg";
+import bitcoinCoreImage from "@assets/desktop/bitcoin_core.png";
+import codeIcon from "@assets/desktop/code.svg";
+import communityIcon from "@assets/desktop/community.svg";
+import connectIcon from "@assets/desktop/connect.svg";
+import customiseSettingsIcon from "@assets/desktop/customise-settings.svg";
+import desktopAddDeviceImage from "@assets/desktop/Desktop-Specter_Add_Device.png";
+import desktopAddNewWalletImage from "@assets/desktop/Desktop-Specter_Add_New_Wallet.png";
+import documentationIcon from "@assets/desktop/documentation.svg";
+import donateIcon from "@assets/desktop/donate.svg";
+import exploreIcon from "@assets/desktop/explore.svg";
+import fastIcon from "@assets/desktop/Fast.svg";
+import fossIcon from "@assets/desktop/foss.svg";
+import importExportIcon from "@assets/desktop/import-export.svg";
+import importExportIcon2 from "@assets/desktop/import_export.svg";
+import liquidArticlesIcon from "@assets/desktop/liquid-articles.svg";
+import qrCodeIcon from "@assets/desktop/QR-Code.svg";
+import receiveIcon from "@assets/desktop/Receive.svg";
+import scanIcon from "@assets/desktop/scan.svg";
+import securelyIcon from "@assets/desktop/securely.svg";
+import selectCoinsIcon from "@assets/desktop/select-coins.svg";
+import sendIcon from "@assets/desktop/Send.svg";
+import specterBackupFileImage from "@assets/desktop/Specter_Backup_File.png";
+import specterDesktopInUseImage from "@assets/desktop/Specter_Desktop_In_Use.jpg";
+import specterReceiveTransactionImage from "@assets/desktop/Specter_Receive_Transaction.png";
+import specterSendTransactionImage from "@assets/desktop/Specter_Send_Transaction.png";
+import supportedNetworksIcon from "@assets/desktop/supported-networks.svg";
+import swanImage from "@assets/desktop/Swan.png";
+import torIcon from "@assets/desktop/tor.svg";
+import tutorialsIcon from "@assets/desktop/tutorials.svg";
+
 export default function Desktop() {
   return (
     <Layout className="bg-specter-dark text-white font-sans min-h-screen">
@@ -63,9 +96,9 @@ export default function Desktop() {
           <section className="mb-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_Device-1024x602.png" 
-                  alt="Specter Desktop Add Device" 
+                <img
+                  src={desktopAddDeviceImage}
+                  alt="Specter Desktop Add Device"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
@@ -91,9 +124,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div>
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/Desktop-Specter_Add_New_Wallet-1024x602.png" 
-                  alt="Specter Desktop Add New Wallet" 
+                <img
+                  src={desktopAddNewWalletImage}
+                  alt="Specter Desktop Add New Wallet"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
@@ -104,9 +137,9 @@ export default function Desktop() {
           <section className="mb-20">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/bitcoin_core-1024x728.png" 
-                  alt="Bitcoin Core" 
+                <img
+                  src={bitcoinCoreImage}
+                  alt="Bitcoin Core"
                   className="w-full max-w-lg h-auto rounded-lg shadow-lg"
                 />
               </div>
@@ -127,9 +160,9 @@ export default function Desktop() {
             <div className="grid md:grid-cols-3 gap-12 items-center">
               <div className="space-y-8">
                 <div className="p-6 rounded-xl">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2021/12/Fast.svg" 
-                    alt="Fast" 
+                  <img
+                    src={fastIcon}
+                    alt="Fast"
                     className="w-16 h-16 mb-6"
                   />
                   <h3 className="text-2xl font-bold mb-4 text-white">Get started fast!</h3>
@@ -141,9 +174,9 @@ export default function Desktop() {
                   </p>
                 </div>
                 <div className="p-6 rounded-xl">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/01/QR-Code.svg" 
-                    alt="QR Code" 
+                  <img
+                    src={qrCodeIcon}
+                    alt="QR Code"
                     className="w-16 h-16 mb-6"
                   />
                   <h3 className="text-2xl font-bold mb-4 text-white">Signing experience.</h3>
@@ -170,9 +203,9 @@ export default function Desktop() {
             <div className="bg-specter-navy rounded-xl border-0 mb-16 overflow-hidden">
               <div className="grid md:grid-cols-3 gap-12 h-full">
                 <div className="p-8 flex flex-col justify-center">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2021/12/Send.svg" 
-                    alt="Send" 
+                  <img
+                    src={sendIcon}
+                    alt="Send"
                     className="w-16 h-16 mb-6"
                   />
                   <h3 className="text-3xl font-bold mb-6 text-white">Send</h3>
@@ -184,9 +217,9 @@ export default function Desktop() {
                   </p>
                 </div>
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Send_Transaction.png" 
-                    alt="Specter Send Transaction" 
+                  <img
+                    src={specterSendTransactionImage}
+                    alt="Specter Send Transaction"
                     className="w-full h-auto block"
                   />
                 </div>
@@ -197,16 +230,16 @@ export default function Desktop() {
             <div className="bg-specter-navy rounded-xl border-0 mb-16 overflow-hidden">
               <div className="grid md:grid-cols-3 gap-12 h-full">
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Receive_Transaction.png" 
-                    alt="Specter Receive Transaction" 
+                  <img
+                    src={specterReceiveTransactionImage}
+                    alt="Specter Receive Transaction"
                     className="w-full h-auto block"
                   />
                 </div>
                 <div className="p-8 flex flex-col justify-center">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2021/12/Receive.svg" 
-                    alt="Receive" 
+                  <img
+                    src={receiveIcon}
+                    alt="Receive"
                     className="w-16 h-16 mb-6"
                   />
                   <h3 className="text-3xl font-bold mb-6 text-white">Receive</h3>
@@ -223,9 +256,9 @@ export default function Desktop() {
             {/* Three Feature Boxes */}
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2021/12/Adjust.svg" 
-                  alt="Adjust" 
+                <img
+                  src={adjustIcon}
+                  alt="Adjust"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Optimise your transactions.</h3>
@@ -243,9 +276,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/liquid-articles.svg" 
-                  alt="Articles" 
+                <img
+                  src={liquidArticlesIcon}
+                  alt="Articles"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Transaction History & Labels.</h3>
@@ -263,9 +296,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/select-coins.svg" 
-                  alt="Select Coins" 
+                <img
+                  src={selectCoinsIcon}
+                  alt="Select Coins"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Select coins for spending.</h3>
@@ -287,9 +320,9 @@ export default function Desktop() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/02/Swan.png" 
-                  alt="Swan" 
+                <img
+                  src={swanImage}
+                  alt="Swan"
                   className="w-24 h-24 mx-auto mb-6 object-contain"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Swan Integration.</h3>
@@ -338,18 +371,18 @@ export default function Desktop() {
             <h2 className="text-4xl font-bold mb-16 text-white text-center">Securely Connected</h2>
 
             <div className="mb-16 text-center">
-              <img 
-                src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Desktop_In_Use-scaled.jpg" 
-                alt="Specter Desktop In Use 2" 
+              <img
+                src={specterDesktopInUseImage}
+                alt="Specter Desktop In Use 2"
                 className="w-full max-w-5xl mx-auto h-auto rounded-lg shadow-lg"
               />
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/tor.svg" 
-                  alt="Tor" 
+                <img
+                  src={torIcon}
+                  alt="Tor"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Use Tor to protect your privacy.</h3>
@@ -361,9 +394,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/securely.svg" 
-                  alt="Securely" 
+                <img
+                  src={securelyIcon}
+                  alt="Securely"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Securely access your wallets.</h3>
@@ -372,9 +405,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/connect.svg" 
-                  alt="Connect" 
+                <img
+                  src={connectIcon}
+                  alt="Connect"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Connect to your node in a box.</h3>
@@ -395,9 +428,9 @@ export default function Desktop() {
             <div className="bg-specter-navy rounded-xl border-0 mb-16 overflow-hidden">
               <div className="grid md:grid-cols-3 gap-12 h-full">
                 <div className="p-8 flex flex-col justify-center">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/02/import_export.svg" 
-                    alt="Import/Export" 
+                  <img
+                    src={importExportIcon2}
+                    alt="Import/Export"
                     className="w-16 h-16 mb-6"
                   />
                   <h3 className="text-2xl font-bold mb-4 text-white">Backup your multi-sig.</h3>
@@ -406,9 +439,9 @@ export default function Desktop() {
                   </p>
                 </div>
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Backup_File-1-1024x511.png" 
-                    alt="Specter Backup File" 
+                  <img
+                    src={specterBackupFileImage}
+                    alt="Specter Backup File"
                     className="w-full h-auto block"
                   />
                 </div>
@@ -417,9 +450,9 @@ export default function Desktop() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/backup.svg" 
-                  alt="Backup" 
+                <img
+                  src={backupIcon}
+                  alt="Backup"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Backup Specter wallet data.</h3>
@@ -431,9 +464,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/import-export.svg" 
-                  alt="Import Export" 
+                <img
+                  src={importExportIcon}
+                  alt="Import Export"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Import and export between apps.</h3>
@@ -448,9 +481,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/scan.svg" 
-                  alt="Scan" 
+                <img
+                  src={scanIcon}
+                  alt="Scan"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Scan for existing funds.</h3>
@@ -470,9 +503,9 @@ export default function Desktop() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/explore.svg" 
-                  alt="Explore" 
+                <img
+                  src={exploreIcon}
+                  alt="Explore"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Explore Bitcoin.</h3>
@@ -484,9 +517,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/customise-settings.svg" 
-                  alt="Customise Settings" 
+                <img
+                  src={customiseSettingsIcon}
+                  alt="Customise Settings"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Customise.</h3>
@@ -504,9 +537,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/supported-networks.svg" 
-                  alt="Supported Networks" 
+                <img
+                  src={supportedNetworksIcon}
+                  alt="Supported Networks"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Networks Supported.</h3>
@@ -523,9 +556,9 @@ export default function Desktop() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/tutorials.svg" 
-                  alt="Tutorials" 
+                <img
+                  src={tutorialsIcon}
+                  alt="Tutorials"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Tutorials.</h3>
@@ -565,9 +598,9 @@ export default function Desktop() {
                 </div>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/documentation.svg" 
-                  alt="Documentation" 
+                <img
+                  src={documentationIcon}
+                  alt="Documentation"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Specter Desktop documentation.</h3>
@@ -584,9 +617,9 @@ export default function Desktop() {
                 </a>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/community.svg" 
-                  alt="Community" 
+                <img
+                  src={communityIcon}
+                  alt="Community"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Join the Specter community.</h3>
@@ -611,9 +644,9 @@ export default function Desktop() {
 
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/foss.svg" 
-                  alt="FOSS" 
+                <img
+                  src={fossIcon}
+                  alt="FOSS"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Free open source software.</h3>
@@ -622,9 +655,9 @@ export default function Desktop() {
                 </p>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/code.svg" 
-                  alt="Code" 
+                <img
+                  src={codeIcon}
+                  alt="Code"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Contribute to the tools we all use.</h3>
@@ -644,9 +677,9 @@ export default function Desktop() {
                 </a>
               </div>
               <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img 
-                  src="https://specter.solutions/wp-content/uploads/2022/01/donate.svg" 
-                  alt="Donate" 
+                <img
+                  src={donateIcon}
+                  alt="Donate"
                   className="w-16 h-16 mb-6 mx-auto"
                 />
                 <h3 className="text-xl font-bold mb-4 text-white">Donate some sats.</h3>
