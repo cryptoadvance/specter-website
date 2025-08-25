@@ -105,27 +105,21 @@ export default function Header({ onHomeClick }: HeaderProps) {
 
             {/* Hardware Dropdown */}
             <div className="relative">
-              <Link
-                href="/hardware"
-                onMouseEnter={() => setHardwareDropdownOpen(true)}
-                onMouseLeave={() => setHardwareDropdownOpen(false)}
+              <button
+                onClick={() => setHardwareDropdownOpen(!hardwareDropdownOpen)}
                 className={`flex items-center transition-colors duration-200 ${
-                  isHardwareActive() 
-                    ? 'text-specter-coral font-medium' 
+                  isHardwareActive()
+                    ? 'text-specter-coral font-medium'
                     : 'text-white hover:text-specter-coral'
                 }`}
               >
                 Hardware
                 <ChevronDown className="ml-1 h-4 w-4" />
-              </Link>
+              </button>
               {hardwareDropdownOpen && (
-                <div 
-                  className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
-                  onMouseEnter={() => setHardwareDropdownOpen(true)}
-                  onMouseLeave={() => setHardwareDropdownOpen(false)}
-                >
-                  <Link 
-                    href="/hardware" 
+                <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                  <Link
+                    href="/hardware"
                     className={`block px-4 py-2 transition-colors duration-200 rounded-t-lg ${
                       isActive('/hardware')
                         ? 'text-specter-coral font-medium bg-specter-dark'
@@ -135,8 +129,8 @@ export default function Header({ onHomeClick }: HeaderProps) {
                   >
                     Hardware Overview
                   </Link>
-                  <Link 
-                    href="/vendors" 
+                  <Link
+                    href="/vendors"
                     className={`block px-4 py-2 transition-colors duration-200 ${
                       isActive('/vendors')
                         ? 'text-specter-coral font-medium bg-specter-dark'
@@ -146,8 +140,8 @@ export default function Header({ onHomeClick }: HeaderProps) {
                   >
                     Vendors
                   </Link>
-                  <Link 
-                    href="/build-guide" 
+                  <Link
+                    href="/build-guide"
                     className={`block px-4 py-2 transition-colors duration-200 rounded-b-lg ${
                       isActive('/build-guide')
                         ? 'text-specter-coral font-medium bg-specter-dark'
