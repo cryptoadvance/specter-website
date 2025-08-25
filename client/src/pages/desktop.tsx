@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import BlinkPayButton from "@/components/BlinkPayButton";
 import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
 import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
 
@@ -62,14 +64,12 @@ export default function Desktop() {
               Secure your bitcoin. Verify your transactions. Protect your privacy.
             </p>
             <div>
-              <a 
-                href="https://specter.solutions/downloads/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/downloads"
                 className="inline-block bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
               >
                 Download
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -656,14 +656,7 @@ export default function Desktop() {
                 <p className="text-gray-300 mb-4">
                   Show your appreciation for the open source projects you use.
                 </p>
-                <a 
-                  href="https://donate.specter.solutions/apps/3k77BAT6zshCGNd3i7gw9WKwXQy1/pos" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-specter-coral hover:underline"
-                >
-                  Donate &gt;&gt;
-                </a>
+                <BlinkPayButton className="mt-4" />
               </div>
             </div>
           </section>
