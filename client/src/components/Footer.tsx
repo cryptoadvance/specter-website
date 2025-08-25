@@ -109,15 +109,6 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
             >
               Imprint
             </Link>
-            <span>|</span>
-            <a
-              href="https://specter.solutions/privacy-policy/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-specter-coral transition-colors"
-            >
-              Privacy
-            </a>
           </div>
         </div>
       </div>
