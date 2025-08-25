@@ -1,18 +1,32 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Link } from "wouter";
+import { useEffect } from "react";
 
 interface FooterProps {
   showNewsletter?: boolean;
 }
 
 export default function Footer({ showNewsletter = false }: FooterProps) {
-  // Newsletter will be handled by external service
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // TODO: Integrate with your external newsletter service
-    console.log('Newsletter signup - integrate with external service');
-  };
+
+  // Load EmailOctopus form script
+  useEffect(() => {
+    if (showNewsletter) {
+      // Check if script is already loaded
+      const existingScript = document.querySelector('script[src="https://eomail6.com/form/c51600a0-81ab-11f0-b46e-69c761b60369.js"]');
+
+      if (!existingScript) {
+        const script = document.createElement('script');
+        script.src = 'https://eomail6.com/form/c51600a0-81ab-11f0-b46e-69c761b60369.js';
+        script.async = true;
+        script.setAttribute('data-form', 'c51600a0-81ab-11f0-b46e-69c761b60369');
+
+        // Append to the newsletter container
+        const newsletterContainer = document.getElementById('emailoctopus-form-container');
+        if (newsletterContainer) {
+          newsletterContainer.appendChild(script);
+        }
+      }
+    }
+  }, [showNewsletter]);
 
   return (
     <footer className="bg-specter-navy py-16 mt-20">
@@ -74,41 +88,15 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
 
         {/* Newsletter Signup - Only show if showNewsletter is true */}
         {showNewsletter && (
-          <>
-
           <div className="text-center mb-12">
             <h4 className="text-xl font-semibold mb-4 text-white">
               Stay up to date<br />with Specter
             </h4>
-            <form
-              onSubmit={handleNewsletterSubmit}
-              className="max-w-md mx-auto flex"
-            >
-              <Input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-                className="flex-1 px-4 py-3 rounded-l-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none text-white"
-              />
-              <Button
-                type="submit"
-                className="bg-specter-primary hover:bg-blue-600 text-white px-6 py-3 rounded-r-lg transition-colors duration-200"
-              >
-                Subscribe
-              </Button>
-            </form>
-            <p className="text-gray-400 text-sm mt-2">
-              Newsletter integration with external service
-            </p>
+            {/* EmailOctopus form will be loaded here */}
+            <div id="emailoctopus-form-container" className="max-w-md mx-auto">
+              {/* The EmailOctopus script will inject the form here */}
+            </div>
           </div>
-          <div className="text-center mb-12">
-            <h4 className="text-xl font-semibold mb-4 text-white">
-              Stay up to date<br />with Specter
-            </h4>
-<script async src="https://eomail6.com/form/c51600a0-81ab-11f0-b46e-69c761b60369.js" data-form="c51600a0-81ab-11f0-b46e-69c761b60369"></script>
-          </div>
-          </>
         )}
 
         {/* Copyright and Legal */}
