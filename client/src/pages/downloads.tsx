@@ -272,7 +272,7 @@ export default function Downloads() {
                       </Button>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer">
+                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer w-full">
                             <Info className="w-3 h-3" />
                             <span>Verify signature</span>
                           </button>
@@ -283,11 +283,11 @@ export default function Downloads() {
                           </DialogHeader>
                           <div className="space-y-4 text-sm">
                             <ol className="list-decimal list-inside space-y-3">
-                              <li>Download Specter for macOS (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-v2.0.5.dmg</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download Specter for macOS (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/Specter-v2.0.5.dmg" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">Specter-v2.0.5.dmg</a>), the hashfile (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS</a>) and the signatures file (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS.asc</a>)</li>
                               <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.
                                 <div className="pl-4 mt-2 space-y-1">
-                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc</div>
-                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc</div>
+                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): <a href="https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://keybase.io/k9ert/pgp_keys.asc</a></div>
+                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: <a href="https://benkaufman.info/ben-kaufman.asc" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://benkaufman.info/ben-kaufman.asc</a></div>
                                 </div>
                               </li>
                               <li>Open the terminal app (you can search for it on the Launchpad)</li>
@@ -349,7 +349,7 @@ export default function Downloads() {
                       </Button>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer">
+                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer w-full">
                             <Info className="w-3 h-3" />
                             <span>Verify signature</span>
                           </button>
@@ -360,14 +360,14 @@ export default function Downloads() {
                           </DialogHeader>
                           <div className="space-y-4 text-sm">
                             <ol className="list-decimal list-inside space-y-3">
-                              <li>Download Specter for Windows (<code className="bg-specter-navy px-1 py-0.5 rounded">Specter-Setup-v2.0.5.exe</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download Specter for Windows (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/Specter-Setup-v2.0.5.exe" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">Specter-Setup-v2.0.5.exe</a>), the hashfile (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS</a>) and the signatures file (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS.asc</a>)</li>
                               <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.
                                 <div className="pl-4 mt-2 space-y-1">
-                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc</div>
-                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc</div>
+                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): <a href="https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://keybase.io/k9ert/pgp_keys.asc</a></div>
+                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: <a href="https://benkaufman.info/ben-kaufman.asc" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://benkaufman.info/ben-kaufman.asc</a></div>
                                 </div>
                               </li>
-                              <li>Download and install Gpg4Win (you can get it directly here)</li>
+                              <li>Download and install <a href="https://files.gpg4win.org/gpg4win-3.1.15.exe" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">Gpg4Win</a> (you can get it directly here)</li>
                               <li>Wait for it to open up or open Kleopatra from the Windows search bar</li>
                               <li>Click "Import" on the main screen and choose the pgp_keys.asc key you have downloaded in step 2</li>
                               <li>Click Decrypt/Verify on the upper bar and select the SHA256SUMS.asc file downloaded in step 1</li>
@@ -406,7 +406,7 @@ export default function Downloads() {
                       </Button>
                       <Dialog>
                         <DialogTrigger asChild>
-                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer">
+                          <button className="flex items-center justify-center gap-1 mb-4 text-gray-400 hover:text-white text-xs cursor-pointer w-full">
                             <Info className="w-3 h-3" />
                             <span>Verify signature</span>
                           </button>
@@ -417,11 +417,11 @@ export default function Downloads() {
                           </DialogHeader>
                           <div className="space-y-4 text-sm">
                             <ol className="list-decimal list-inside space-y-3">
-                              <li>Download Specter for Linux (<code className="bg-specter-navy px-1 py-0.5 rounded">specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz</code>), the hashfile (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS</code>) and the signatures file (<code className="bg-specter-navy px-1 py-0.5 rounded">SHA256SUMS.asc</code>)</li>
+                              <li>Download Specter for Linux (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz</a>), the hashfile (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS</a>) and the signatures file (<a href="https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc" target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS.asc</a>)</li>
                               <li>Download and import the PGP Public key of "Specter Signer" here here. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>.
                                 <div className="pl-4 mt-2 space-y-1">
-                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): https://keybase.io/k9ert/pgp_keys.asc</div>
-                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: https://benkaufman.info/ben-kaufman.asc</div>
+                                  <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): <a href="https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://keybase.io/k9ert/pgp_keys.asc</a></div>
+                                  <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: <a href="https://benkaufman.info/ben-kaufman.asc" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://benkaufman.info/ben-kaufman.asc</a></div>
                                 </div>
                               </li>
                               <li>Open the terminal app (you can search for it on the Launchpad)</li>

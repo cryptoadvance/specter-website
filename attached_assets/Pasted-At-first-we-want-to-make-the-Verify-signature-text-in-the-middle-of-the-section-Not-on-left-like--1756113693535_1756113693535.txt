@@ -1,0 +1,30 @@
+At first we want to make the “Verify signature” text in the middle of the section. Not on left like it is currently.
+
+Then we want to add links to the Verify signature windows we are starting with For OS X
+Specter-v2.0.5.dmg -> https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/Specter-v2.0.5.dmg
+SHA256SUMS ->https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS
+SHA256SUMS.asc -> https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
+
+https://keybase.io/k9ert/pgp_keys.asc -> https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109
+https://benkaufman.info/ben-kaufman.asc -> https://benkaufman.info/ben-kaufman.asc
+
+Then we  the window for Windows:
+Specter-Setup-v2.0.5.exe -> https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/Specter-Setup-v2.0.5.exe
+
+SHA256SUMS ->https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS
+SHA256SUMS.asc -> https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
+
+https://keybase.io/k9ert/pgp_keys.asc -> https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109
+https://benkaufman.info/ben-kaufman.asc -> https://benkaufman.info/ben-kaufman.asc
+Gpg4Win -> https://files.gpg4win.org/gpg4win-3.1.15.exe
+
+
+Then we do the window for linux:
+specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz -> https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz
+
+
+SHA256SUMS ->https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS
+SHA256SUMS.asc -> https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/SHA256SUMS.asc
+
+https://keybase.io/k9ert/pgp_keys.asc -> https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109
+https://benkaufman.info/ben-kaufman.asc -> https://benkaufman.info/ben-kaufman.asc
