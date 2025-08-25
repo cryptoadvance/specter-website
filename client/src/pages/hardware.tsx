@@ -4,6 +4,12 @@ import { Card } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
 
+// Hardware page specific images
+import specterFirmwareImage from "@assets/hardware/IMG_0058.png";
+import specterDiyBarebonesImage from "@assets/hardware/Specter-DIY-Barebones.png";
+import specterShieldImage from "@assets/hardware/Specter-Shield.png";
+import specterSignerInUseImage from "@assets/hardware/Specter_Signer_In_Use.jpg";
+
 
 export default function Hardware() {
   return (
@@ -77,9 +83,9 @@ export default function Hardware() {
                   </a>
                 </div>
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/03/IMG_0058.png" 
-                    alt="Specter Firmware" 
+                  <img
+                    src={specterFirmwareImage}
+                    alt="Specter Firmware"
                     className="w-full h-auto block"
                   />
                 </div>
@@ -106,9 +112,9 @@ export default function Hardware() {
                   </Link>
                 </div>
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/02/Specter-DIY-Barebones.png" 
-                    alt="Specter DIY Barebones" 
+                  <img
+                    src={specterDiyBarebonesImage}
+                    alt="Specter DIY Barebones"
                     className="w-full h-auto block"
                   />
                 </div>
@@ -147,9 +153,9 @@ export default function Hardware() {
             <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
               <div className="grid md:grid-cols-3 gap-12 h-full">
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/01/Specter-Shield.png" 
-                    alt="Specter Shield" 
+                  <img
+                    src={specterShieldImage}
+                    alt="Specter Shield"
                     className="w-full h-auto block"
                   />
                 </div>
@@ -197,9 +203,9 @@ export default function Hardware() {
 
           {/* Usage Image */}
           <div className="mb-20 text-center">
-            <img 
-              src="https://specter.solutions/wp-content/uploads/2022/02/Specter_Signer_In_Use-scaled.jpg" 
-              alt="Specter Signer In Use" 
+            <img
+              src={specterSignerInUseImage}
+              alt="Specter Signer In Use"
               className="w-full max-w-4xl mx-auto h-auto rounded-lg"
             />
           </div>
