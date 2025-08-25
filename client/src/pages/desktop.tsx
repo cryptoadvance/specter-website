@@ -870,8 +870,8 @@ export default function Desktop() {
 
           {/* Copyright */}
           <div className="text-center text-gray-400 text-sm">
-            © 2022 | Specter Solutions AG | 
-            <a href="https://specter.solutions/imprint/" className="hover:text-specter-coral mx-2">Imprint</a> | 
+            © 2024 | Specter Association |
+            <Link href="/imprint" className="hover:text-specter-coral mx-2">Imprint</Link> |
             <a href="https://specter.solutions/privacy-policy/" className="hover:text-specter-coral mx-2">Privacy</a>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Link } from "wouter";
 
 interface FooterProps {
   showNewsletter?: boolean;
@@ -103,19 +104,17 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
 
         {/* Copyright and Legal */}
         <div className="text-center text-gray-400 text-sm">
-          <p className="mb-2">© 2022 | Specter Solutions AG</p>
+          <p className="mb-2">© 2024 | Specter Association</p>
           <div className="flex justify-center space-x-4">
-            <a 
-              href="https://specter.solutions/imprint/" 
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/imprint"
               className="hover:text-specter-coral transition-colors"
             >
               Imprint
-            </a>
+            </Link>
             <span>|</span>
-            <a 
-              href="https://specter.solutions/privacy-policy/" 
+            <a
+              href="https://specter.solutions/privacy-policy/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-specter-coral transition-colors"

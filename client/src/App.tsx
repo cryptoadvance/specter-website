@@ -10,6 +10,7 @@ import Hardware from "@/pages/hardware";
 import Vendors from "@/pages/vendors";
 import BuildGuide from "@/pages/build-guide";
 import Contact from "@/pages/contact";
+import Imprint from "@/pages/imprint";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -22,6 +23,7 @@ function Router() {
       <Route path="/vendors" component={Vendors} />
       <Route path="/build-guide" component={BuildGuide} />
       <Route path="/contact" component={Contact} />
+      <Route path="/imprint" component={Imprint} />
       <Route component={NotFound} />
     </Switch>
   );
