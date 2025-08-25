@@ -63,8 +63,8 @@ export default function Imprint() {
               <h2 className="text-2xl font-semibold text-white mb-4">Legal Notice</h2>
               <div className="text-gray-300 space-y-4">
                 <p>
-                  The Specter Association is a non-profit organization dedicated to advancing 
-                  Bitcoin privacy and security through open-source hardware and software solutions.
+                  The Specter Association is a non-profit organization based in Zurich (Switzerland) with 
+                  the aim of further development, distribution and promotion of the Specter open source project. 
                 </p>
                 <p>
                   All content on this website is provided for informational purposes only. 

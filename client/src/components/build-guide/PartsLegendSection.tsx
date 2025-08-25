@@ -1,9 +1,41 @@
+import { useEffect } from "react";
+
 interface PartsLegendSectionProps {
   activeFilter: string;
   onFilterChange: (filter: string) => void;
 }
 
 export default function PartsLegendSection({ activeFilter, onFilterChange }: PartsLegendSectionProps) {
+  // Filter parts based on activeFilter
+  useEffect(() => {
+    const partsList = document.getElementById('parts-list');
+
+    if (partsList) {
+      const partItems = partsList.querySelectorAll('li[data-cases]');
+      partItems.forEach(item => {
+        const itemElement = item as HTMLElement;
+        const itemCases = itemElement.getAttribute('data-cases')?.split(' ') || [];
+
+        if (activeFilter === 'all' || itemCases.includes(activeFilter) || (activeFilter === 'specter-shield-lite-battery' && itemCases.includes('specter-shield-lite'))) {
+          itemElement.style.display = 'block';
+        } else {
+          itemElement.style.display = 'none';
+        }
+      });
+
+      // Filter case list entries within the legend
+      const allLegendSections = partsList.querySelectorAll('div[data-cases]');
+      allLegendSections.forEach(section => {
+        const sectionElement = section as HTMLElement;
+        const requiredCases = sectionElement.getAttribute('data-cases')?.split(' ') || [];
+        if (activeFilter === 'all' || requiredCases.includes(activeFilter) || (activeFilter === 'specter-shield-lite-battery' && requiredCases.includes('specter-shield-lite'))) {
+          sectionElement.style.display = 'block';
+        } else {
+          sectionElement.style.display = 'none';
+        }
+      });
+    }
+  }, [activeFilter]);
   return (
     <>
       {/* Filter Controls for Legend */}

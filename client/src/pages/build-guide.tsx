@@ -36,9 +36,9 @@ export default function BuildGuide() {
   const filterElements = (filter: string) => {
     setActiveFilter(filter);
 
+    // Note: Parts list filtering is now handled by the PartsLegendSection component
+    // This function now only handles case sections filtering
     const caseSections = document.querySelectorAll('.case-section');
-    const partsList = document.getElementById('parts-list');
-    const legendSection = document.getElementById('legend-section');
 
     // Handle case sections
     caseSections.forEach(section => {
@@ -51,36 +51,6 @@ export default function BuildGuide() {
         sectionElement.style.display = 'none';
       }
     });
-
-    // Handle parts list
-    if (partsList) {
-      const partItems = partsList.querySelectorAll('.part-item');
-      partItems.forEach(item => {
-        const itemElement = item as HTMLElement;
-        const itemCases = itemElement.getAttribute('data-cases')?.split(',') || [];
-
-        if (filter === 'all' || itemCases.includes(filter)) {
-          itemElement.style.display = 'block';
-        } else {
-          itemElement.style.display = 'none';
-        }
-      });
-    }
-
-    // Handle legend section
-    if (legendSection) {
-      const legendItems = legendSection.querySelectorAll('.legend-item');
-      legendItems.forEach(item => {
-        const itemElement = item as HTMLElement;
-        const itemCases = itemElement.getAttribute('data-cases')?.split(',') || [];
-
-        if (filter === 'all' || itemCases.includes(filter)) {
-          itemElement.style.display = 'block';
-        } else {
-          itemElement.style.display = 'none';
-        }
-      });
-    }
   };
 
   const highlightTarget = (targetId: string) => {
