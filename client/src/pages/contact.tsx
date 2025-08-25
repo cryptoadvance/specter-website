@@ -498,6 +498,9 @@ export default function Contact() {
                 <p className="text-sm text-gray-400">Association Member</p>
                 <p className="text-xs text-gray-400 mt-1">A former key member of the Specter team who contributed to improving the software wallet.</p>
                 <div className="flex justify-center space-x-3 mt-3">
+                  <a href="https://x.com/k9ert" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+                    <img src={xIcon} alt="X (Twitter)" className="w-5 h-5" />
+                  </a>
                   <a href="https://www.linkedin.com/in/k9ert/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
                     <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5" />
                   </a>
