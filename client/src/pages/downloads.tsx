@@ -265,7 +265,7 @@ export default function Downloads() {
                         <MacIcon />
                       </div>
                       <Button
-                        onClick={() => macAsset && window.open(macAsset.browser_download_url, '_blank')}
+                        onClick={() => window.open('https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/Specter-v2.0.5.dmg', '_blank')}
                         className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-2 w-full text-xl"
                       >
                         For OS X
@@ -342,7 +342,7 @@ export default function Downloads() {
                         <WindowsIcon />
                       </div>
                       <Button
-                        onClick={() => winAsset && window.open(winAsset.browser_download_url, '_blank')}
+                        onClick={() => window.open('https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/Specter-Setup-v2.0.5.exe', '_blank')}
                         className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-2 w-full text-xl"
                       >
                         For Windows
@@ -399,7 +399,7 @@ export default function Downloads() {
                         <LinuxIcon />
                       </div>
                       <Button
-                        onClick={() => linuxAsset && window.open(linuxAsset.browser_download_url, '_blank')}
+                        onClick={() => window.open('https://github.com/cryptoadvance/specter-desktop/releases/download/v2.0.5/specter_desktop-v2.0.5-x86_64-linux-gnu.tar.gz', '_blank')}
                         className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-2 w-full text-xl"
                       >
                         For Linux
