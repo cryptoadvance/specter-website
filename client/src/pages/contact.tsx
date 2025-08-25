@@ -494,7 +494,7 @@ export default function Contact() {
                   alt="Kim" 
                   className="rounded-full w-20 h-20 mb-2 object-cover"
                 />
-                <h3 className="text-lg font-semibold text-white">Kim</h3>
+                <h3 className="text-lg font-semibold text-white">k9ert</h3>
                 <p className="text-sm text-gray-400">Association Member</p>
                 <p className="text-xs text-gray-400 mt-1">A former key member of the Specter team who contributed to improving the software wallet.</p>
                 <div className="flex justify-center space-x-3 mt-3">
