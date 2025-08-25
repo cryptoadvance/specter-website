@@ -1,51 +1,16 @@
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import { insertNewsletterSchema } from "@shared/schema";
-import type { InsertNewsletter } from "@shared/schema";
 
 interface FooterProps {
   showNewsletter?: boolean;
 }
 
 export default function Footer({ showNewsletter = false }: FooterProps) {
-  const { toast } = useToast();
-
-  // Newsletter form
-  const newsletterForm = useForm<InsertNewsletter>({
-    resolver: zodResolver(insertNewsletterSchema),
-    defaultValues: {
-      email: "",
-    },
-  });
-
-  // Newsletter mutation
-  const newsletterMutation = useMutation({
-    mutationFn: async (data: InsertNewsletter) => {
-      return apiRequest('POST', '/api/newsletter', data);
-    },
-    onSuccess: () => {
-      toast({
-        title: "Subscribed!",
-        description: "Thank you for subscribing to Specter updates!",
-      });
-      newsletterForm.reset();
-    },
-    onError: (error: any) => {
-      toast({
-        title: "Error",
-        description: error.message || "Failed to subscribe. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onNewsletterSubmit = (data: InsertNewsletter) => {
-    newsletterMutation.mutate(data);
+  // Newsletter will be handled by external service
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Integrate with your external newsletter service
+    console.log('Newsletter signup - integrate with external service');
   };
 
   return (
@@ -112,29 +77,27 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
             <h4 className="text-xl font-semibold mb-4 text-white">
               Stay up to date<br />with Specter
             </h4>
-            <form 
-              onSubmit={newsletterForm.handleSubmit(onNewsletterSubmit)} 
+            <form
+              onSubmit={handleNewsletterSubmit}
               className="max-w-md mx-auto flex"
             >
               <Input
-                {...newsletterForm.register("email")}
-                type="email" 
-                placeholder="Enter your email" 
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
                 className="flex-1 px-4 py-3 rounded-l-lg bg-specter-dark border border-gray-600 focus:border-specter-primary focus:outline-none text-white"
               />
-              <Button 
+              <Button
                 type="submit"
-                disabled={newsletterMutation.isPending}
                 className="bg-specter-primary hover:bg-blue-600 text-white px-6 py-3 rounded-r-lg transition-colors duration-200"
               >
-                {newsletterMutation.isPending ? "..." : "Subscribe"}
+                Subscribe
               </Button>
             </form>
-            {newsletterForm.formState.errors.email && (
-              <p className="text-red-400 text-sm mt-2">
-                {newsletterForm.formState.errors.email.message}
-              </p>
-            )}
+            <p className="text-gray-400 text-sm mt-2">
+              Newsletter integration with external service
+            </p>
           </div>
         )}
 
