@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import blinkScriptUrl from "@assets/blink-pay-button.js?url";
 
 interface BlinkPayButtonProps {
   className?: string;
@@ -42,7 +43,7 @@ export default function BlinkPayButton({ className = "" }: BlinkPayButtonProps) 
       
       if (!existingScript) {
         const script = document.createElement('script');
-        script.src = '/src/assets/blink-pay-button.js'; // Local path
+        script.src = blinkScriptUrl; // Vite processed asset URL
         script.async = true;
         
         script.onload = () => {
