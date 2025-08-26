@@ -5,7 +5,13 @@
 [build.environment]
   NODE_VERSION = "18"
 
-# Redirect all routes to index.html for SPA routing
+# Serve static assets directly (don't redirect to index.html)
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+# Redirect all other routes to index.html for SPA routing
 [[redirects]]
   from = "/*"
   to = "/index.html"
