@@ -5,6 +5,8 @@ import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
 import heroBackgroundImage from "@assets/imgi_6_Specter_Foss_Suite-scaled_1755535754418.png";
 import contactPersonImage from "@assets/Uncle Jim Tutorial (1)_1755536226982.png";
+import specterDiyImage from "@assets/IMG_0062.png";
+import addDeviceImage from "@assets/Home-Specter_Add_Device.png";
 
 export default function Home() {
   const scrollToSection = (sectionId: string) => {
@@ -54,9 +56,9 @@ export default function Home() {
             <Card className="bg-specter-navy rounded-xl shadow-2xl border-0 overflow-hidden">
               <div className="grid md:grid-cols-3 gap-12 h-full">
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/03/IMG_0062.png" 
-                    alt="Specter DIY Hardware Wallet" 
+                  <img
+                    src={specterDiyImage}
+                    alt="Specter DIY Hardware Wallet"
                     className="w-full h-auto block"
                   />
                 </div>
@@ -91,9 +93,9 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className="md:col-span-2 flex items-end">
-                  <img 
-                    src="https://specter.solutions/wp-content/uploads/2022/02/Home-Specter_Add_Device.png" 
-                    alt="Specter Desktop - Add your devices interface" 
+                  <img
+                    src={addDeviceImage}
+                    alt="Specter Desktop - Add your devices interface"
                     className="w-full h-auto block"
                   />
                 </div>
