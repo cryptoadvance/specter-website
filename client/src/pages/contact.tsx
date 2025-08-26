@@ -3,6 +3,8 @@ import Layout from "@/components/Layout";
 import Leadership from "@/components/contact/Leadership";
 import ContactAssociation from "@/components/contact/ContactAssociation";
 import BoardMembers from "@/components/contact/BoardMembers";
+import BlinkPayButton from "@/components/BlinkPayButton";
+import donateIcon from "@assets/desktop/donate.svg";
 
 
 
@@ -27,8 +29,29 @@ export default function Contact() {
         {/* Board & Honorary Members */}
         <BoardMembers />
 
-        {/* Contact Association */}
-        <ContactAssociation />
+        {/* Contact Association & Donation Section */}
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Contact Association - 50% width */}
+          <div className="flex-1">
+            <ContactAssociation />
+          </div>
+
+          {/* Donation Section - 50% width */}
+          <div className="flex-1">
+            <div className="bg-specter-navy rounded-xl p-8 border-0 text-center h-full flex flex-col justify-center">
+              <img
+                src={donateIcon}
+                alt="Donate"
+                className="w-16 h-16 mb-6 mx-auto"
+              />
+              <h3 className="text-xl font-bold mb-4 text-white">Donate some sats.</h3>
+              <p className="text-gray-300 mb-4">
+                Show your appreciation for the open source projects you use.
+              </p>
+              <BlinkPayButton className="mt-4" />
+            </div>
+          </div>
+        </div>
 
 
 
