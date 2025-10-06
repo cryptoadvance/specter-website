@@ -12,6 +12,7 @@ export default function Header({ onHomeClick }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
+  const [docsDropdownOpen, setDocsDropdownOpen] = useState(false);
 
   const isActive = (path: string) => location === path;
   const isHardwareActive = () => ['/hardware', '/vendors', '/build-guide'].includes(location);
@@ -166,6 +167,39 @@ export default function Header({ onHomeClick }: HeaderProps) {
             >
               Contact
             </Link>
+
+            {/* Docs Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setDocsDropdownOpen(!docsDropdownOpen)}
+                className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
+              >
+                Docs
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {docsDropdownOpen && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+                  <a 
+                    href="https://docs.specter.solutions/desktop/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
+                    onClick={() => setDocsDropdownOpen(false)}
+                  >
+                    Desktop Docs
+                  </a>
+                  <a 
+                    href="https://docs.specter.solutions/diy/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
+                    onClick={() => setDocsDropdownOpen(false)}
+                  >
+                    DIY Docs
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -247,6 +281,27 @@ export default function Header({ onHomeClick }: HeaderProps) {
               >
                 Contact
               </Link>
+
+              {/* Docs Links */}
+              <a 
+                href="https://docs.specter.solutions/desktop/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
+                onClick={handleMobileMenuClose}
+              >
+                Desktop Docs
+              </a>
+              
+              <a 
+                href="https://docs.specter.solutions/diy/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
+                onClick={handleMobileMenuClose}
+              >
+                DIY Docs
+              </a>
             </div>
           </div>
         )}
