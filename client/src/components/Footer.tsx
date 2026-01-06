@@ -55,7 +55,7 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
             </svg>
           </a>
           <a 
-            href="https://twitter.com/specterwallet" 
+            href="https://x.com/SpecterDIY" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-specter-coral transition-colors duration-200"

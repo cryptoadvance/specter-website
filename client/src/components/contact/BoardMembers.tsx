@@ -9,6 +9,8 @@ import stepanImage from "@assets/Stepan-Snigirev_1755804956177.jpg";
 import kimImage from "@assets/Kim_1755804970556.jpg";
 import poltoImage from "@assets/polto_1755804982512.jpg";
 import thomasImage from "@assets/Thomas_1755804997253.jpg";
+import richardImage from "@assets/Richard.png";
+import darkoImage from "@assets/darko.jpg";
 
 const boardMembers: BoardMemberData[] = [
   // Board of Directors
@@ -89,6 +91,27 @@ const boardMembers: BoardMemberData[] = [
     socialLinks: [
       { type: "x", url: "https://x.com/Kayth21" },
       { type: "website", url: "https://bitcoin-store.org/" }
+    ]
+  },
+  {
+    name: "Richard",
+    image: richardImage,
+    role: "Association Member",
+    roleColor: "gray",
+    description: "He helped since the beginning to print Specter DIY cases, to grow the ecosystem.",
+    socialLinks: [
+      { type: "x", url: "https://x.com/surfaceplasmon" },
+      { type: "nostr", url: "https://njump.me/npub16g0r66400k8j3d5c7v9ucjr6vd4xg3nhzknrxvnvh72gg2w39kksfmqpk7" }
+    ]
+  },
+  {
+    name: "Darko",
+    image: darkoImage,
+    role: "Association Member",
+    roleColor: "gray",
+    description: "Led Specter workshops at conferences to promote knowledge and adoption within the community.",
+    socialLinks: [
+      { type: "website", url: "https://hodling.ch/" }
     ]
   }
 ];

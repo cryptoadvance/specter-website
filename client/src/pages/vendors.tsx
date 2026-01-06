@@ -9,6 +9,14 @@ import plebStyleLogo from "@assets/imgi_1_YwTqyo_1_400x400_1755840295047.png";
 import bitcoinStoreLogo from "@assets/CalMPylj_400x400 (1)_1755840297048.jpg";
 import cryptoguideLogo from "@assets/Cryptoguide_1755840305434.jpg";
 import specterLogo from "@assets/Specter_logo_1756046218246.png";
+import bayotoLogo from "@assets/Bayoto.jpg";
+import cryptomaanLogo from "@assets/Cryptomaan.jpg";
+import btcDirectLogo from "@assets/btcdirect.jpg";
+import dezentralshopLogo from "@assets/Dezentralshop.jpg";
+import lwalletLogo from "@assets/Lwallet.jpg";
+import bitcoinBrabantLogo from "@assets/BitcoinBrabant.jpg";
+import bitsagaLogo from "@assets/BitSaga.jpg";
+import bitcoinBazisLogo from "@assets/BitcoinBazis.jpg";
 
 export default function Vendors() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -25,7 +33,8 @@ export default function Vendors() {
       country: "Germany",
       tags: ["parts", "shield", "preassembled"],
       member: "Schnuartz",
-      logo: clavaStackLogo
+      logo: clavaStackLogo,
+      shippingCountry: "Germany",
     },
     {
       name: "Pleb.style",
@@ -34,7 +43,8 @@ export default function Vendors() {
       country: "Germany",
       tags: ["shield", "preassembled"],
       member: "None",
-      logo: plebStyleLogo
+      logo: plebStyleLogo,
+      shippingCountry: "Germany",
     },
     {
       name: "Bitcoin-store.org",
@@ -43,7 +53,8 @@ export default function Vendors() {
       country: "Switzerland",
       tags: ["parts", "preassembled"],
       member: "Thomas",
-      logo: bitcoinStoreLogo
+      logo: bitcoinStoreLogo,
+      shippingCountry: "Switzerland",
     },
     {
       name: "Cryptoguide.tips",
@@ -52,8 +63,91 @@ export default function Vendors() {
       country: "Canada",
       tags: ["parts", "shield"],
       member: "Crypto Guide",
-      logo: cryptoguideLogo
-    }
+      logo: cryptoguideLogo,
+      shippingCountry: "Canada",
+    },
+    {
+      name: "Bayoto",
+      url: "https://bayoto.me/",
+      continent: "europe",
+      country: "Denmark",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: bayotoLogo,
+      shippingCountry: "Denmark",
+    },
+    /*
+    {
+      name: "Cryptomaan",
+      url: "https://cryptomaan.eu/collections/hardware-wallets",
+      continent: "europe",
+      country: "Netherlands",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: cryptomaanLogo,
+    },
+    {
+      name: "BTC Direct",
+      url: "https://shop.btcdirect.eu/",
+      continent: "europe",
+      country: "Netherlands",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: btcDirectLogo,
+    },
+    */
+    {
+      name: "Dezentralshop",
+      url: "https://dezentralshop.ch/",
+      continent: "europe",
+      country: "Switzerland",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: dezentralshopLogo,
+      shippingCountry: "Switzerland",
+    },
+    /*
+    {
+      name: "LWallet",
+      url: "https://lwallet.com.ua/en/",
+      continent: "europe",
+      country: "Ukraine",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: lwalletLogo,
+    },
+    */
+    {
+      name: "Bitcoin Brabant",
+      url: "https://bitcoinbrabant.com/",
+      continent: "europe",
+      country: "Netherlands",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: bitcoinBrabantLogo,
+      shippingCountry: "Germany", // Corrected based on user feedback
+    },
+    /*
+    {
+      name: "Bitsaga",
+      url: "https://bitsaga.be/",
+      continent: "europe",
+      country: "Belgium",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: bitsagaLogo,
+    },
+    */
+    {
+      name: "Bitcoin Bazis",
+      url: "https://shop.bitcoinbazis.hu/",
+      continent: "europe",
+      country: "Hungary",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: bitcoinBazisLogo,
+      shippingCountry: "Hungary",
+    },
   ];
 
   const filteredVendors = vendors.filter(vendor => {
@@ -274,6 +368,9 @@ export default function Vendors() {
               </h2>
               <p className="text-gray-400 text-sm mb-4">
                 {vendor.continent === 'europe' ? 'Europe' : 'North America'}, {vendor.country}
+              </p>
+              <p className="text-gray-500 text-xs mb-4">
+                Ships from: {vendor.shippingCountry}
               </p>
               <p className="text-gray-500 text-xs mb-4">
                 Association member: {vendor.member}
