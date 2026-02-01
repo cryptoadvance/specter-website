@@ -1,9 +1,10 @@
 import xIcon from "@assets/imgi_1_x-icon-white-logo-x-app-editable-transparent-background-premium-social-media-de_1756110415058.png";
 import linkedinIcon from "@assets/Linkedin-Logo-PNG-Picture_1756110417256.png";
 import websiteIcon from "@assets/website-Icon_1756111196211.png";
+import nostrIcon from "@assets/Nostr_logo_weiß.png";
 
 export interface SocialLink {
-  type: 'x' | 'linkedin' | 'website';
+  type: 'x' | 'linkedin' | 'website' | 'nostr';
   url: string;
 }
 
@@ -24,12 +25,14 @@ const socialIcons = {
   x: xIcon,
   linkedin: linkedinIcon,
   website: websiteIcon,
+  nostr: nostrIcon,
 };
 
 const socialLabels = {
   x: 'X (Twitter)',
   linkedin: 'LinkedIn',
   website: 'Website',
+  nostr: 'Nostr',
 };
 
 export default function BoardMember({ member }: BoardMemberProps) {
