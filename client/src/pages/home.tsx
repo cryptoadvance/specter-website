@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import ContactForm from "@/components/ContactForm";
 import heroBackgroundImage from "@assets/imgi_6_Specter_Foss_Suite-scaled_1755535754418.png";
 import contactPersonImage from "@assets/Uncle Jim Tutorial (1)_1755536226982.png";
@@ -18,6 +19,25 @@ export default function Home() {
 
   return (
     <Layout showNewsletter={true} onHomeClick={() => scrollToSection('hero')}>
+      <SEO
+        title="Open-Source Bitcoin Self-Custody"
+        description="Specter is an open-source suite for Bitcoin self-custody: Specter Desktop wallet software and Specter DIY hardware wallets. Secure your Bitcoin, verify your transactions, protect your privacy."
+        path="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "Specter Association",
+          url: "https://specter.solutions",
+          logo: "https://specter.solutions/favicon.png",
+          description:
+            "An association of Bitcoin enthusiasts dedicated to promoting self-custody through open-source software and hardware.",
+          sameAs: [
+            "https://github.com/cryptoadvance",
+            "https://github.com/cryptoadvance/specter-desktop",
+            "https://github.com/cryptoadvance/specter-diy",
+          ],
+        }}
+      />
       {/* Hero Section */}
       <section 
         id="hero"

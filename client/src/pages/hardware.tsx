@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import hardwareBackgroundImage from "@assets/imgi_11_Specter_Signer-scaled_1755538028904.jpg";
 
 // Hardware page specific images
@@ -14,6 +15,21 @@ import specterSignerInUseImage from "@assets/hardware/Specter_Signer_In_Use.jpg"
 export default function Hardware() {
   return (
     <Layout className="bg-specter-dark text-white font-sans min-h-screen">
+      <SEO
+        title="Specter Hardware Wallet"
+        description="Specter DIY is an open-source Bitcoin hardware wallet with trust-minimized signing. Build your own hardware wallet or buy one from trusted vendors."
+        path="/hardware"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "Specter DIY Hardware Wallet",
+          description:
+            "Open-source Bitcoin hardware wallet with trust-minimized firmware. Supports multisig, air-gapped signing and QR-code communication.",
+          brand: { "@type": "Brand", name: "Specter" },
+          url: "https://specter.solutions/hardware",
+          category: "Bitcoin Hardware Wallet",
+        }}
+      />
 
 
       {/* Hero Section with Background Image */}

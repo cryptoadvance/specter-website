@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import SEO from "@/components/SEO";
 
 // Import vendor logos
 import clavaStackLogo from "@assets/BtcFrankenstein Logo 3.4.1_1755840288095.png";
@@ -167,6 +168,11 @@ export default function Vendors() {
 
   return (
     <div className="bg-specter-dark text-white font-sans min-h-screen">
+      <SEO
+        title="Vendors"
+        description="Find trusted vendors selling Specter DIY hardware wallets, parts, shields and preassembled devices — worldwide."
+        path="/vendors"
+      />
       {/* Header */}
       <header className="bg-specter-primary shadow-lg sticky top-0 z-50">
         <nav className="container mx-auto px-4 py-3">

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import BlinkPayButton from "@/components/BlinkPayButton";
 import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
 import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
@@ -42,6 +43,27 @@ import tutorialsIcon from "@assets/desktop/tutorials.svg";
 export default function Desktop() {
   return (
     <Layout className="bg-specter-dark text-white font-sans min-h-screen">
+      <SEO
+        title="Specter Desktop — Bitcoin Wallet Software"
+        description="Specter Desktop is an open-source Bitcoin wallet that connects to your own Bitcoin Core node. Secure your bitcoin, verify your transactions, protect your privacy with multisig and hardware-wallet support."
+        path="/desktop"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "Specter Desktop",
+          operatingSystem: "Windows, macOS, Linux",
+          applicationCategory: "FinanceApplication",
+          url: "https://specter.solutions/desktop",
+          description:
+            "Open-source Bitcoin wallet software with multisig and hardware-wallet support. Connects to your own Bitcoin Core node for maximum privacy and verification.",
+          license: "https://opensource.org/licenses/MIT",
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+          },
+        }}
+      />
 
 
       {/* Hero Section with Background Image */}

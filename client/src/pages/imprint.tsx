@@ -1,8 +1,15 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 
 export default function Imprint() {
   return (
     <Layout className="min-h-screen bg-specter-dark text-white">
+      <SEO
+        title="Imprint"
+        description="Legal information and contact details for the Specter Association."
+        path="/imprint"
+        noindex
+      />
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Header Section */}
         <header className="mb-12 text-center">

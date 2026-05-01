@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import Leadership from "@/components/contact/Leadership";
 import ContactAssociation from "@/components/contact/ContactAssociation";
 import BoardMembers from "@/components/contact/BoardMembers";
@@ -11,6 +12,17 @@ import donateIcon from "@assets/desktop/donate.svg";
 export default function Contact() {
   return (
     <Layout showNewsletter={true}>
+      <SEO
+        title="Contact & About"
+        description="The Specter Association is a community of Bitcoin enthusiasts promoting self-custody through open-source software and hardware. Meet the board and get in touch."
+        path="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact Specter Association",
+          url: "https://specter.solutions/contact",
+        }}
+      />
 
 
       {/* Header Section */}

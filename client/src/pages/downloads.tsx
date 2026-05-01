@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from '@/components/shared/Header';
 import Footer from '@/components/shared/Footer';
+import SEO from '@/components/SEO';
 import DownloadHeroSection from '@/components/downloads/DownloadHeroSection';
 import ReleasesSection from '@/components/downloads/ReleasesSection';
 import ArtifactsSection from '@/components/downloads/ArtifactsSection';
@@ -50,6 +51,11 @@ export default function Downloads() {
 
   return (
     <div className="bg-specter-dark text-white font-sans">
+      <SEO
+        title="Downloads"
+        description="Download the latest version of Specter Desktop Bitcoin wallet software for Windows, macOS and Linux. All releases are open-source and verifiable."
+        path="/downloads"
+      />
       <Header />
 
       <DownloadHeroSection latestRelease={latestRelease} loading={loading} />
