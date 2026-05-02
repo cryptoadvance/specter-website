@@ -17,6 +17,7 @@ import lwalletLogo from "@assets/Lwallet.jpg";
 import bitcoinBrabantLogo from "@assets/BitcoinBrabant.jpg";
 import bitsagaLogo from "@assets/BitSaga.jpg";
 import bitcoinBazisLogo from "@assets/BitcoinBazis.jpg";
+import bitcoinBazarLogo from "@assets/BitcoinBazar.jpg";
 
 export default function Vendors() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -106,7 +107,6 @@ export default function Vendors() {
       logo: dezentralshopLogo,
       shippingCountry: "Switzerland",
     },
-    /*
     {
       name: "LWallet",
       url: "https://lwallet.com.ua/en/",
@@ -115,8 +115,8 @@ export default function Vendors() {
       tags: ["preassembled", "shield"],
       member: "None",
       logo: lwalletLogo,
+      shippingCountry: "Germany",
     },
-    */
     {
       name: "Bitcoin Brabant",
       url: "https://bitcoinbrabant.com/",
@@ -127,17 +127,26 @@ export default function Vendors() {
       logo: bitcoinBrabantLogo,
       shippingCountry: "Germany", // Corrected based on user feedback
     },
-    /*
     {
       name: "Bitsaga",
-      url: "https://bitsaga.be/",
+      url: "https://bitsaga.be/product/specter-shield-metal/",
       continent: "europe",
       country: "Belgium",
       tags: ["preassembled", "shield"],
       member: "None",
       logo: bitsagaLogo,
+      shippingCountry: "Germany",
     },
-    */
+    {
+      name: "Bitcoin Bazar",
+      url: "https://bitcoinbazar.fr/en/products/specter-shield-lite",
+      continent: "europe",
+      country: "France",
+      tags: ["preassembled", "shield"],
+      member: "None",
+      logo: bitcoinBazarLogo,
+      shippingCountry: "France",
+    },
     {
       name: "Bitcoin Bazis",
       url: "https://shop.bitcoinbazis.hu/",
@@ -353,7 +362,7 @@ export default function Vendors() {
                 <img 
                   src={vendor.logo} 
                   alt={`${vendor.name} logo`}
-                  className="h-16 w-16 object-contain"
+                  className="h-16 w-16 object-contain rounded-[4px]"
                 />
               </div>
               <h2 className="text-2xl font-semibold mb-2 text-white">
