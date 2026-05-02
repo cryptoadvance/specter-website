@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import SpecterDIYSection from "@/components/build-guide/SpecterDIYSection";
 import SpecterShieldSection from "@/components/build-guide/SpecterShieldSection";
 import SpecterShieldLiteSection from "@/components/build-guide/SpecterShieldLiteSection";
@@ -65,6 +66,19 @@ export default function BuildGuide() {
 
   return (
     <Layout className="min-h-screen bg-specter-dark text-white">
+      <SEO
+        title="Build Guide"
+        description="Step-by-step build guide for the Specter DIY Bitcoin hardware wallet. Learn how to assemble Specter DIY, Specter Shield and Shield Lite from parts."
+        path="/build-guide"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: "How to build a Specter DIY Bitcoin Hardware Wallet",
+          description:
+            "A step-by-step guide to assembling the Specter DIY open-source Bitcoin hardware wallet.",
+          url: "https://specter.solutions/build-guide",
+        }}
+      />
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         {/* Header Section */}
         <header className="mb-12 text-center">
