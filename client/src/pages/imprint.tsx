@@ -103,7 +103,7 @@ export default function Imprint() {
               <h2 className="text-2xl font-semibold text-white mb-4">Copyright</h2>
               <div className="text-gray-300 space-y-4">
                 <p>
-                  © 2024 Specter Association. All rights reserved.
+                  © {new Date().getFullYear()} Specter Association. All rights reserved.
                 </p>
                 <p>
                   The content of this website is licensed under open-source licenses where applicable. 

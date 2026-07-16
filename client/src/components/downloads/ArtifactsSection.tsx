@@ -6,7 +6,11 @@ export default function ArtifactsSection() {
       <h2 className="text-3xl font-bold mb-8 text-center">Artifacts</h2>
       <div className="max-w-4xl mx-auto">
         <p className="text-lg text-gray-300 mb-8">
-          Specter is available in several forms: as a GUI application, as a binary that can be executed like a web app, and as a PyPI package. Additionally, Specter is available as a Docker image via the awesome{' '}
+          Specter is available in several forms: as a GUI application, as a binary that can be executed like a web app, and as a PyPI package. Official Docker images are published to the{' '}
+          <a href="https://github.com/cryptoadvance/specter-desktop/pkgs/container/specter-desktop" className="text-specter-coral hover:underline">
+            GitHub Container Registry
+          </a>{' '}
+          (<code className="bg-specter-dark px-1 rounded text-sm">docker pull ghcr.io/cryptoadvance/specter-desktop</code>). Releases before v2.1.2 instead used images from the{' '}
           <a href="https://github.com/lncm/docker-specter-desktop" className="text-specter-coral hover:underline">
             Chiang Mai LN devs
           </a>.
@@ -29,6 +33,9 @@ export default function ArtifactsSection() {
             </p>
             <p className="text-gray-300 text-sm mt-2">
               <strong>Note on macOS:</strong> The current build supports only macOS Catalina (10.15) or higher.
+              The app is not code-signed or notarized by Apple, so Gatekeeper will block it on first launch.
+              After installing, run <code className="bg-specter-dark px-1 rounded">xattr -cr /Applications/Specter.app</code>{' '}
+              in Terminal to remove the quarantine flag.
             </p>
           </Card>
 
