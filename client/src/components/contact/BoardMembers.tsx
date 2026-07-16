@@ -11,6 +11,8 @@ import poltoImage from "@assets/polto_1755804982512.jpg";
 import thomasImage from "@assets/Thomas_1755804997253.jpg";
 import richardImage from "@assets/Richard.png";
 import darkoImage from "@assets/darko.jpg";
+import marcoImage from "@assets/Marco.jpg";
+import tadeuImage from "@assets/Tadeu.png";
 
 const boardMembers: BoardMemberData[] = [
   // Board of Directors
@@ -112,6 +114,26 @@ const boardMembers: BoardMemberData[] = [
     description: "Led Specter workshops at conferences to promote knowledge and adoption within the community.",
     socialLinks: [
       { type: "website", url: "https://hodling.ch/" }
+    ]
+  },
+  {
+    name: "Marco",
+    image: marcoImage,
+    role: "Association Member",
+    roleColor: "gray",
+    description: "Is working on a new UI and UX for the Specter HWW.",
+    socialLinks: [
+      { type: "x", url: "https://x.com/MarcoKruse6" }
+    ]
+  },
+  {
+    name: "Tadeu",
+    image: tadeuImage,
+    role: "Association Member",
+    roleColor: "gray",
+    description: "Implemented the M3Y QR-Scanner into the Specter HWW.",
+    socialLinks: [
+      { type: "github", url: "https://github.com/tadeubas" }
     ]
   }
 ];

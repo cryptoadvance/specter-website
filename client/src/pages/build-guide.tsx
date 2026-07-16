@@ -91,9 +91,9 @@ export default function BuildGuide() {
           <div className="mt-6 text-center">
             <p className="text-gray-300 mb-4">Additional Resources:</p>
             <ul className="inline-flex flex-wrap gap-4 text-sm">
-              <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/docs/enclosures" target="_blank" className="text-specter-primary hover:underline">More Case Enclosures</a></li>
-              <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/docs/assembly.md" target="_blank" className="hover:underline text-specter-primary">Assembly Instructions</a></li>
-              <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/shield" target="_blank" className="hover:underline text-specter-primary">Shield GitHub Page</a></li>
+              <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/docs/enclosures" target="_blank" rel="noopener noreferrer" className="text-specter-primary hover:underline">More Case Enclosures</a></li>
+              <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/docs/assembly.md" target="_blank" rel="noopener noreferrer" className="hover:underline text-specter-primary">Assembly Instructions</a></li>
+              <li><a href="https://github.com/cryptoadvance/specter-diy/tree/master/shield" target="_blank" rel="noopener noreferrer" className="hover:underline text-specter-primary">Shield GitHub Page</a></li>
             </ul>
           </div>
         </header>

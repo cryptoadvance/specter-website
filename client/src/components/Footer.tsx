@@ -101,7 +101,7 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
 
         {/* Copyright and Legal */}
         <div className="text-center text-gray-400 text-sm">
-          <p className="mb-2">© 2024 | Specter Association</p>
+          <p className="mb-2">© {new Date().getFullYear()} | Specter Association</p>
           <div className="flex justify-center space-x-4">
             <Link
               href="/imprint"

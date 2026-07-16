@@ -1,15 +1,13 @@
 import { useState } from "react";
-import { Link } from "wouter";
-import { Menu, X, ChevronDown } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import SEO from "@/components/SEO";
+import Layout from "@/components/Layout";
 
 // Import vendor logos
 import clavaStackLogo from "@assets/BtcFrankenstein Logo 3.4.1_1755840288095.png";
 import plebStyleLogo from "@assets/imgi_1_YwTqyo_1_400x400_1755840295047.png";
 import bitcoinStoreLogo from "@assets/CalMPylj_400x400 (1)_1755840297048.jpg";
 import cryptoguideLogo from "@assets/Cryptoguide_1755840305434.jpg";
-import specterLogo from "@assets/Specter_logo_1756046218246.png";
 import bayotoLogo from "@assets/Bayoto.jpg";
 import cryptomaanLogo from "@assets/Cryptomaan.jpg";
 import btcDirectLogo from "@assets/btcdirect.jpg";
@@ -21,9 +19,6 @@ import bitcoinBazisLogo from "@assets/BitcoinBazis.jpg";
 import bitcoinBazarLogo from "@assets/BitcoinBazar.jpg";
 
 export default function Vendors() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [hardwareDropdownOpen, setHardwareDropdownOpen] = useState(false);
-  const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [continentFilter, setContinentFilter] = useState("all");
   const [tagsFilter, setTagsFilter] = useState("all");
 
@@ -176,144 +171,15 @@ export default function Vendors() {
   };
 
   return (
-    <div className="bg-specter-dark text-white font-sans min-h-screen">
+    <Layout>
       <SEO
         title="Vendors"
         description="Find trusted vendors selling Specter DIY hardware wallets, parts, shields and preassembled devices — worldwide."
         path="/vendors"
       />
-      {/* Header */}
-      <header className="bg-specter-primary shadow-lg sticky top-0 z-50">
-        <nav className="container mx-auto px-4 py-3">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/">
-                <img 
-                  src={specterLogo} 
-                  alt="Specter Logo" 
-                  className="h-12 w-auto"
-                />
-              </Link>
-            </div>
-            
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200">
-                Home
-              </Link>
-              <div className="relative">
-                <button
-                  onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
-                  className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
-                >
-                  Desktop
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                {desktopDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
-                    <Link 
-                      href="/desktop" 
-                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
-                      onClick={() => setDesktopDropdownOpen(false)}
-                    >
-                      Desktop Overview
-                    </Link>
-                    <Link 
-                      href="/downloads" 
-                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
-                      onClick={() => setDesktopDropdownOpen(false)}
-                    >
-                      Downloads
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <div className="relative">
-                <Link
-                  href="/hardware"
-                  onMouseEnter={() => setHardwareDropdownOpen(true)}
-                  onMouseLeave={() => setHardwareDropdownOpen(false)}
-                  className="flex items-center text-specter-coral font-medium hover:text-white transition-colors duration-200"
-                >
-                  Hardware
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </Link>
-                {hardwareDropdownOpen && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50"
-                    onMouseEnter={() => setHardwareDropdownOpen(true)}
-                    onMouseLeave={() => setHardwareDropdownOpen(false)}
-                  >
-                    <Link 
-                      href="/hardware" 
-                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
-                      onClick={() => setHardwareDropdownOpen(false)}
-                    >
-                      Hardware Overview
-                    </Link>
-                    <Link 
-                      href="/vendors" 
-                      className="block px-4 py-2 text-specter-coral font-medium bg-specter-dark"
-                      onClick={() => setHardwareDropdownOpen(false)}
-                    >
-                      Vendors
-                    </Link>
-                    <Link 
-                      href="/build-guide" 
-                      className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
-                      onClick={() => setHardwareDropdownOpen(false)}
-                    >
-                      Build Guide
-                    </Link>
-                  </div>
-                )}
-              </div>
-              <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200">
-                Contact
-              </Link>
-            </div>
-
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden text-white"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
-            </button>
-          </div>
-
-          {/* Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="md:hidden mt-4">
-              <div className="flex flex-col space-y-2">
-                <Link href="/" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
-                  Home
-                </Link>
-                <Link href="/desktop" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
-                  Desktop
-                </Link>
-                <Link href="/hardware" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
-                  Hardware
-                </Link>
-                <span className="text-specter-coral font-medium py-2 text-left pl-4">
-                  Vendors
-                </span>
-                <Link href="/build-guide" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4">
-                  Build Guide
-                </Link>
-                <Link href="/contact" className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left">
-                  Contact
-                </Link>
-              </div>
-            </div>
-          )}
-        </nav>
-      </header>
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        
+
         {/* Header Section */}
         <header className="mb-12 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white mb-2">
@@ -412,6 +278,6 @@ export default function Vendors() {
         </div>
 
       </main>
-    </div>
+    </Layout>
   );
 }
