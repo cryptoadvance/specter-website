@@ -53,14 +53,21 @@ export default function ArtifactsSection() {
           <Card className="bg-specter-navy rounded-xl p-6 border-0">
             <h3 className="text-xl font-bold mb-4 text-white">Signatures and hashes</h3>
             <p className="text-gray-300 text-sm">
-              SHA256SUMS file contains sha256 hashes of all binary files and signed with "Specter Signer's" GPG key.
+              SHA256SUMS file contains sha256 hashes of all binary files and is signed with the "Specter Signer 2026" GPG key.
               You can get the public key from{' '}
-              <a href="http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x785a2269ee3a9736ac1a4f4c864b7cf9a811fef7" className="text-specter-coral hover:underline">
+              <a href="http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x9dc33ca830589de3b3225c26eef5756b2ea42349" className="text-specter-coral hover:underline">
                 here
               </a>.
             </p>
             <p className="text-gray-300 text-sm mt-2">
-              Fingerprint of the key is <code className="bg-specter-dark px-1 rounded">785A 2269 EE3A 9736 AC1A 4F4C 864B 7CF9 A811 FEF7</code>
+              Fingerprint of the key is <code className="bg-specter-dark px-1 rounded">9DC3 3CA8 3058 9DE3 B322 5C26 EEF5 756B 2EA4 2349</code>
+            </p>
+            <p className="text-gray-300 text-sm mt-2">
+              This key is certified by the personal key of Kim Neunert (<a href="https://github.com/k9ert" className="text-specter-coral hover:underline">@k9ert</a>),
+              verifiable via{' '}
+              <a href="https://api.github.com/users/k9ert/gpg_keys" className="text-specter-coral hover:underline">GitHub</a>,{' '}
+              <a href="https://keybase.io/k9ert" className="text-specter-coral hover:underline">Keybase</a> or the{' '}
+              <a href="https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x28b358a8843b0109" className="text-specter-coral hover:underline">Ubuntu keyserver</a>.
             </p>
           </Card>
         </div>
