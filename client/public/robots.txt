@@ -1,42 +1,51 @@
 # https://specter.solutions/robots.txt
 User-agent: *
 Allow: /
+Disallow: /imprint
 
 # Explicitly allow AI crawlers
 User-agent: GPTBot
 Allow: /
+Disallow: /imprint
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /imprint
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /imprint
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /imprint
 
 User-agent: Claude-Web
 Allow: /
+Disallow: /imprint
 
 User-agent: anthropic-ai
 Allow: /
+Disallow: /imprint
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /imprint
 
 User-agent: Perplexity-User
 Allow: /
+Disallow: /imprint
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /imprint
 
 User-agent: Applebot-Extended
 Allow: /
+Disallow: /imprint
 
 User-agent: CCBot
 Allow: /
-
-# Disallow legal/low-value pages from index
 Disallow: /imprint
 
 Sitemap: https://specter.solutions/sitemap.xml

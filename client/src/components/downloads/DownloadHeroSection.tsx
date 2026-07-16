@@ -46,12 +46,6 @@ export default function DownloadHeroSection({ latestRelease, loading }: Download
             {(() => {
               const { macAsset, winAsset, linuxAsset } = getMainAssets(latestRelease.assets);
 
-              // Debug logging
-              console.log('Latest stable release:', latestRelease.tag_name);
-              console.log('Total assets:', latestRelease.assets.length);
-              console.log('Asset names:', latestRelease.assets.map(a => a.name));
-              console.log('Found assets:', { macAsset: macAsset?.name, winAsset: winAsset?.name, linuxAsset: linuxAsset?.name });
-
               return (
                 <>
                   {/* macOS */}

@@ -52,7 +52,7 @@ export default function SpecterShieldSection({ isVisible = true }: SpecterShield
           
           <h3 className="text-xl font-semibold text-white mt-6 mb-2">How to Build</h3>
           <ul className="list-disc list-inside text-specter-primary space-y-2">
-            <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/shield/Alternative_3D_Printed_Case/Assembly_Instructions.pdf" target="_blank" className="text-specter-primary hover:underline">Assembly Instructions</a></li>
+            <li><a href="https://github.com/cryptoadvance/specter-diy/blob/master/shield/Alternative_3D_Printed_Case/Assembly_Instructions.pdf" target="_blank" rel="noopener noreferrer" className="text-specter-primary hover:underline">Assembly Instructions</a></li>
           </ul>
         </div>
       </div>

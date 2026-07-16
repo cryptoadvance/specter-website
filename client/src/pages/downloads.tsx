@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
-import Header from '@/components/shared/Header';
-import Footer from '@/components/shared/Footer';
+import Layout from '@/components/Layout';
 import SEO from '@/components/SEO';
 import DownloadHeroSection from '@/components/downloads/DownloadHeroSection';
 import ReleasesSection from '@/components/downloads/ReleasesSection';
@@ -33,10 +32,6 @@ export default function Downloads() {
         // Filter out pre-releases
         const stableReleases = data.filter(release => !release.prerelease);
 
-        console.log('All releases:', data.length);
-        console.log('Stable releases:', stableReleases.length);
-        console.log('Latest stable release:', stableReleases[0]?.tag_name);
-
         setReleases(stableReleases);
         setLatestRelease(stableReleases[0] || null);
       } catch (error) {
@@ -50,21 +45,18 @@ export default function Downloads() {
   }, []);
 
   return (
-    <div className="bg-specter-dark text-white font-sans">
+    <Layout>
       <SEO
         title="Downloads"
         description="Download the latest version of Specter Desktop Bitcoin wallet software for Windows, macOS and Linux. All releases are open-source and verifiable."
         path="/downloads"
       />
-      <Header />
 
       <DownloadHeroSection latestRelease={latestRelease} loading={loading} />
       <ReleasesSection releases={releases} loading={loading} />
       <div className="container mx-auto px-4">
         <ArtifactsSection />
       </div>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

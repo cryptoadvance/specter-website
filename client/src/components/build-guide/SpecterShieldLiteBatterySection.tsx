@@ -46,7 +46,7 @@ export default function SpecterShieldLiteBatterySection({ isVisible = true }: Sp
           
           <h3 className="text-xl font-semibold text-white mt-6 mb-2">How to Build</h3>
           <ul className="list-disc list-inside text-specter-primary space-y-2">
-            <li><a href="https://www.youtube.com/watch?v=NWD0xLyAras&t=332s" target="_blank" className="text-specter-primary hover:underline">Specter Shield Lite with Batteries Case Instructions</a></li>
+            <li><a href="https://www.youtube.com/watch?v=NWD0xLyAras&t=332s" target="_blank" rel="noopener noreferrer" className="text-specter-primary hover:underline">Specter Shield Lite with Batteries Case Instructions</a></li>
           </ul>
         </div>
       </div>

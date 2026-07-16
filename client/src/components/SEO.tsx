@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 
 const SITE_URL = "https://specter.solutions";
@@ -30,6 +31,37 @@ export default function SEO({
 
   const url = `${SITE_URL}${path}`;
   const ogImage = image.startsWith("http") ? image : `${SITE_URL}${image}`;
+
+  // react-helmet-async's own client-side DOM patching doesn't re-run reliably
+  // on client-side route changes in this app (only the initially hydrated
+  // page's tags stick around). These effects don't affect prerendering/SSR —
+  // that path already emits correct tags per route at build time — they just
+  // guarantee the live SPA keeps <title>/description/canonical in sync as
+  // wouter swaps pages without a full page reload.
+  useEffect(() => {
+    document.title = fullTitle;
+  }, [fullTitle]);
+
+  useEffect(() => {
+    if (!description) return;
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute("content", description);
+  }, [description]);
+
+  useEffect(() => {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement("link");
+      link.setAttribute("rel", "canonical");
+      document.head.appendChild(link);
+    }
+    link.setAttribute("href", url);
+  }, [url]);
 
   return (
     <Helmet>

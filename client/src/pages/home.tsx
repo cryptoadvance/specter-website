@@ -39,14 +39,13 @@ export default function Home() {
         }}
       />
       {/* Hero Section */}
-      <section 
+      <section
         id="hero"
-        className="relative min-h-screen flex items-center justify-center overflow-hidden" 
+        className="relative min-h-screen flex items-center justify-center overflow-hidden bg-scroll md:bg-fixed"
         style={{
           backgroundImage: `url(${heroBackgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
         }}
       >
         <div className="absolute inset-0 bg-black opacity-40"></div>
