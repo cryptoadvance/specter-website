@@ -42,7 +42,8 @@ export class MemStorage implements IStorage {
   async createContact(insertContact: InsertContact): Promise<Contact> {
     const id = randomUUID();
     const contact: Contact = { 
-      ...insertContact, 
+      ...insertContact,
+      honeypot: insertContact.honeypot || null,
       id, 
       createdAt: new Date() 
     };

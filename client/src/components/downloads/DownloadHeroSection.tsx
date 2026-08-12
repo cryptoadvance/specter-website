@@ -93,8 +93,8 @@ export default function DownloadHeroSection({ latestRelease, loading }: Download
           </div>
         ) : null}
 
-        {/* Fallback: Always show hardcoded downloads if API fails or no assets found */}
-        {(!latestRelease || !loading) && (
+        {/* Fallback: Show hardcoded downloads only if the GitHub API fails */}
+        {!latestRelease && !loading && (
           <div className="mt-8">
             <div className="text-center text-gray-400 text-sm mb-4">
               {!latestRelease ? 'API unavailable - showing latest known stable release:' : ''}
