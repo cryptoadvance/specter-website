@@ -56,7 +56,7 @@ export default function ArtifactsSection() {
           <Card className="bg-specter-navy rounded-xl p-6 border-0">
             <h3 className="text-xl font-bold mb-4 text-white">Signatures and hashes</h3>
             <p className="text-gray-300 text-sm">
-              SHA256SUMS contains SHA256 hashes of all binary files and is signed with "Specter Signer's" GPG key.
+              SHA256SUMS contains SHA256 hashes of all binary files and is signed with the GPG key for "Specter Signer 2026".
               You can get the public key from{' '}
               <a href={specterSignerKeyUrl} className="text-specter-coral hover:underline">
                 keyserver.ubuntu.com
