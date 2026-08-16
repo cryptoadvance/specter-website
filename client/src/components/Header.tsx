@@ -4,10 +4,31 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import specterLogo from "@assets/Specter_logo_1756046218246.png";
 
 interface HeaderProps {
-  onHomeClick?: () => void; // For home page scroll functionality
+  onHomeClick?: () => void;
 }
 
 type DropdownKey = "desktop" | "hardware" | "docs";
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const desktopLinks: NavItem[] = [
+  { label: "Desktop Overview", href: "/desktop" },
+  { label: "Downloads", href: "/downloads" },
+];
+
+const hardwareLinks: NavItem[] = [
+  { label: "Hardware Overview", href: "/hardware" },
+  { label: "Vendors", href: "/vendors" },
+  { label: "Build Guide", href: "/build-guide" },
+];
+
+const docsLinks: { label: string; href: string }[] = [
+  { label: "Desktop Docs", href: "https://docs.specter.solutions/desktop/" },
+  { label: "DIY Docs", href: "https://docs.specter.solutions/diy/" },
+];
 
 export default function Header({ onHomeClick }: HeaderProps) {
   const [location] = useLocation();
@@ -16,42 +37,70 @@ export default function Header({ onHomeClick }: HeaderProps) {
   const navRef = useRef<HTMLElement>(null);
 
   const isActive = (path: string) => location === path;
-  const isHardwareActive = () => ['/hardware', '/vendors', '/build-guide'].includes(location);
-  const isDesktopActive = () => ['/desktop', '/downloads'].includes(location);
+  const isHardwareActive = () =>
+    ["/hardware", "/vendors", "/build-guide"].includes(location);
+  const isDesktopActive = () => ["/desktop", "/downloads"].includes(location);
 
   const toggleDropdown = (key: DropdownKey) => {
     setOpenDropdown((current) => (current === key ? null : key));
   };
 
+  const closeDropdown = () => setOpenDropdown(null);
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  // Close dropdown on Escape or click outside the nav
   useEffect(() => {
-    const closeOnOutsideOrEscape = (event: MouseEvent | KeyboardEvent) => {
-      if (event.type === "keydown" && (event as KeyboardEvent).key === "Escape") {
-        setOpenDropdown(null);
+    const handler = (event: MouseEvent | KeyboardEvent) => {
+      if (
+        event.type === "keydown" &&
+        (event as KeyboardEvent).key === "Escape"
+      ) {
+        closeDropdown();
         return;
       }
-      if (event.type === "mousedown" && navRef.current && !navRef.current.contains(event.target as Node)) {
-        setOpenDropdown(null);
+      if (
+        event.type === "mousedown" &&
+        navRef.current &&
+        !navRef.current.contains(event.target as Node)
+      ) {
+        closeDropdown();
       }
     };
-
-    document.addEventListener("mousedown", closeOnOutsideOrEscape);
-    document.addEventListener("keydown", closeOnOutsideOrEscape);
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("keydown", handler);
     return () => {
-      document.removeEventListener("mousedown", closeOnOutsideOrEscape);
-      document.removeEventListener("keydown", closeOnOutsideOrEscape);
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("keydown", handler);
     };
   }, []);
 
+  // Close everything on route change
+  useEffect(() => {
+    closeDropdown();
+    setMobileMenuOpen(false);
+  }, [location]);
+
   const handleHomeClick = () => {
-    if (onHomeClick && location === '/') {
+    if (onHomeClick && location === "/") {
       onHomeClick();
     }
-    setMobileMenuOpen(false);
+    closeMobileMenu();
+    closeDropdown();
   };
 
-  const handleMobileMenuClose = () => {
-    setMobileMenuOpen(false);
-  };
+  const dropdownClasses = (key: DropdownKey) =>
+    `absolute top-full mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50 origin-top transition-all duration-200 ${
+      key === "docs" ? "right-0" : "left-0"
+    } ${
+      openDropdown === key
+        ? "opacity-100 pointer-events-auto"
+        : "opacity-0 pointer-events-none"
+    }`;
+
+  const chevronClasses = (key: DropdownKey) =>
+    `ml-1 h-4 w-4 transition-transform duration-200 ${
+      openDropdown === key ? "rotate-180" : ""
+    }`;
 
   return (
     <header className="bg-specter-primary shadow-lg sticky top-0 z-50">
@@ -59,7 +108,7 @@ export default function Header({ onHomeClick }: HeaderProps) {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/">
+            <Link href="/" onClick={closeDropdown}>
               <img
                 src={specterLogo}
                 alt="Specter Logo"
@@ -69,11 +118,11 @@ export default function Header({ onHomeClick }: HeaderProps) {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             {/* Home Link */}
-            {location === '/' ? (
+            {location === "/" ? (
               <button
-                onClick={onHomeClick}
+                onClick={handleHomeClick}
                 className="text-white hover:text-specter-coral transition-colors duration-200"
               >
                 Home
@@ -82,6 +131,7 @@ export default function Header({ onHomeClick }: HeaderProps) {
               <Link
                 href="/"
                 className="text-white hover:text-specter-coral transition-colors duration-200"
+                onClick={closeDropdown}
               >
                 Home
               </Link>
@@ -95,39 +145,33 @@ export default function Header({ onHomeClick }: HeaderProps) {
                 aria-expanded={openDropdown === "desktop"}
                 className={`flex items-center transition-colors duration-200 ${
                   isDesktopActive()
-                    ? 'text-specter-coral font-medium'
-                    : 'text-white hover:text-specter-coral'
+                    ? "text-specter-coral font-medium"
+                    : "text-white hover:text-specter-coral"
                 }`}
               >
                 Desktop
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className={chevronClasses("desktop")} />
               </button>
-              {openDropdown === "desktop" && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+              <div className={dropdownClasses("desktop")}>
+                {desktopLinks.map((item, idx) => (
                   <Link
-                    href="/desktop"
-                    className={`block px-4 py-2 transition-colors duration-200 rounded-t-lg ${
-                      isActive('/desktop')
-                        ? 'text-specter-coral font-medium bg-specter-dark'
-                        : 'text-white hover:bg-specter-dark hover:text-specter-coral'
+                    key={item.href}
+                    href={item.href}
+                    className={`block px-4 py-2 transition-colors duration-200 ${
+                      idx === 0 ? "rounded-t-lg" : ""
+                    } ${
+                      idx === desktopLinks.length - 1 ? "rounded-b-lg" : ""
+                    } ${
+                      isActive(item.href)
+                        ? "text-specter-coral font-medium bg-specter-dark"
+                        : "text-white hover:bg-specter-dark hover:text-specter-coral"
                     }`}
-                    onClick={() => setOpenDropdown(null)}
+                    onClick={closeDropdown}
                   >
-                    Desktop Overview
+                    {item.label}
                   </Link>
-                  <Link
-                    href="/downloads"
-                    className={`block px-4 py-2 transition-colors duration-200 rounded-b-lg ${
-                      isActive('/downloads')
-                        ? 'text-specter-coral font-medium bg-specter-dark'
-                        : 'text-white hover:bg-specter-dark hover:text-specter-coral'
-                    }`}
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    Downloads
-                  </Link>
-                </div>
-              )}
+                ))}
+              </div>
             </div>
 
             {/* Hardware Dropdown */}
@@ -138,62 +182,59 @@ export default function Header({ onHomeClick }: HeaderProps) {
                 aria-expanded={openDropdown === "hardware"}
                 className={`flex items-center transition-colors duration-200 ${
                   isHardwareActive()
-                    ? 'text-specter-coral font-medium'
-                    : 'text-white hover:text-specter-coral'
+                    ? "text-specter-coral font-medium"
+                    : "text-white hover:text-specter-coral"
                 }`}
               >
                 Hardware
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className={chevronClasses("hardware")} />
               </button>
-              {openDropdown === "hardware" && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+              <div className={dropdownClasses("hardware")}>
+                {hardwareLinks.map((item, idx) => (
                   <Link
-                    href="/hardware"
-                    className={`block px-4 py-2 transition-colors duration-200 rounded-t-lg ${
-                      isActive('/hardware')
-                        ? 'text-specter-coral font-medium bg-specter-dark'
-                        : 'text-white hover:bg-specter-dark hover:text-specter-coral'
-                    }`}
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    Hardware Overview
-                  </Link>
-                  <Link
-                    href="/vendors"
+                    key={item.href}
+                    href={item.href}
                     className={`block px-4 py-2 transition-colors duration-200 ${
-                      isActive('/vendors')
-                        ? 'text-specter-coral font-medium bg-specter-dark'
-                        : 'text-white hover:bg-specter-dark hover:text-specter-coral'
+                      idx === 0 ? "rounded-t-lg" : ""
+                    } ${
+                      idx === hardwareLinks.length - 1 ? "rounded-b-lg" : ""
+                    } ${
+                      isActive(item.href)
+                        ? "text-specter-coral font-medium bg-specter-dark"
+                        : "text-white hover:bg-specter-dark hover:text-specter-coral"
                     }`}
-                    onClick={() => setOpenDropdown(null)}
+                    onClick={closeDropdown}
                   >
-                    Vendors
+                    {item.label}
                   </Link>
-                  <Link
-                    href="/build-guide"
-                    className={`block px-4 py-2 transition-colors duration-200 rounded-b-lg ${
-                      isActive('/build-guide')
-                        ? 'text-specter-coral font-medium bg-specter-dark'
-                        : 'text-white hover:bg-specter-dark hover:text-specter-coral'
-                    }`}
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    Build Guide
-                  </Link>
-                </div>
-              )}
+                ))}
+              </div>
             </div>
 
             {/* Contact Link */}
             <Link
               href="/contact"
               className={`transition-colors duration-200 ${
-                isActive('/contact')
-                  ? 'text-specter-coral font-medium'
-                  : 'text-white hover:text-specter-coral'
+                isActive("/contact")
+                  ? "text-specter-coral font-medium"
+                  : "text-white hover:text-specter-coral"
               }`}
+              onClick={closeDropdown}
             >
               Contact
+            </Link>
+
+            {/* Donate Link */}
+            <Link
+              href="/donate"
+              className={`transition-colors duration-200 ${
+                isActive("/donate")
+                  ? "text-specter-coral font-medium"
+                  : "text-white hover:text-specter-coral"
+              }`}
+              onClick={closeDropdown}
+            >
+              Donate
             </Link>
 
             {/* Docs Dropdown */}
@@ -205,30 +246,26 @@ export default function Header({ onHomeClick }: HeaderProps) {
                 className="flex items-center text-white hover:text-specter-coral transition-colors duration-200"
               >
                 Docs
-                <ChevronDown className="ml-1 h-4 w-4" />
+                <ChevronDown className={chevronClasses("docs")} />
               </button>
-              {openDropdown === "docs" && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-specter-navy rounded-lg shadow-lg border border-gray-600 z-50">
+              <div className={dropdownClasses("docs")}>
+                {docsLinks.map((item, idx) => (
                   <a
-                    href="https://docs.specter.solutions/desktop/"
+                    key={item.href}
+                    href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-t-lg"
-                    onClick={() => setOpenDropdown(null)}
+                    className={`block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 ${
+                      idx === 0 ? "rounded-t-lg" : ""
+                    } ${
+                      idx === docsLinks.length - 1 ? "rounded-b-lg" : ""
+                    }`}
+                    onClick={closeDropdown}
                   >
-                    Desktop Docs
+                    {item.label}
                   </a>
-                  <a
-                    href="https://docs.specter.solutions/diy/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block px-4 py-2 text-white hover:bg-specter-dark hover:text-specter-coral transition-colors duration-200 rounded-b-lg"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    DIY Docs
-                  </a>
-                </div>
-              )}
+                ))}
+              </div>
             </div>
           </div>
 
@@ -239,112 +276,165 @@ export default function Header({ onHomeClick }: HeaderProps) {
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
+            {mobileMenuOpen ? (
+              <X className="text-xl" />
+            ) : (
+              <Menu className="text-xl" />
+            )}
           </button>
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-4">
-            <div className="flex flex-col space-y-2">
-              {/* Home Link */}
-              {location === '/' ? (
-                <button
-                  onClick={handleHomeClick}
-                  className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                >
-                  Home
-                </button>
-              ) : (
+        <div
+          className={`md:hidden overflow-hidden transition-all duration-300 ${
+            mobileMenuOpen ? "max-h-[800px] opacity-100 mt-4" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="flex flex-col space-y-1">
+            {/* Home */}
+            {location === "/" ? (
+              <button
+                onClick={handleHomeClick}
+                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
+              >
+                Home
+              </button>
+            ) : (
+              <Link
+                href="/"
+                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
+                onClick={closeMobileMenu}
+              >
+                Home
+              </Link>
+            )}
+
+            {/* Desktop section */}
+            <button
+              onClick={() => toggleDropdown("desktop")}
+              className={`flex items-center justify-between text-left transition-colors duration-200 py-2 ${
+                isDesktopActive()
+                  ? "text-specter-coral font-medium"
+                  : "text-white hover:text-specter-coral"
+              }`}
+            >
+              Desktop
+              <ChevronDown className={chevronClasses("desktop")} />
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 pl-4 ${
+                openDropdown === "desktop"
+                  ? "max-h-48 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              {desktopLinks.map((item) => (
                 <Link
-                  href="/"
-                  className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                  onClick={handleMobileMenuClose}
+                  key={item.href}
+                  href={item.href}
+                  className={`block py-2 text-left transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? "text-specter-coral font-medium"
+                      : "text-white hover:text-specter-coral"
+                  }`}
+                  onClick={closeMobileMenu}
                 >
-                  Home
+                  {item.label}
                 </Link>
-              )}
+              ))}
+            </div>
 
-              {/* Desktop Links */}
-              <Link
-                href="/desktop"
-                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                onClick={handleMobileMenuClose}
-              >
-                Desktop
-              </Link>
-
-              <Link
-                href="/downloads"
-                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4"
-                onClick={handleMobileMenuClose}
-              >
-                Downloads
-              </Link>
-
-              {/* Hardware Links */}
-              {isActive('/hardware') ? (
-                <span className="text-specter-coral font-medium py-2 text-left">
-                  Hardware
-                </span>
-              ) : (
+            {/* Hardware section */}
+            <button
+              onClick={() => toggleDropdown("hardware")}
+              className={`flex items-center justify-between text-left transition-colors duration-200 py-2 ${
+                isHardwareActive()
+                  ? "text-specter-coral font-medium"
+                  : "text-white hover:text-specter-coral"
+              }`}
+            >
+              Hardware
+              <ChevronDown className={chevronClasses("hardware")} />
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 pl-4 ${
+                openDropdown === "hardware"
+                  ? "max-h-48 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              {hardwareLinks.map((item) => (
                 <Link
-                  href="/hardware"
-                  className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                  onClick={handleMobileMenuClose}
+                  key={item.href}
+                  href={item.href}
+                  className={`block py-2 text-left transition-colors duration-200 ${
+                    isActive(item.href)
+                      ? "text-specter-coral font-medium"
+                      : "text-white hover:text-specter-coral"
+                  }`}
+                  onClick={closeMobileMenu}
                 >
-                  Hardware
+                  {item.label}
                 </Link>
-              )}
+              ))}
+            </div>
 
-              <Link
-                href="/vendors"
-                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4"
-                onClick={handleMobileMenuClose}
-              >
-                Vendors
-              </Link>
+            {/* Contact */}
+            <Link
+              href="/contact"
+              className={`text-left transition-colors duration-200 py-2 ${
+                isActive("/contact")
+                  ? "text-specter-coral font-medium"
+                  : "text-white hover:text-specter-coral"
+              }`}
+              onClick={closeMobileMenu}
+            >
+              Contact
+            </Link>
 
-              <Link
-                href="/build-guide"
-                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left pl-4"
-                onClick={handleMobileMenuClose}
-              >
-                Build Guide
-              </Link>
+            {/* Donate */}
+            <Link
+              href="/donate"
+              className={`text-left transition-colors duration-200 py-2 ${
+                isActive("/donate")
+                  ? "text-specter-coral font-medium"
+                  : "text-white hover:text-specter-coral"
+              }`}
+              onClick={closeMobileMenu}
+            >
+              Donate
+            </Link>
 
-              {/* Contact Link */}
-              <Link
-                href="/contact"
-                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                onClick={handleMobileMenuClose}
-              >
-                Contact
-              </Link>
-
-              {/* Docs Links */}
-              <a
-                href="https://docs.specter.solutions/desktop/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                onClick={handleMobileMenuClose}
-              >
-                Desktop Docs
-              </a>
-
-              <a
-                href="https://docs.specter.solutions/diy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-specter-coral transition-colors duration-200 py-2 text-left"
-                onClick={handleMobileMenuClose}
-              >
-                DIY Docs
-              </a>
+            {/* Docs section */}
+            <button
+              onClick={() => toggleDropdown("docs")}
+              className="flex items-center justify-between text-left text-white hover:text-specter-coral transition-colors duration-200 py-2"
+            >
+              Docs
+              <ChevronDown className={chevronClasses("docs")} />
+            </button>
+            <div
+              className={`overflow-hidden transition-all duration-300 pl-4 ${
+                openDropdown === "docs"
+                  ? "max-h-48 opacity-100"
+                  : "max-h-0 opacity-0"
+              }`}
+            >
+              {docsLinks.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block py-2 text-left text-white hover:text-specter-coral transition-colors duration-200"
+                  onClick={closeMobileMenu}
+                >
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
-        )}
+        </div>
       </nav>
     </header>
   );

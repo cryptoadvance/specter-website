@@ -102,12 +102,26 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
         {/* Copyright and Legal */}
         <div className="text-center text-gray-400 text-sm">
           <p className="mb-2">© {new Date().getFullYear()} | Specter Association</p>
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center space-x-4 flex-wrap gap-y-2">
             <Link
               href="/imprint"
               className="hover:text-specter-coral transition-colors"
             >
               Imprint
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link
+              href="/donate"
+              className="hover:text-specter-coral transition-colors"
+            >
+              Donate
+            </Link>
+            <span className="text-gray-600">|</span>
+            <Link
+              href="/brand-guidelines"
+              className="hover:text-specter-coral transition-colors"
+            >
+              Brand Guidelines
             </Link>
           </div>
         </div>

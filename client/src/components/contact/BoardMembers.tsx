@@ -123,7 +123,8 @@ const boardMembers: BoardMemberData[] = [
     roleColor: "gray",
     description: "Is working on a new UI and UX for the Specter HWW.",
     socialLinks: [
-      { type: "x", url: "https://x.com/MarcoKruse6" }
+      { type: "x", url: "https://x.com/MarcoKruse6" },
+      { type: "github", url: "https://github.com/maggo83" }
     ]
   },
   {
@@ -152,4 +153,3 @@ export default function BoardMembers() {
     </section>
   );
 }
-
