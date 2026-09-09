@@ -32,7 +32,7 @@ const funders: Funder[] = [
     announcementUrl:
       "https://opensats.org/blog/seventeenth-wave-of-bitcoin-grants#specter-diy",
     summary:
-      "OpenSats awarded Specter DIY a significant grant through their General Fund. The grant directly funds the ongoing development of Specter DIY and embit — the lightweight Bitcoin library that Specter DIY shares with other open-hardware projects such as Krux and SeedSigner. In line with OpenSats' disclosure policy, the grant amount is not published here; see their public announcement for details.",
+      "OpenSats awarded Specter DIY a significant grant through their General Fund. The grant directly funds the ongoing development of Specter DIY and embit, the lightweight Bitcoin library that Specter DIY shares with other open-hardware projects such as Krux and SeedSigner. In line with OpenSats' disclosure policy, the grant amount is not published here; see their public announcement for details.",
     fundedWork: [
       {
         label: "Maintaining embit, the shared Bitcoin library used by Specter DIY, Krux and SeedSigner",
@@ -54,7 +54,11 @@ const funders: Funder[] = [
         label: "A redesigned user interface informed by community feedback",
       },
       {
-        label: "A modular firmware architecture supporting apps for the Liquid Network and BIP-85 derived seeds",
+        label: "Porting Specter DIY to the ESP32-P4 board",
+      },
+      {
+        label:
+          "Advising and coordinating community work on future Specter DIY application development, security, and code quality reviews of current contributions to Specter DIY and Embit.",
       },
     ],
   },
@@ -129,7 +133,7 @@ export default function Donate() {
             <div className="prose prose-invert max-w-none text-gray-300 leading-relaxed text-sm md:text-base space-y-4">
               <p>
                 The Specter Association is a Swiss non-profit that holds and
-                advances the Specter project — both Specter Desktop, the
+                advances the Specter project, including Specter Desktop, the
                 Bitcoin wallet software, and the Specter DIY hardware wallet
                 firmware. Everything we release is free and open-source under
                 the MIT license.
@@ -137,15 +141,14 @@ export default function Donate() {
               <p>
                 Donations to the Association fund the work that keeps the
                 project alive: hosting and infrastructure, security audits,
-                documentation, conference presence, and the coordination of
-                volunteers and contributors. They also let us respond to
-                community needs without being dependent on a single
-                commercial sponsor.
+                documentation and the coordination of volunteers and
+                contributors. They also let us respond to community needs
+                without being dependent on a single commercial sponsor.
               </p>
               <p>
                 If you use Specter to hold your own keys, run your own node,
-                or build your own hardware wallet — a donation is a direct way
-                to give back to the tools that protect your sovereignty.
+                or build your own hardware wallet, donating is a direct way to
+                give back to the tools that protect your sovereignty.
               </p>
             </div>
           </Card>
@@ -245,7 +248,7 @@ export default function Donate() {
             <p className="text-gray-400 mb-10 text-center max-w-2xl mx-auto">
               As a donor-funded non-profit, we believe in showing what grants
               make possible. We only publish what our funders have already
-              disclosed publicly — never grant amounts or individual recipients,
+              disclosed publicly, never grant amounts or individual recipients,
               to respect everyone's privacy.
             </p>
 
