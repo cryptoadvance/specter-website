@@ -36,9 +36,10 @@ export default function ArtifactsSection() {
             </p>
             <p className="text-gray-300 text-sm mt-2">
               <strong>Note on macOS:</strong> The current build supports only macOS Catalina (10.15) or higher.
-              The app is not code-signed or notarized by Apple, so Gatekeeper will block it on first launch.
-              After installing, run <code className="bg-specter-dark px-1 rounded">xattr -cr /Applications/Specter.app</code>{' '}
-              in Terminal to remove the quarantine flag.
+              The app is not code-signed or notarized by Apple, so macOS Gatekeeper may prevent it from opening normally.
+              After verifying the PGP signature and SHA256 hash, run{' '}
+              <code className="bg-specter-dark px-1 rounded">xattr -dr com.apple.quarantine /Applications/Specter.app</code>{' '}
+              in Terminal to remove the quarantine attribute.
             </p>
           </Card>
 
