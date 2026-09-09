@@ -44,6 +44,7 @@ export class MemStorage implements IStorage {
     const contact: Contact = { 
       ...insertContact, 
       id, 
+      honeypot: insertContact.honeypot ?? null,
       createdAt: new Date() 
     };
     this.contacts.set(id, contact);
