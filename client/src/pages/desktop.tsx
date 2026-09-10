@@ -3,25 +3,22 @@ import { Card } from "@/components/ui/card";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import BlinkPayButton from "@/components/BlinkPayButton";
 import desktopImage from "@assets/imgi_39_Specter_Desktop_In_Use2-scaled_1756034442973.png";
 import specterDesktopHeroImage from "@assets/Specter_Desktop-scaled_1756037166999.jpg";
+import specterGhostMascot from "@assets/Specter_logo_1756046218246.png";
 
 // Desktop page specific images
 import adjustIcon from "@assets/desktop/Adjust.svg";
 import backupIcon from "@assets/desktop/backup.svg";
 import bitcoinCoreImage from "@assets/desktop/bitcoin_core.png";
-import codeIcon from "@assets/desktop/code.svg";
 import communityIcon from "@assets/desktop/community.svg";
 import connectIcon from "@assets/desktop/connect.svg";
 import customiseSettingsIcon from "@assets/desktop/customise-settings.svg";
 import desktopAddDeviceImage from "@assets/desktop/Desktop-Specter_Add_Device.png";
 import desktopAddNewWalletImage from "@assets/desktop/Desktop-Specter_Add_New_Wallet.png";
 import documentationIcon from "@assets/desktop/documentation.svg";
-import donateIcon from "@assets/desktop/donate.svg";
 import exploreIcon from "@assets/desktop/explore.svg";
 import fastIcon from "@assets/desktop/Fast.svg";
-import fossIcon from "@assets/desktop/foss.svg";
 import importExportIcon from "@assets/desktop/import-export.svg";
 import importExportIcon2 from "@assets/desktop/import_export.svg";
 import liquidArticlesIcon from "@assets/desktop/liquid-articles.svg";
@@ -632,61 +629,29 @@ export default function Desktop() {
 
           {/* Contribute Section */}
           <section className="mb-20">
-            <h2 className="text-4xl font-bold mb-16 text-white text-center">Contribute</h2>
+            <h2 className="text-4xl font-bold mb-10 text-white text-center">Contributions</h2>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img
-                  src={fossIcon}
-                  alt="FOSS"
-                  className="w-16 h-16 mb-6 mx-auto"
-                />
-                <h3 className="text-xl font-bold mb-4 text-white">Free open source software.</h3>
-                <p className="text-gray-300">
-                  Specter Desktop is free and open source software under the MIT Licence, this gives everyone the freedom to review and use the code.
+            <Link
+              href="/contribute/desktop"
+              className="group mx-auto flex max-w-2xl flex-col items-center gap-6 rounded-xl bg-specter-navy p-6 text-center transition-colors hover:bg-specter-dark-accent focus:outline-none focus:ring-2 focus:ring-specter-primary sm:flex-row sm:text-left"
+            >
+              <img
+                src={specterGhostMascot}
+                alt="Specter ghost mascot"
+                className="h-24 w-24 rounded-lg object-cover"
+              />
+              <div>
+                <h3 className="text-xl font-bold text-white group-hover:text-specter-primary">
+                  Contribute to Specter Desktop
+                </h3>
+                <p className="mt-2 text-gray-300">
+                  Explore ways to improve the wallet, build plugins and join the developer community.
                 </p>
+                <span className="mt-4 inline-block text-sm font-semibold text-specter-coral">
+                  View contribution options &gt;&gt;
+                </span>
               </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img
-                  src={codeIcon}
-                  alt="Code"
-                  className="w-16 h-16 mb-6 mx-auto"
-                />
-                <h3 className="text-xl font-bold mb-4 text-white">Contribute to the tools we all use.</h3>
-                <p className="text-gray-300 mb-4">
-                  We have a developer community, please reach out to the team.
-                </p>
-                <p className="text-gray-300 mb-4">
-                  Join the many contributors who build, improve and maintain the tools we all use.
-                </p>
-                <a 
-                  href="https://github.com/cryptoadvance/specter-desktop" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-specter-coral hover:underline"
-                >
-                  Github &gt;&gt;
-                </a>
-              </div>
-              <div className="bg-specter-navy rounded-xl p-8 border-0 text-center">
-                <img
-                  src={donateIcon}
-                  alt="Donate"
-                  className="w-16 h-16 mb-6 mx-auto"
-                />
-                <h3 className="text-xl font-bold mb-4 text-white">Donate some sats.</h3>
-                <p className="text-gray-300 mb-4">
-                  Show your appreciation for the open source projects you use.
-                </p>
-                <BlinkPayButton className="mt-4" />
-                <Link
-                  href="/donate"
-                  className="inline-block mt-6 text-specter-coral hover:underline text-sm"
-                >
-                  Learn more about donating &gt;&gt;
-                </Link>
-              </div>
-            </div>
+            </Link>
           </section>
 
 

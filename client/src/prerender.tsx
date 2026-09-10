@@ -59,6 +59,10 @@ const ROUTES = [
   "/vendors",
   "/build-guide",
   "/contact",
+  "/contribute",
+  "/contribute/desktop",
+  "/contribute/diy",
+  "/contribute/other",
   "/imprint",
 ];
 

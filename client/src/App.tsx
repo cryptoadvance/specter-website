@@ -11,6 +11,10 @@ import Hardware from "@/pages/hardware";
 import Vendors from "@/pages/vendors";
 import BuildGuide from "@/pages/build-guide";
 import Contact from "@/pages/contact";
+import Contribute from "@/pages/contribute";
+import ContributeDesktop from "@/pages/contribute-desktop";
+import ContributeDIY from "@/pages/contribute-diy";
+import ContributeOther from "@/pages/contribute-other";
 import Donate from "@/pages/donate";
 import BrandGuidelines from "@/pages/brand-guidelines";
 import Imprint from "@/pages/imprint";
@@ -38,6 +42,10 @@ function Router() {
         <Route path="/vendors" component={Vendors} />
         <Route path="/build-guide" component={BuildGuide} />
         <Route path="/contact" component={Contact} />
+        <Route path="/contribute" component={Contribute} />
+        <Route path="/contribute/desktop" component={ContributeDesktop} />
+        <Route path="/contribute/diy" component={ContributeDIY} />
+        <Route path="/contribute/other" component={ContributeOther} />
         <Route path="/donate" component={Donate} />
         <Route path="/brand-guidelines" component={BrandGuidelines} />
         <Route path="/imprint" component={Imprint} />
