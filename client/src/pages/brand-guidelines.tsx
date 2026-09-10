@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Download } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import specterLogo from "@assets/Specter_logo_1756046218246.png";
+import specterLogo from "@assets/specter-ghost-mascot.png";
+import specterGhostOutline from "@assets/specter-ghost-outline-thick.svg";
 
 interface BrandColor {
   name: string;
@@ -237,7 +239,7 @@ export default function BrandGuidelines() {
         <div className="inline-flex items-center justify-center bg-specter-dark-accent rounded-2xl p-8 mb-8">
           <img
             src={specterLogo}
-            alt="Specter Logo"
+            alt="Specter ghost mascot logo"
             className="h-24 w-auto"
           />
         </div>
@@ -414,6 +416,34 @@ export default function BrandGuidelines() {
             </a>
             .
           </p>
+        </section>
+
+        {/* Logo download */}
+        <section>
+          <Card className="bg-specter-navy rounded-2xl p-8 shadow-2xl border-0 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">Logo Downloads</h2>
+            <p className="text-gray-300 max-w-2xl mx-auto mb-6">
+              Download all three Specter logo variants in one ZIP file. The
+              archive includes a README explaining the differences between the
+              versions and when to use them.
+            </p>
+            <a
+              href="/specter-brand-assets.zip"
+              download="specter-brand-assets.zip"
+              className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-specter-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-specter-primary"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Download Logo
+            </a>
+            <a
+              href={specterGhostOutline}
+              download="specter-ghost-outline-thick.svg"
+              className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-lg border border-gray-600 px-6 py-3 text-sm font-semibold text-gray-300 transition-colors hover:border-specter-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-specter-primary"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              Download SVG variant · thicker lines
+            </a>
+          </Card>
         </section>
       </main>
     </Layout>
