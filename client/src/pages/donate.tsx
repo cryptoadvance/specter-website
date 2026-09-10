@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -80,6 +81,18 @@ const funders: Funder[] = [
 ];
 
 export default function Donate() {
+  const [copiedBlinkAddress, setCopiedBlinkAddress] = useState(false);
+
+  const copyBlinkAddress = async () => {
+    try {
+      await navigator.clipboard.writeText("specterassociation@blink.sv");
+      setCopiedBlinkAddress(true);
+      window.setTimeout(() => setCopiedBlinkAddress(false), 1500);
+    } catch {
+      setCopiedBlinkAddress(false);
+    }
+  };
+
   return (
     <Layout showNewsletter={true}>
       <SEO
@@ -178,7 +191,19 @@ export default function Donate() {
 
             <p className="text-xs text-gray-500 mt-6 text-center max-w-xl mx-auto">
               The Blink Pay Button forwards your Lightning payment directly to
-              the Specter Association (<span className="text-gray-400">@specterassociation</span>).
+              the Specter Association ({" "}
+              <button
+                type="button"
+                onClick={copyBlinkAddress}
+                className="text-gray-400 hover:text-specter-coral underline underline-offset-2 transition-colors"
+                aria-label="Copy specterassociation@blink.sv"
+              >
+                specterassociation@blink.sv
+              </button>
+              {copiedBlinkAddress && (
+                <span className="ml-2 text-specter-primary">Copied</span>
+              )}
+              ).
               You can use any Lightning-enabled wallet such as Blink, Wallet of
               Satoshi, Muun, Phoenix or Breez.
             </p>

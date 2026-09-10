@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import nostrIcon from "@assets/Nostr_logo_weiß.png";
 
 interface FooterProps {
@@ -7,26 +7,24 @@ interface FooterProps {
 }
 
 export default function Footer({ showNewsletter = false }: FooterProps) {
+  const newsletterRef = useRef<HTMLDivElement>(null);
 
-  // Load EmailOctopus form script
   useEffect(() => {
-    if (showNewsletter) {
-      // Check if script is already loaded
-      const existingScript = document.querySelector('script[src="https://eomail6.com/form/c51600a0-81ab-11f0-b46e-69c761b60369.js"]');
+    if (!showNewsletter || !newsletterRef.current) return;
 
-      if (!existingScript) {
-        const script = document.createElement('script');
-        script.src = 'https://eomail6.com/form/c51600a0-81ab-11f0-b46e-69c761b60369.js';
-        script.async = true;
-        script.setAttribute('data-form', 'c51600a0-81ab-11f0-b46e-69c761b60369');
+    const newsletterContainer = newsletterRef.current;
+    if (newsletterContainer.querySelector(".emailoctopus-form")) return;
 
-        // Append to the newsletter container
-        const newsletterContainer = document.getElementById('emailoctopus-form-container');
-        if (newsletterContainer) {
-          newsletterContainer.appendChild(script);
-        }
-      }
-    }
+    const script = document.createElement("script");
+    script.src =
+      "https://eomail6.com/form/c51600a0-81ab-11f0-b46e-69c761b60369.js";
+    script.async = true;
+    script.setAttribute("data-form", "c51600a0-81ab-11f0-b46e-69c761b60369");
+    newsletterContainer.appendChild(script);
+
+    return () => {
+      newsletterContainer.replaceChildren();
+    };
   }, [showNewsletter]);
 
   return (
@@ -118,7 +116,7 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
               Stay up to date<br />with Specter
             </h4>
             {/* EmailOctopus form will be loaded here */}
-            <div id="emailoctopus-form-container" className="max-w-md mx-auto">
+            <div ref={newsletterRef} className="max-w-md mx-auto">
               {/* The EmailOctopus script will inject the form here */}
             </div>
           </div>
