@@ -22,6 +22,8 @@ export default defineConfig({
         "/contribute/desktop",
         "/contribute/diy",
         "/contribute/other",
+        "/donate",
+        "/brand-guidelines",
         "/imprint",
       ],
     }),

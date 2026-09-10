@@ -9,7 +9,11 @@ export default function ArtifactsSection() {
       <h2 className="text-3xl font-bold mb-8 text-center">Artifacts</h2>
       <div className="max-w-4xl mx-auto">
         <p className="text-lg text-gray-300 mb-8">
-          Specter is available in several forms: as a GUI application, as a binary that can be executed like a web app, and as a PyPI package. Additionally, Specter is available as a Docker image via the awesome{' '}
+          Specter is available in several forms: as a GUI application, as a binary that can be executed like a web app, and as a PyPI package. Official Docker images are published to the{' '}
+          <a href="https://github.com/cryptoadvance/specter-desktop/pkgs/container/specter-desktop" className="text-specter-coral hover:underline">
+            GitHub Container Registry
+          </a>{' '}
+          (<code className="bg-specter-dark px-1 rounded text-sm">docker pull ghcr.io/cryptoadvance/specter-desktop</code>). Releases before v2.1.2 instead used images from the{' '}
           <a href="https://github.com/lncm/docker-specter-desktop" className="text-specter-coral hover:underline">
             Chiang Mai LN devs
           </a>.
@@ -32,6 +36,10 @@ export default function ArtifactsSection() {
             </p>
             <p className="text-gray-300 text-sm mt-2">
               <strong>Note on macOS:</strong> The current build supports only macOS Catalina (10.15) or higher.
+              The app is not code-signed or notarized by Apple, so macOS Gatekeeper may prevent it from opening normally.
+              After verifying the PGP signature and SHA256 hash, run{' '}
+              <code className="bg-specter-dark px-1 rounded">xattr -dr com.apple.quarantine /Applications/Specter.app</code>{' '}
+              in Terminal to remove the quarantine attribute.
             </p>
           </Card>
 
@@ -64,6 +72,14 @@ export default function ArtifactsSection() {
             </p>
             <p className="text-gray-300 text-sm mt-2">
               Fingerprint of the key is <code className="bg-specter-dark px-1 rounded">{specterSignerFingerprint}</code>
+            </p>
+            <p className="text-gray-300 text-sm mt-2">
+              This key is certified by the personal key of Kim Neunert (<a href="https://github.com/k9ert" className="text-specter-coral hover:underline">@k9ert</a>),
+              fingerprint <code className="bg-specter-dark px-1 rounded">ECC0 B4AB D74E 716F 5ADE 0952 28B3 58A8 843B 0109</code>.
+              You can independently verify that identity via{' '}
+              <a href="https://api.github.com/users/k9ert/gpg_keys" className="text-specter-coral hover:underline">GitHub's GPG key API</a>,{' '}
+              <a href="https://keybase.io/k9ert" className="text-specter-coral hover:underline">Keybase</a> or the{' '}
+              <a href="https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x28b358a8843b0109" className="text-specter-coral hover:underline">Ubuntu keyserver</a>.
             </p>
           </Card>
         </div>

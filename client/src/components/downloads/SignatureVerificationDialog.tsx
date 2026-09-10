@@ -9,6 +9,35 @@ interface SignatureVerificationDialogProps {
   fileName: string;
 }
 
+const linkClass = "text-specter-coral hover:text-white transition-colors";
+
+// Shared across all three platforms so the key name/fingerprint only needs
+// updating in one place (a past copy-paste-3x update missed a typo and left
+// stale key info on two of the three tabs).
+function SignerKeyInfo() {
+  return (
+    <>
+      Download and import the PGP Public key of "Specter Signer 2026" from{' '}
+      <a href="http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x9dc33ca830589de3b3225c26eef5756b2ea42349" target="_blank" rel="noopener noreferrer" className={linkClass}>here</a>.
+      {' '}The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">9DC3 3CA8 3058 9DE3 B322 5C26 EEF5 756B 2EA4 2349</code>.
+      <div className="mt-2 p-3 bg-specter-navy/60 rounded-lg text-xs text-gray-300">
+        This release key is certified by the personal PGP key of Kim Neunert (<a href="https://github.com/k9ert" target="_blank" rel="noopener noreferrer" className={linkClass}>@k9ert</a>),
+        fingerprint <code className="bg-specter-navy px-1 py-0.5 rounded">ECC0 B4AB D74E 716F 5ADE 0952 28B3 58A8 843B 0109</code>.
+        You can independently verify that identity via:
+        <ul className="list-disc list-inside mt-1 space-y-0.5">
+          <li><a href="https://api.github.com/users/k9ert/gpg_keys" target="_blank" rel="noopener noreferrer" className={linkClass}>GitHub's GPG key API</a></li>
+          <li><a href="https://keybase.io/k9ert" target="_blank" rel="noopener noreferrer" className={linkClass}>Keybase</a> (which also cross-links k9ert's GitHub and X/Twitter identity)</li>
+          <li><a href="https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x28b358a8843b0109" target="_blank" rel="noopener noreferrer" className={linkClass}>Ubuntu keyserver</a></li>
+        </ul>
+      </div>
+      <div className="pl-4 mt-2 space-y-1">
+        <div><strong>2b.</strong> For releases before the "Specter Signer" key existed, files were signed directly with Kim Neunert's personal key: <a href="https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109" target="_blank" rel="noopener noreferrer" className={linkClass}>https://keybase.io/k9ert/pgp_keys.asc</a></div>
+        <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: <a href="https://benkaufman.info/ben-kaufman.asc" target="_blank" rel="noopener noreferrer" className={linkClass}>https://benkaufman.info/ben-kaufman.asc</a></div>
+      </div>
+    </>
+  );
+}
+
 export default function SignatureVerificationDialog({ platform, version, fileName }: SignatureVerificationDialogProps) {
   const platformTitles = {
     mac: 'Mac OS Signature Verification',
@@ -22,19 +51,11 @@ export default function SignatureVerificationDialog({ platform, version, fileNam
     signatures: `https://github.com/cryptoadvance/specter-desktop/releases/download/${version}/SHA256SUMS.asc`
   };
 
-  const specterSignerKeyUrl = 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x9dc33ca830589de3b3225c26eef5756b2ea42349';
-  const specterSignerFingerprint = '9DC3 3CA8 3058 9DE3 B322 5C26 EEF5 756B 2EA4 2349';
-
   const renderMacInstructions = () => (
     <div className="space-y-4 text-sm">
       <ol className="list-decimal list-inside space-y-3">
         <li>Download Specter for macOS (<a href={downloadUrls.file} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">{fileName}</a>), the hashfile (<a href={downloadUrls.hashfile} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS</a>) and the signatures file (<a href={downloadUrls.signatures} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS.asc</a>)</li>
-        <li>Download and import the PGP Public key of "Specter Signer 2026" from <a href={specterSignerKeyUrl} target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">keyserver.ubuntu.com</a>. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">{specterSignerFingerprint}</code>.
-          <div className="pl-4 mt-2 space-y-1">
-            <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): <a href="https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://keybase.io/k9ert/pgp_keys.asc</a></div>
-            <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: <a href="https://benkaufman.info/ben-kaufman.asc" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://benkaufman.info/ben-kaufman.asc</a></div>
-          </div>
-        </li>
+        <li><SignerKeyInfo /></li>
         <li>Open the terminal app (you can search for it on the Launchpad)</li>
         <li>Paste in the following lines (Note: The first 2 commands are needed only if it's your first time doing this process):</li>
       </ol>
@@ -80,12 +101,7 @@ export default function SignatureVerificationDialog({ platform, version, fileNam
     <div className="space-y-4 text-sm">
       <ol className="list-decimal list-inside space-y-3">
         <li>Download Specter for Windows (<a href={downloadUrls.file} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">{fileName}</a>), the hashfile (<a href={downloadUrls.hashfile} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS</a>) and the signatures file (<a href={downloadUrls.signatures} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS.asc</a>)</li>
-        <li>Download and import the PGP Public key of "Specter Signer 2026" from <a href={specterSignerKeyUrl} target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">keyserver.ubuntu.com</a>. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">{specterSignerFingerprint}</code>.
-          <div className="pl-4 mt-2 space-y-1">
-            <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): <a href="https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://keybase.io/k9ert/pgp_keys.asc</a></div>
-            <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: <a href="https://benkaufman.info/ben-kaufman.asc" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://benkaufman.info/ben-kaufman.asc</a></div>
-          </div>
-        </li>
+        <li><SignerKeyInfo /></li>
         <li>Download and install <a href="https://files.gpg4win.org/gpg4win-3.1.15.exe" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">Gpg4Win</a> (you can get it directly here)</li>
         <li>Wait for it to open up or open Kleopatra from the Windows search bar</li>
         <li>Click "Import" on the main screen and choose the pgp_keys.asc key you have downloaded in step 2</li>
@@ -111,12 +127,7 @@ export default function SignatureVerificationDialog({ platform, version, fileNam
     <div className="space-y-4 text-sm">
       <ol className="list-decimal list-inside space-y-3">
         <li>Download Specter for Linux (<a href={downloadUrls.file} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">{fileName}</a>), the hashfile (<a href={downloadUrls.hashfile} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS</a>) and the signatures file (<a href={downloadUrls.signatures} target="_blank" rel="noopener noreferrer" className="bg-specter-navy px-1 py-0.5 rounded text-specter-coral hover:text-white transition-colors">SHA256SUMS.asc</a>)</li>
-        <li>Download and import the PGP Public key of "Specter Signer 2026" from <a href={specterSignerKeyUrl} target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">keyserver.ubuntu.com</a>. The fingerprint for this key is <code className="bg-specter-navy px-1 py-0.5 rounded">{specterSignerFingerprint}</code>.
-          <div className="pl-4 mt-2 space-y-1">
-            <div><strong>2b.</strong> Download and import the PGP Public key of Kim Neunert (for v1.7.0): <a href="https://keybase.io/k9ert/pgp_keys.asc?fingerprint=ecc0b4abd74e716f5ade095228b358a8843b0109" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://keybase.io/k9ert/pgp_keys.asc</a></div>
-            <div><strong>2c.</strong> For older releases, download and save the PGP public key of Ben Kaufman: <a href="https://benkaufman.info/ben-kaufman.asc" target="_blank" rel="noopener noreferrer" className="text-specter-coral hover:text-white transition-colors">https://benkaufman.info/ben-kaufman.asc</a></div>
-          </div>
-        </li>
+        <li><SignerKeyInfo /></li>
         <li>Open the terminal app (you can search for it on the Launchpad)</li>
         <li>Paste in the following lines (Note: The first 2 commands are needed only if it's your first time doing this process):</li>
       </ol>

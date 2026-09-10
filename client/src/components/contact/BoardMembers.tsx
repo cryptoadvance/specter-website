@@ -55,7 +55,7 @@ const boardMembers: BoardMemberData[] = [
     image: stepanImage,
     role: "Honorary Member",
     roleColor: "gray",
-    description: "Main Developer of the Specter DIY and Specter Desktop now working on a quantum computer.",
+    description: "Initial main developer of Specter DIY and Desktop now working on a quantum computer.",
     socialLinks: [
       { type: "x", url: "https://x.com/StepanSnigirev" },
       { type: "website", url: "https://stepansnigirev.com/" }
@@ -67,7 +67,7 @@ const boardMembers: BoardMemberData[] = [
     image: kimImage,
     role: "Association Member",
     roleColor: "gray",
-    description: "A former key member of the Specter team who contributed to improving the software wallet.",
+    description: "A former key member of the Specter team who contributed to improving the desktop wallet.",
     socialLinks: [
       { type: "x", url: "https://x.com/k9ert" },
       { type: "linkedin", url: "https://www.linkedin.com/in/k9ert/" }
@@ -123,7 +123,8 @@ const boardMembers: BoardMemberData[] = [
     roleColor: "gray",
     description: "Is working on a new UI and UX for the Specter HWW.",
     socialLinks: [
-      { type: "x", url: "https://x.com/MarcoKruse6" }
+      { type: "x", url: "https://x.com/MarcoKruse6" },
+      { type: "github", url: "https://github.com/maggo83" }
     ]
   },
   {
@@ -152,4 +153,3 @@ export default function BoardMembers() {
     </section>
   );
 }
-

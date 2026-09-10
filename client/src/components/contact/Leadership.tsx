@@ -55,8 +55,8 @@ export default function Leadership() {
             <a href="https://www.linkedin.com/in/mikhail-tolkachev/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
               <img src={linkedinIcon} alt="LinkedIn" className="w-6 h-6" />
             </a>
-            <a href="https://www.embedity.com/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-              <img src={websiteIcon} alt="Website" className="w-6 h-6" />
+            <a href="https://x.com/mike_tolkachev" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
+              <img src={xIcon} alt="X (Twitter)" className="w-6 h-6" />
             </a>
           </div>
         </div>
