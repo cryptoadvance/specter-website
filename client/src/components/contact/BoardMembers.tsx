@@ -67,7 +67,7 @@ const boardMembers: BoardMemberData[] = [
     image: kimImage,
     role: "Association Member",
     roleColor: "gray",
-    description: "A former key member of the Specter team who contributed to improving the software wallet.",
+    description: "A former key member of the Specter team who contributed to improving the desktop wallet.",
     socialLinks: [
       { type: "x", url: "https://x.com/k9ert" },
       { type: "linkedin", url: "https://www.linkedin.com/in/k9ert/" }
