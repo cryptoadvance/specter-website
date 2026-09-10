@@ -62,8 +62,10 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
                 WebkitMaskPosition: "center",
                 maskRepeat: "no-repeat",
                 WebkitMaskRepeat: "no-repeat",
-                maskSize: "contain",
-                WebkitMaskSize: "contain",
+                maskSize: "145%",
+                WebkitMaskSize: "145%",
+                filter:
+                  "drop-shadow(1px 0 0 currentColor) drop-shadow(-1px 0 0 currentColor) drop-shadow(0 1px 0 currentColor) drop-shadow(0 -1px 0 currentColor)",
               }}
             />
           </a>
