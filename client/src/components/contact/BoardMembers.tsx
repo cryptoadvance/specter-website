@@ -55,7 +55,7 @@ const boardMembers: BoardMemberData[] = [
     image: stepanImage,
     role: "Honorary Member",
     roleColor: "gray",
-    description: "Main Developer of the Specter DIY and Specter Desktop now working on a quantum computer.",
+    description: "Initial main developer of Specter DIY and Desktop now working on a quantum computer.",
     socialLinks: [
       { type: "x", url: "https://x.com/StepanSnigirev" },
       { type: "website", url: "https://stepansnigirev.com/" }
