@@ -15,7 +15,7 @@ export default function BlinkPayButton({ className = "" }: BlinkPayButtonProps) 
           containerId: 'blink-pay-button-container',
           themeMode: 'dark',
           language: 'en',
-          defaultAmount: 1000,
+          defaultAmount: 21000,
           supportedCurrencies: [
             {
               "code": "sats",
