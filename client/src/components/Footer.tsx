@@ -109,6 +109,13 @@ export default function Footer({ showNewsletter = false }: FooterProps) {
             >
               Imprint
             </Link>
+            <span className="text-gray-600">|</span>
+            <Link
+              href="/contribute"
+              className="hover:text-specter-coral transition-colors"
+            >
+              Contribute
+            </Link>
           </div>
         </div>
       </div>
