@@ -597,7 +597,7 @@
             this.buttonText = config.buttonText || this.t('buttonText');
             this.buttonClass = config.buttonClass || 'blink-pay-button';
             this.themeMode = config.themeMode || 'light'; // light or dark
-            this.themeColor = config.themeColor || '#FB5607'; // Sunset Orange as default
+            this.themeColor = config.themeColor || '#1F99E5'; // Specter Blue as default
             this.minAmount = config.minAmount || 1;
             this.defaultAmount = config.defaultAmount || 1000;
             this.buttonWidth = config.buttonWidth || null; // Custom button width in pixels
@@ -663,11 +663,11 @@
         const blinkLogoDark = 'https://blinkbitcoin.github.io/donation-button.blink.sv/img/blink-dark.svg';
         const checkmarkSvg = 'https://blinkbitcoin.github.io/donation-button.blink.sv/img/successcheckmark.svg';
             
-            // Define CSS colors based on the Blink brand
+            // Define CSS colors based on the Specter brand
             const colors = {
-                sunset: '#FB5607',
-                lightning: '#FFB32C',
-                gradient: 'linear-gradient(45deg, #fe9f0c, #fc5805)',
+                sunset: '#1F99E5',
+                lightning: '#1F99E5',
+                gradient: 'linear-gradient(45deg, #1F99E5, #1680c0)',
                 dark: '#222222',
                 light: '#FFFFFF',
                 darkBg: '#253041',

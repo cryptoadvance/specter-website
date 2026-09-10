@@ -679,6 +679,12 @@ export default function Desktop() {
                   Show your appreciation for the open source projects you use.
                 </p>
                 <BlinkPayButton className="mt-4" />
+                <Link
+                  href="/donate"
+                  className="inline-block mt-6 text-specter-coral hover:underline text-sm"
+                >
+                  Learn more about donating &gt;&gt;
+                </Link>
               </div>
             </div>
           </section>

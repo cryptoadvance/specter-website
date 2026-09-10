@@ -18,6 +18,8 @@ export default defineConfig({
         "/vendors",
         "/build-guide",
         "/contact",
+        "/donate",
+        "/brand-guidelines",
         "/imprint",
       ],
     }),
