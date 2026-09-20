@@ -9,7 +9,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/contact", async (req, res) => {
     try {
       // Check honeypot field for spam protection
-      if (req.body.honeypot && req.body.honeypot.trim() !== "") {
+      const honeypot = req.body?.honeypot ?? req.body?.["bot-field"];
+      if (typeof honeypot === "string" && honeypot.trim() !== "") {
         return res.status(400).json({ message: "Spam detected" });
       }
 

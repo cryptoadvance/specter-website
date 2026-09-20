@@ -45,6 +45,7 @@ export default function ContactForm({
       formData.append('name', data.name);
       formData.append('email', data.email);
       formData.append('message', data.message);
+      formData.append('bot-field', data.honeypot ?? '');
       
       const response = await fetch('/', {
         method: 'POST',
@@ -92,9 +93,11 @@ export default function ContactForm({
       <div className="max-w-lg mx-auto">
         {/* Hidden form for Netlify detection */}
         <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="contact" />
           <input type="text" name="name" />
           <input type="email" name="email" />
           <textarea name="message"></textarea>
+          <input type="text" name="bot-field" />
         </form>
         
         <form
@@ -167,8 +170,10 @@ export default function ContactForm({
           <input 
             {...contactForm.register("honeypot")}
             type="text" 
-            name="honeypot" 
-            style={{ display: 'none' }} 
+            name="bot-field"
+            aria-hidden="true"
+            autoComplete="off"
+            className="absolute -left-[9999px] h-px w-px opacity-0"
             tabIndex={-1} 
           />
           
