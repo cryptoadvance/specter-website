@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import type { BaseSyntheticEvent } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,15 +38,17 @@ export default function ContactForm({
   });
 
   // Contact form submission for Netlify Forms
-  const onContactSubmit = async (data: InsertContact) => {
+  const onContactSubmit = async (data: InsertContact, event?: BaseSyntheticEvent) => {
     try {
-      // For Netlify Forms, we need to submit as form data
-      const formData = new FormData();
-      formData.append('form-name', 'contact');
-      formData.append('name', data.name);
-      formData.append('email', data.email);
-      formData.append('message', data.message);
-      formData.append('bot-field', data.honeypot ?? '');
+      // Preserve Netlify's CAPTCHA response when submitting the form with AJAX.
+      const formData = event?.currentTarget instanceof HTMLFormElement
+        ? new FormData(event.currentTarget)
+        : new FormData();
+      formData.set('form-name', 'contact');
+      formData.set('name', data.name);
+      formData.set('email', data.email);
+      formData.set('message', data.message);
+      formData.set('bot-field', data.honeypot ?? '');
       
       const response = await fetch('/', {
         method: 'POST',
@@ -92,7 +95,7 @@ export default function ContactForm({
       
       <div className="max-w-lg mx-auto">
         {/* Hidden form for Netlify detection */}
-        <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+        <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
           <input type="hidden" name="form-name" value="contact" />
           <input type="text" name="name" />
           <input type="email" name="email" />
@@ -104,7 +107,8 @@ export default function ContactForm({
           name="contact"
           method="POST"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
+          netlify-honeypot="bot-field"
+          data-netlify-recaptcha="true"
           onSubmit={contactForm.handleSubmit(onContactSubmit)}
           className="space-y-4"
         >
@@ -165,6 +169,8 @@ export default function ContactForm({
           <div className="text-xs text-gray-400 mb-4 text-center">
             Fields marked with an * are required
           </div>
+
+          <div data-netlify-recaptcha="true" className="my-4" />
           
           {/* Honeypot field for spam protection */}
           <input 
