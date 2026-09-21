@@ -19,6 +19,7 @@ interface Funder {
   logo?: string;
   logoLinkUrl?: string;
   announcementUrl?: string;
+  announcementLabel?: string;
   sourceLinks?: { label: string; href: string }[];
   // Plain-language summary of the funder's public grant announcement.
   summary: string;
@@ -76,6 +77,16 @@ const funders: Funder[] = [
     ],
     summary:
       "EINUNDZWANZIG donated 5,000,000 sats to the Specter Association.",
+    fundedWork: [],
+  },
+  {
+    name: "Copiaro",
+    logo:
+      "https://copiaro.com/cdn/shop/files/copiaro_logo_white.png?width=600",
+    logoLinkUrl: "https://copiaro.com",
+    announcementUrl: "https://copiaro.com",
+    announcementLabel: "Copiaro Website",
+    summary: "Copiaro helped the association with 2,1k€",
     fundedWork: [],
   },
 ];
@@ -351,7 +362,8 @@ export default function Donate() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 text-specter-coral hover:underline text-sm"
                       >
-                        Read {funder.name}'s grant announcement
+                        {funder.announcementLabel ??
+                          `Read ${funder.name}'s grant announcement`}
                         <span aria-hidden="true">→</span>
                       </a>
                     </div>
