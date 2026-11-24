@@ -8,6 +8,7 @@ interface PlatformDownloadCardProps {
   fileName: string;
   version: string;
   fileSize?: number;
+  buttonText?: string;
 }
 
 const platformConfig = {
@@ -41,7 +42,8 @@ export default function PlatformDownloadCard({
   downloadUrl,
   fileName,
   version,
-  fileSize
+  fileSize,
+  buttonText
 }: PlatformDownloadCardProps) {
   const config = platformConfig[platform];
   const IconComponent = config.icon;
@@ -55,7 +57,7 @@ export default function PlatformDownloadCard({
         onClick={() => window.open(downloadUrl, '_blank')}
         className="bg-specter-primary hover:bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 mb-2 w-full text-xl"
       >
-        {config.buttonText}
+        {buttonText ?? config.buttonText}
       </Button>
       <SignatureVerificationDialog
         platform={config.platform}
